@@ -2,5 +2,6 @@ package main;
 
 public class BD{
 
-	// aqui va la base de datos de usuarios
+	// aqui va la base de datos
+	
 }
