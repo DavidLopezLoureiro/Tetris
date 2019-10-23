@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class BD{
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		
 	//LECTURA DE ENTRADA DE DATOS
