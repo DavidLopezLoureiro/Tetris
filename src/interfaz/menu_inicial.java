@@ -10,7 +10,8 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;	
+import javax.swing.JButton;
+import java.awt.Color;	
 
 	@SuppressWarnings("serial")
 	public class menu_inicial extends JFrame {
@@ -38,40 +39,45 @@ import javax.swing.JButton;
 		 */
 		public menu_inicial() {
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			setBounds(100, 100, 685, 413);
+			setBounds(100, 100, 850, 700);
 			contentPane = new JPanel();
 			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 			setContentPane(contentPane);
 			contentPane.setLayout(null);
 			
-			JLabel lblTetris = new JLabel("Tetris");
-			lblTetris.setFont(new Font("Georgia", Font.BOLD, 30));
-			lblTetris.setBounds(265, 27, 108, 65);
-			contentPane.add(lblTetris);
-			
-			JButton btnCrearUsuario = new JButton("Crear usuario");
-			btnCrearUsuario.setBounds(95, 115, 456, 75);
+			JButton btnCrearUsuario = new JButton("REGISTRARSE");
+			btnCrearUsuario.setForeground(new Color(255, 255, 255));
+			btnCrearUsuario.setBackground(new Color(50, 205, 50));
+			btnCrearUsuario.setFont(new Font("Times New Roman", Font.BOLD, 20));
+			btnCrearUsuario.setBounds(146, 451, 492, 75);
 			contentPane.add(btnCrearUsuario);
+			
+			JButton btnNewButton = new JButton("INICIAR SESION");
+			btnNewButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+				}
+			});
+			btnNewButton.setForeground(new Color(255, 255, 255));
+			btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 20));
+			btnNewButton.setBackground(new Color(50, 205, 50));
+			btnNewButton.setBounds(146, 342, 492, 75);
+			contentPane.add(btnNewButton);
+			
+			JPanel panel = new JPanel();
+			panel.setBackground(new Color(220, 220, 220));
+			panel.setBounds(0, 0, 762, 93);
+			contentPane.add(panel);
+			panel.setLayout(null);
+			
+			JLabel lblTetris = new JLabel("TETRIS");
+			lblTetris.setFont(new Font("Times New Roman", Font.BOLD, 30));
+			lblTetris.setBounds(329, 13, 111, 56);
+			panel.add(lblTetris);
 			
 			btnCrearUsuario.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					if (e.getSource() == btnCrearUsuario) {
 						crear_usuario nuevaventana = new crear_usuario();
-						nuevaventana.setVisible(true);
-						menu_inicial.this.dispose();
-					}
-				}
-			});
-			
-			
-			JButton btnIniciarSesion = new JButton("Iniciar sesion");
-			btnIniciarSesion.setBounds(95, 235, 456, 75);
-			contentPane.add(btnIniciarSesion);
-			
-			btnIniciarSesion.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					if (e.getSource() == btnIniciarSesion) {
-						iniciar_sesion nuevaventana = new iniciar_sesion();
 						nuevaventana.setVisible(true);
 						menu_inicial.this.dispose();
 					}

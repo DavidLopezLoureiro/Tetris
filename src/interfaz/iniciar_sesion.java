@@ -44,7 +44,7 @@ public class iniciar_sesion extends JFrame {
 	 */
 	public iniciar_sesion() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 779, 601);
+		setBounds(100, 100, 850, 700);
 		contentPane = new JPanel();
 		contentPane.setBorder(null);
 		setContentPane(contentPane);
@@ -52,12 +52,12 @@ public class iniciar_sesion extends JFrame {
 		
 		JLabel lblNombreDeUsuario = new JLabel("Nombre de usuario:");
 		lblNombreDeUsuario.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		lblNombreDeUsuario.setBounds(91, 144, 180, 43);
+		lblNombreDeUsuario.setBounds(116, 162, 180, 43);
 		contentPane.add(lblNombreDeUsuario);
 		
 		JLabel lblContrasea = new JLabel("Contrase\u00F1a:");
 		lblContrasea.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		lblContrasea.setBounds(91, 280, 180, 35);
+		lblContrasea.setBounds(116, 318, 180, 35);
 		contentPane.add(lblContrasea);
 		
 		JButton btnIniciarSesion = new JButton("INICIAR SESION\r\n");
@@ -68,29 +68,29 @@ public class iniciar_sesion extends JFrame {
 			}
 		});
 		btnIniciarSesion.setFont(new Font("Times New Roman", Font.BOLD, 25));
-		btnIniciarSesion.setBounds(91, 423, 578, 92);
+		btnIniciarSesion.setBounds(116, 491, 598, 105);
 		contentPane.add(btnIniciarSesion);
 		
 		textFieldNombre = new JTextField();
 		textFieldNombre.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 		textFieldNombre.setColumns(10);
-		textFieldNombre.setBounds(91, 196, 578, 56);
+		textFieldNombre.setBounds(116, 215, 598, 56);
 		contentPane.add(textFieldNombre);
 		
 		passwordFieldInicioSesion = new JPasswordField();
 		passwordFieldInicioSesion.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-		passwordFieldInicioSesion.setBounds(91, 328, 578, 56);
+		passwordFieldInicioSesion.setBounds(116, 366, 598, 56);
 		contentPane.add(passwordFieldInicioSesion);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(220, 220, 220));
-		panel.setBounds(0, 0, 761, 105);
+		panel.setBounds(0, 0, 832, 105);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
 		JLabel lblIniciarSesion = new JLabel("INICIAR SESION");
 		lblIniciarSesion.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 35));
-		lblIniciarSesion.setBounds(233, 13, 281, 79);
+		lblIniciarSesion.setBounds(293, 13, 281, 79);
 		panel.add(lblIniciarSesion);
 	}
 }
