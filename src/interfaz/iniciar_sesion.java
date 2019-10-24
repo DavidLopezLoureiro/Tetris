@@ -8,14 +8,20 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
+import javax.swing.border.LineBorder;
+import javax.swing.JPasswordField;
+import javax.swing.border.TitledBorder;
 
 @SuppressWarnings("serial")
 public class iniciar_sesion extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField textFieldNombre;
+	private JPasswordField passwordFieldInicioSesion;
 
 	/**
 	 * Launch the application.
@@ -38,41 +44,53 @@ public class iniciar_sesion extends JFrame {
 	 */
 	public iniciar_sesion() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 685, 413);
+		setBounds(100, 100, 779, 601);
 		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBorder(null);
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblNombreDeUsuario = new JLabel("Nombre de usuario:");
-		lblNombreDeUsuario.setBounds(23, 38, 129, 35);
+		lblNombreDeUsuario.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		lblNombreDeUsuario.setBounds(91, 144, 180, 43);
 		contentPane.add(lblNombreDeUsuario);
 		
-		textField = new JTextField();
-		textField.setBounds(23, 74, 567, 35);
-		contentPane.add(textField);
-		textField.setColumns(10);
-		
 		JLabel lblContrasea = new JLabel("Contrase\u00F1a:");
-		lblContrasea.setBounds(23, 134, 129, 22);
+		lblContrasea.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		lblContrasea.setBounds(91, 280, 180, 35);
 		contentPane.add(lblContrasea);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(23, 158, 567, 35);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
-		
-		JLabel lblConfirmarContrasea = new JLabel("Confirmar contrase\u00F1a:");
-		lblConfirmarContrasea.setBounds(23, 220, 129, 22);
-		contentPane.add(lblConfirmarContrasea);
-		
-		textField_2 = new JTextField();
-		textField_2.setBounds(23, 243, 567, 35);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
-		
-		JButton btnIniciarSesion = new JButton("Iniciar sesion");
-		btnIniciarSesion.setBounds(226, 310, 180, 43);
+		JButton btnIniciarSesion = new JButton("INICIAR SESION\r\n");
+		btnIniciarSesion.setForeground(new Color(255, 255, 255));
+		btnIniciarSesion.setBackground(new Color(50, 205, 50));
+		btnIniciarSesion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnIniciarSesion.setFont(new Font("Times New Roman", Font.BOLD, 25));
+		btnIniciarSesion.setBounds(91, 423, 578, 92);
 		contentPane.add(btnIniciarSesion);
+		
+		textFieldNombre = new JTextField();
+		textFieldNombre.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+		textFieldNombre.setColumns(10);
+		textFieldNombre.setBounds(91, 196, 578, 56);
+		contentPane.add(textFieldNombre);
+		
+		passwordFieldInicioSesion = new JPasswordField();
+		passwordFieldInicioSesion.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+		passwordFieldInicioSesion.setBounds(91, 328, 578, 56);
+		contentPane.add(passwordFieldInicioSesion);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(220, 220, 220));
+		panel.setBounds(0, 0, 761, 105);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblIniciarSesion = new JLabel("INICIAR SESION");
+		lblIniciarSesion.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 35));
+		lblIniciarSesion.setBounds(233, 13, 281, 79);
+		panel.add(lblIniciarSesion);
 	}
 }
