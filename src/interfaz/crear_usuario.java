@@ -8,14 +8,18 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 @SuppressWarnings("serial")
 public class crear_usuario extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField textFieldNombreUsuarioRegistro;
+	private JTextField textFieldContrasenaRegistro;
+	private JTextField textFieldConfirmaContrasenaRegistro;
 
 	/**
 	 * Launch the application.
@@ -38,41 +42,69 @@ public class crear_usuario extends JFrame {
 	 */
 	public crear_usuario() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 685, 413);
+		setBounds(100, 100, 850, 700);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblNombreDeUsuario = new JLabel("Nombre de usuario:");
-		lblNombreDeUsuario.setBounds(23, 38, 129, 35);
+		lblNombreDeUsuario.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		lblNombreDeUsuario.setBounds(135, 193, 172, 35);
 		contentPane.add(lblNombreDeUsuario);
 		
-		textField = new JTextField();
-		textField.setBounds(23, 74, 567, 35);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		textFieldNombreUsuarioRegistro = new JTextField();
+		textFieldNombreUsuarioRegistro.setBounds(135, 241, 567, 44);
+		contentPane.add(textFieldNombreUsuarioRegistro);
+		textFieldNombreUsuarioRegistro.setColumns(10);
 		
 		JLabel lblContrasea = new JLabel("Contrase\u00F1a:");
-		lblContrasea.setBounds(23, 134, 129, 22);
+		lblContrasea.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		lblContrasea.setBounds(135, 309, 129, 22);
 		contentPane.add(lblContrasea);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(23, 158, 567, 35);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		textFieldContrasenaRegistro = new JTextField();
+		textFieldContrasenaRegistro.setBounds(135, 344, 567, 44);
+		contentPane.add(textFieldContrasenaRegistro);
+		textFieldContrasenaRegistro.setColumns(10);
 		
 		JLabel lblConfirmarContrasea = new JLabel("Confirmar contrase\u00F1a:");
-		lblConfirmarContrasea.setBounds(23, 220, 129, 22);
+		lblConfirmarContrasea.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		lblConfirmarContrasea.setBounds(135, 414, 202, 22);
 		contentPane.add(lblConfirmarContrasea);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(23, 243, 567, 35);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
+		textFieldConfirmaContrasenaRegistro = new JTextField();
+		textFieldConfirmaContrasenaRegistro.setBounds(135, 449, 567, 44);
+		contentPane.add(textFieldConfirmaContrasenaRegistro);
+		textFieldConfirmaContrasenaRegistro.setColumns(10);
 		
-		JButton btnIniciarSesion = new JButton("Crear usuario");
-		btnIniciarSesion.setBounds(226, 310, 180, 43);
+		JButton btnIniciarSesion = new JButton("REGISTRARSE");
+		btnIniciarSesion.setBackground(new Color(50, 205, 50));
+		btnIniciarSesion.setForeground(Color.WHITE);
+		btnIniciarSesion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnIniciarSesion.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		btnIniciarSesion.setBounds(447, 520, 255, 91);
 		contentPane.add(btnIniciarSesion);
+		
+		JPanel panelFondoTitulo = new JPanel();
+		panelFondoTitulo.setBackground(new Color(220, 220, 220));
+		panelFondoTitulo.setBounds(0, 0, 832, 146);
+		contentPane.add(panelFondoTitulo);
+		panelFondoTitulo.setLayout(null);
+		
+		JLabel lblRegistro = new JLabel("REGISTRO");
+		lblRegistro.setFont(new Font("Times New Roman", Font.BOLD, 30));
+		lblRegistro.setBounds(327, 31, 159, 69);
+		panelFondoTitulo.add(lblRegistro);
+		
+		JButton btnNewButton = new JButton("ATRAS");
+		btnNewButton.setBackground(new Color(135, 206, 235));
+		btnNewButton.setForeground(new Color(255, 250, 250));
+		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		btnNewButton.setBounds(135, 520, 255, 91);
+		contentPane.add(btnNewButton);
 	}
 }

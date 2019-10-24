@@ -49,7 +49,7 @@ import java.awt.Color;
 			btnCrearUsuario.setForeground(new Color(255, 255, 255));
 			btnCrearUsuario.setBackground(new Color(50, 205, 50));
 			btnCrearUsuario.setFont(new Font("Times New Roman", Font.BOLD, 20));
-			btnCrearUsuario.setBounds(146, 451, 492, 75);
+			btnCrearUsuario.setBounds(113, 522, 623, 85);
 			contentPane.add(btnCrearUsuario);
 			
 			JButton btnNewButton = new JButton("INICIAR SESION");
@@ -60,18 +60,18 @@ import java.awt.Color;
 			btnNewButton.setForeground(new Color(255, 255, 255));
 			btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 20));
 			btnNewButton.setBackground(new Color(50, 205, 50));
-			btnNewButton.setBounds(146, 342, 492, 75);
+			btnNewButton.setBounds(113, 394, 623, 85);
 			contentPane.add(btnNewButton);
 			
 			JPanel panel = new JPanel();
 			panel.setBackground(new Color(220, 220, 220));
-			panel.setBounds(0, 0, 762, 93);
+			panel.setBounds(0, 0, 832, 93);
 			contentPane.add(panel);
 			panel.setLayout(null);
 			
 			JLabel lblTetris = new JLabel("TETRIS");
 			lblTetris.setFont(new Font("Times New Roman", Font.BOLD, 30));
-			lblTetris.setBounds(329, 13, 111, 56);
+			lblTetris.setBounds(371, 13, 111, 56);
 			panel.add(lblTetris);
 			
 			btnCrearUsuario.addActionListener(new ActionListener() {

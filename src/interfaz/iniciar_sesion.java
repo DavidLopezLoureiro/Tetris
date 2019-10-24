@@ -60,7 +60,7 @@ public class iniciar_sesion extends JFrame {
 		lblContrasea.setBounds(116, 318, 180, 35);
 		contentPane.add(lblContrasea);
 		
-		JButton btnIniciarSesion = new JButton("INICIAR SESION\r\n");
+		JButton btnIniciarSesion = new JButton("ENTRAR");
 		btnIniciarSesion.setForeground(new Color(255, 255, 255));
 		btnIniciarSesion.setBackground(new Color(50, 205, 50));
 		btnIniciarSesion.addActionListener(new ActionListener() {
@@ -90,7 +90,7 @@ public class iniciar_sesion extends JFrame {
 		
 		JLabel lblIniciarSesion = new JLabel("INICIAR SESION");
 		lblIniciarSesion.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 35));
-		lblIniciarSesion.setBounds(293, 13, 281, 79);
+		lblIniciarSesion.setBounds(283, 13, 281, 79);
 		panel.add(lblIniciarSesion);
 	}
 }
