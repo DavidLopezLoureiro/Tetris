@@ -100,11 +100,21 @@ public class crear_usuario extends JFrame {
 		lblRegistro.setBounds(327, 31, 159, 69);
 		panelFondoTitulo.add(lblRegistro);
 		
-		JButton btnNewButton = new JButton("ATRAS");
-		btnNewButton.setBackground(new Color(135, 206, 235));
-		btnNewButton.setForeground(new Color(255, 250, 250));
-		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		btnNewButton.setBounds(135, 520, 255, 91);
-		contentPane.add(btnNewButton);
+		JButton btnAtras = new JButton("ATRAS");
+		btnAtras.setBackground(new Color(135, 206, 235));
+		btnAtras.setForeground(new Color(255, 250, 250));
+		btnAtras.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		btnAtras.setBounds(135, 520, 255, 91);
+		contentPane.add(btnAtras);
+		
+		btnAtras.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (e.getSource() == btnAtras) {
+					menu_inicial nuevaventana = new menu_inicial();
+					nuevaventana.setVisible(true);
+					crear_usuario.this.dispose();
+				}
+			}
+		});
 	}
 }

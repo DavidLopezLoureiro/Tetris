@@ -52,16 +52,21 @@ import java.awt.Color;
 			btnCrearUsuario.setBounds(113, 522, 623, 85);
 			contentPane.add(btnCrearUsuario);
 			
-			JButton btnNewButton = new JButton("INICIAR SESION");
-			btnNewButton.addActionListener(new ActionListener() {
+			JButton btnIniciarSesion = new JButton("INICIAR SESION");
+			btnIniciarSesion.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
+					if (e.getSource() == btnIniciarSesion) {
+						iniciar_sesion nuevaventana = new iniciar_sesion();
+						nuevaventana.setVisible(true);
+						menu_inicial.this.dispose();
+					}
 				}
 			});
-			btnNewButton.setForeground(new Color(255, 255, 255));
-			btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 20));
-			btnNewButton.setBackground(new Color(50, 205, 50));
-			btnNewButton.setBounds(113, 394, 623, 85);
-			contentPane.add(btnNewButton);
+			btnIniciarSesion.setForeground(new Color(255, 255, 255));
+			btnIniciarSesion.setFont(new Font("Times New Roman", Font.BOLD, 20));
+			btnIniciarSesion.setBackground(new Color(50, 205, 50));
+			btnIniciarSesion.setBounds(113, 394, 623, 85);
+			contentPane.add(btnIniciarSesion);
 			
 			JPanel panel = new JPanel();
 			panel.setBackground(new Color(220, 220, 220));
