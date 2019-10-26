@@ -36,7 +36,14 @@ public class Usuario {
 		this.maxPuntu = maxPuntu;
 		this.email = email;
 	}
-	
+	//para poder crear un usuario sin necesidad de que tenga una puntuacion establecida
+	public Usuario(String nombre,String contra,String email) {
+		super();
+		Nombre = nombre;
+		this.contra = contra;
+		this.maxPuntu=0;
+		this.email = email;
+	}
 	
 
 }

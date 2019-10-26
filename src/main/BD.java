@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import objetos.Usuario;
 import main.BD;
 
@@ -61,7 +60,7 @@ public class BD{
 			
 			try {
 				sentSQL = "insert into Usuario values('" +i+"'"+
-						",'" + secu(u.getNombre())+"',"+ "'"+secu(u.getContra())+"',"+ u.getMaxPuntu()+","+i+")";
+						",'" + secu(u.getNombre())+"',"+ "'"+secu(u.getContra())+"',"+ u.getMaxPuntu()+","+i+u.getEmail()+")";
 				int val = state.executeUpdate( sentSQL );
 				
 			} catch (SQLException e) {
@@ -80,5 +79,80 @@ public class BD{
 					ret.append(c);//para concatenar la palabras que si queremos que se guarde en la base de datos
 			}
 			return ret.toString();
+		}
+		//metodo para obtener todos los usuarios de la base de  datos en formato arraylist
+		public static ArrayList<Usuario> cargaUsuario(Connection con ,Statement st){
+			String sentSQL="";
+			ArrayList< Usuario>devolver=new ArrayList<>();
+			try {
+				sentSQL = "select * from Usuario";
+				ResultSet rs = st.executeQuery( sentSQL );
+				while (rs.next()) {
+					Usuario usua=new Usuario(rs.getString("nombre"), rs.getString("contra"), rs.getInt("MaxPuntu"),rs.getString("email"));
+					devolver.add(usua);
+				}
+				rs.close();
+				return devolver;
+			} catch (SQLException e) {
+				lastError = e;
+				log( Level.SEVERE, "erro en la lectura de la base de datos", e );
+				e.printStackTrace();
+				return null;
+			}
+		}
+		//metodo para crear tabas con la base de datos que en esta caso se va a emplear para crear la tabla Usuario
+		public static Statement crearTabla( Connection con) {
+		try {
+			Statement statement = con.createStatement();
+			statement.setQueryTimeout(30);  // poner timeout 30 msg
+			try {
+				statement.executeUpdate("create table Usuario " +
+						"( id integer not null primary key AUTOINCREMENT ,"//para que no se repita y se incremente 
+						+ "nombre text ,"
+						+ "contra text ,"
+						+ "MaxPuntu numeric ,"
+						+ "email text ) "
+						);
+							} catch (Exception e) {
+							// TODO: handle exception
+							lastError = e;
+								log( Level.SEVERE, "ya ha sido creada la tabla usuario", e );
+								}
+		} catch (SQLException e) {
+			lastError = e;
+			log( Level.SEVERE, "error en la creacion de las tablas", e );
+			e.printStackTrace();
+			return null;
+		}
+		return null;
+			
+		}
+		//para conseguir el  id del usuario
+		public static int idUsuario(Connection con ,Statement st,String nombre) {
+			String mensaje="select id from Usuario where nombre = '"+ nombre+ "'";
+			try {
+				ResultSet rs=st.executeQuery(mensaje);
+				return rs.getInt("id");
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return 0;
+		}
+		public static void cerrarBD(Connection con ,Statement st) {
+			try {
+				if (st!=null) st.close();
+				if (con!=null) con.close();
+			System.out.println("se ha cerrado la base de datos");
+			} catch (SQLException e) {
+				lastError = e;
+				log( Level.SEVERE, "error al cerrar la base de datos", e );
+				e.printStackTrace();
+			}
+		}
+		public static void main(String[] args) {
+			//creamos la base de datos
+			Connection con=iniciar();
+			Statement estado= crearTabla(con);
 		}
 }
