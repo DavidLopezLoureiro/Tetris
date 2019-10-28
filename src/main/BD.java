@@ -37,6 +37,12 @@ public class BD{
 		else
 			log.log( level, msg, excepcion );
 	}
+	
+	/**
+	 *Inicia la conexion con la BD
+	 * 
+	 * @return con (conexion con la BD) 
+	 */
 	public static Connection iniciar() {
 		try {
 		    Class.forName("org.sqlite.JDBC");
@@ -119,10 +125,19 @@ public class BD{
 								log( Level.SEVERE, "ya ha sido creada la tabla usuario", e );
 								}
 		} catch (SQLException e) {
+			
+			if (e.getMessage()=="table Usuario already exists") {
+		
+				System.out.println("adfasfsd");
+				
+			}else {
+			
 			lastError = e;
 			log( Level.SEVERE, "error en la creacion de las tablas", e );
 			e.printStackTrace();
 			return null;
+			
+			}
 		}
 		return null;
 			
