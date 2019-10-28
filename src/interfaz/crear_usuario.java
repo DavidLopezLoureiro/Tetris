@@ -14,6 +14,7 @@ import javax.swing.JTextField;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
+import java.sql.Statement;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
@@ -29,12 +30,6 @@ public class crear_usuario extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		
-		//inicio la BD
-		
-		Connection con = BD.iniciar();
-		
-		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -45,6 +40,11 @@ public class crear_usuario extends JFrame {
 				}
 			}
 		});
+		
+		//inicio la BD
+		
+		Connection con = BD.iniciar();
+		BD.crearTabla(con);	
 	}
 
 	/**

@@ -16,6 +16,7 @@ import main.BD;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
+import java.sql.Statement;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
@@ -37,6 +38,7 @@ public class iniciar_sesion extends JFrame {
 		//inicio la BD
 		
 		Connection con = BD.iniciar();
+		Statement st = BD.crearTabla(con);
 		
 		
 		EventQueue.invokeLater(new Runnable() {
