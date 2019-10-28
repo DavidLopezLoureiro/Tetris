@@ -8,6 +8,10 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+
+import interfaz.iniciar_sesion;
+import interfaz.menu_inicial;
+
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -68,7 +72,7 @@ public class iniciar_sesion extends JFrame {
 			}
 		});
 		btnIniciarSesion.setFont(new Font("Times New Roman", Font.BOLD, 25));
-		btnIniciarSesion.setBounds(116, 491, 598, 105);
+		btnIniciarSesion.setBounds(437, 492, 277, 105);
 		contentPane.add(btnIniciarSesion);
 		
 		textFieldNombre = new JTextField();
@@ -92,5 +96,22 @@ public class iniciar_sesion extends JFrame {
 		lblIniciarSesion.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 35));
 		lblIniciarSesion.setBounds(283, 13, 281, 79);
 		panel.add(lblIniciarSesion);
+		
+		JButton btnVolver = new JButton("ATRAS");
+		btnVolver.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if (arg0.getSource() == btnVolver) {
+					menu_inicial nuevaventana = new menu_inicial();
+					nuevaventana.setVisible(true);
+					iniciar_sesion.this.dispose();
+				}
+				
+			}
+		});
+		btnVolver.setForeground(Color.WHITE);
+		btnVolver.setFont(new Font("Times New Roman", Font.BOLD, 25));
+		btnVolver.setBackground(new Color(135, 206, 235));
+		btnVolver.setBounds(116, 492, 277, 105);
+		contentPane.add(btnVolver);
 	}
 }
