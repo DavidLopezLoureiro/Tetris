@@ -5,11 +5,15 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import main.BD;
+
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.Font;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
@@ -25,6 +29,12 @@ public class crear_usuario extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		
+		//inicio la BD
+		
+		Connection con = BD.iniciar();
+		
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {

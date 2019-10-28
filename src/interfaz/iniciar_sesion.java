@@ -11,9 +11,11 @@ import javax.swing.JTextField;
 
 import interfaz.iniciar_sesion;
 import interfaz.menu_inicial;
+import main.BD;
 
 import java.awt.Font;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
@@ -31,6 +33,12 @@ public class iniciar_sesion extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		
+		//inicio la BD
+		
+		Connection con = BD.iniciar();
+		
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
