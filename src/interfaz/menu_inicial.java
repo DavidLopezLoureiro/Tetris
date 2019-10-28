@@ -41,6 +41,7 @@ import javax.swing.ImageIcon;
 		 * Create the frame.
 		 */
 		public menu_inicial() {
+			setResizable(false);
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			setBounds(100, 100, 850, 609);
 			contentPane = new JPanel();
