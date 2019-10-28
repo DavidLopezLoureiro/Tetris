@@ -1,0 +1,940 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-10-28T19:10:53</date>
+  <millis>1572286253822</millis>
+  <sequence>0</sequence>
+  <logger>main.BD</logger>
+  <level>SEVERE</level>
+  <class>main.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Error en uso de base de datos</message>
+  <exception>
+    <message>java.lang.ClassNotFoundException: org.sqlite.JDBC</message>
+    <frame>
+      <class>java.net.URLClassLoader</class>
+      <method>findClass</method>
+    </frame>
+    <frame>
+      <class>java.lang.ClassLoader</class>
+      <method>loadClass</method>
+    </frame>
+    <frame>
+      <class>sun.misc.Launcher$AppClassLoader</class>
+      <method>loadClass</method>
+    </frame>
+    <frame>
+      <class>java.lang.ClassLoader</class>
+      <method>loadClass</method>
+    </frame>
+    <frame>
+      <class>java.lang.Class</class>
+      <method>forName0</method>
+    </frame>
+    <frame>
+      <class>java.lang.Class</class>
+      <method>forName</method>
+    </frame>
+    <frame>
+      <class>main.BD</class>
+      <method>iniciar</method>
+      <line>48</line>
+    </frame>
+    <frame>
+      <class>interfaz.crear_usuario$1</class>
+      <method>run</method>
+      <line>41</line>
+    </frame>
+    <frame>
+      <class>java.awt.event.InvocationEvent</class>
+      <method>dispatch</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>access$500</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-10-28T19:12:04</date>
+  <millis>1572286324868</millis>
+  <sequence>0</sequence>
+  <logger>main.BD</logger>
+  <level>SEVERE</level>
+  <class>main.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Error en uso de base de datos</message>
+  <exception>
+    <message>java.lang.ClassNotFoundException: org.sqlite.JDBC</message>
+    <frame>
+      <class>java.net.URLClassLoader</class>
+      <method>findClass</method>
+    </frame>
+    <frame>
+      <class>java.lang.ClassLoader</class>
+      <method>loadClass</method>
+    </frame>
+    <frame>
+      <class>sun.misc.Launcher$AppClassLoader</class>
+      <method>loadClass</method>
+    </frame>
+    <frame>
+      <class>java.lang.ClassLoader</class>
+      <method>loadClass</method>
+    </frame>
+    <frame>
+      <class>java.lang.Class</class>
+      <method>forName0</method>
+    </frame>
+    <frame>
+      <class>java.lang.Class</class>
+      <method>forName</method>
+    </frame>
+    <frame>
+      <class>main.BD</class>
+      <method>iniciar</method>
+      <line>48</line>
+    </frame>
+    <frame>
+      <class>interfaz.crear_usuario</class>
+      <method>&lt;init&gt;</method>
+      <line>129</line>
+    </frame>
+    <frame>
+      <class>interfaz.menu_inicial$3</class>
+      <method>actionPerformed</method>
+      <line>83</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>access$500</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-10-28T19:12:21</date>
+  <millis>1572286341949</millis>
+  <sequence>0</sequence>
+  <logger>main.BD</logger>
+  <level>SEVERE</level>
+  <class>main.BD</class>
+  <method>log</method>
+  <thread>15</thread>
+  <message>Error en uso de base de datos</message>
+  <exception>
+    <message>java.lang.ClassNotFoundException: org.sqlite.JDBC</message>
+    <frame>
+      <class>java.net.URLClassLoader</class>
+      <method>findClass</method>
+    </frame>
+    <frame>
+      <class>java.lang.ClassLoader</class>
+      <method>loadClass</method>
+    </frame>
+    <frame>
+      <class>sun.misc.Launcher$AppClassLoader</class>
+      <method>loadClass</method>
+    </frame>
+    <frame>
+      <class>java.lang.ClassLoader</class>
+      <method>loadClass</method>
+    </frame>
+    <frame>
+      <class>java.lang.Class</class>
+      <method>forName0</method>
+    </frame>
+    <frame>
+      <class>java.lang.Class</class>
+      <method>forName</method>
+    </frame>
+    <frame>
+      <class>main.BD</class>
+      <method>iniciar</method>
+      <line>48</line>
+    </frame>
+    <frame>
+      <class>interfaz.crear_usuario</class>
+      <method>&lt;init&gt;</method>
+      <line>129</line>
+    </frame>
+    <frame>
+      <class>interfaz.menu_inicial$3</class>
+      <method>actionPerformed</method>
+      <line>83</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>access$500</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$3</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-10-28T19:16:39</date>
+  <millis>1572286599319</millis>
+  <sequence>0</sequence>
+  <logger>main.BD</logger>
+  <level>SEVERE</level>
+  <class>main.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Error en uso de base de datos</message>
+  <exception>
+    <message>java.lang.ClassNotFoundException: org.sqlite.JDBC</message>
+    <frame>
+      <class>java.net.URLClassLoader</class>
+      <method>findClass</method>
+    </frame>
+    <frame>
+      <class>java.lang.ClassLoader</class>
+      <method>loadClass</method>
+    </frame>
+    <frame>
+      <class>sun.misc.Launcher$AppClassLoader</class>
+      <method>loadClass</method>
+    </frame>
+    <frame>
+      <class>java.lang.ClassLoader</class>
+      <method>loadClass</method>
+    </frame>
+    <frame>
+      <class>java.lang.Class</class>
+      <method>forName0</method>
+    </frame>
+    <frame>
+      <class>java.lang.Class</class>
+      <method>forName</method>
+    </frame>
+    <frame>
+      <class>main.BD</class>
+      <method>iniciar</method>
+      <line>48</line>
+    </frame>
+    <frame>
+      <class>interfaz.crear_usuario</class>
+      <method>main</method>
+      <line>46</line>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-10-28T19:19:59</date>
+  <millis>1572286799165</millis>
+  <sequence>0</sequence>
+  <logger>main.BD</logger>
+  <level>SEVERE</level>
+  <class>main.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ya ha sido creada la tabla usuario</message>
+  <exception>
+    <message>java.sql.SQLException: table Usuario already exists</message>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>throwex</method>
+      <line>397</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeUpdate</method>
+      <line>116</line>
+    </frame>
+    <frame>
+      <class>main.BD</class>
+      <method>crearTabla</method>
+      <line>114</line>
+    </frame>
+    <frame>
+      <class>interfaz.crear_usuario</class>
+      <method>main</method>
+      <line>47</line>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-10-28T19:20:40</date>
+  <millis>1572286840379</millis>
+  <sequence>0</sequence>
+  <logger>main.BD</logger>
+  <level>SEVERE</level>
+  <class>main.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ya ha sido creada la tabla usuario</message>
+  <exception>
+    <message>java.sql.SQLException: table Usuario already exists</message>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>throwex</method>
+      <line>397</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeUpdate</method>
+      <line>116</line>
+    </frame>
+    <frame>
+      <class>main.BD</class>
+      <method>crearTabla</method>
+      <line>114</line>
+    </frame>
+    <frame>
+      <class>interfaz.crear_usuario</class>
+      <method>main</method>
+      <line>47</line>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-10-28T19:21:23</date>
+  <millis>1572286883073</millis>
+  <sequence>0</sequence>
+  <logger>main.BD</logger>
+  <level>SEVERE</level>
+  <class>main.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ya ha sido creada la tabla usuario</message>
+  <exception>
+    <message>java.sql.SQLException: table Usuario already exists</message>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>throwex</method>
+      <line>397</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeUpdate</method>
+      <line>116</line>
+    </frame>
+    <frame>
+      <class>main.BD</class>
+      <method>crearTabla</method>
+      <line>114</line>
+    </frame>
+    <frame>
+      <class>interfaz.crear_usuario</class>
+      <method>main</method>
+      <line>47</line>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-10-28T19:22:15</date>
+  <millis>1572286935499</millis>
+  <sequence>0</sequence>
+  <logger>main.BD</logger>
+  <level>SEVERE</level>
+  <class>main.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ya ha sido creada la tabla usuario</message>
+  <exception>
+    <message>java.sql.SQLException: table Usuario already exists</message>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>throwex</method>
+      <line>397</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeUpdate</method>
+      <line>116</line>
+    </frame>
+    <frame>
+      <class>main.BD</class>
+      <method>crearTabla</method>
+      <line>114</line>
+    </frame>
+    <frame>
+      <class>main.BD</class>
+      <method>main</method>
+      <line>170</line>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-10-28T19:22:20</date>
+  <millis>1572286940032</millis>
+  <sequence>0</sequence>
+  <logger>main.BD</logger>
+  <level>SEVERE</level>
+  <class>main.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ya ha sido creada la tabla usuario</message>
+  <exception>
+    <message>java.sql.SQLException: table Usuario already exists</message>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>throwex</method>
+      <line>397</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeUpdate</method>
+      <line>116</line>
+    </frame>
+    <frame>
+      <class>main.BD</class>
+      <method>crearTabla</method>
+      <line>114</line>
+    </frame>
+    <frame>
+      <class>interfaz.crear_usuario</class>
+      <method>main</method>
+      <line>47</line>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-10-28T19:26:57</date>
+  <millis>1572287217999</millis>
+  <sequence>0</sequence>
+  <logger>main.BD</logger>
+  <level>SEVERE</level>
+  <class>main.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ya ha sido creada la tabla usuario</message>
+  <exception>
+    <message>java.sql.SQLException: table Usuario already exists</message>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>throwex</method>
+      <line>397</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeUpdate</method>
+      <line>116</line>
+    </frame>
+    <frame>
+      <class>main.BD</class>
+      <method>crearTabla</method>
+      <line>125</line>
+    </frame>
+    <frame>
+      <class>interfaz.crear_usuario</class>
+      <method>main</method>
+      <line>47</line>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-10-28T19:28:31</date>
+  <millis>1572287311825</millis>
+  <sequence>0</sequence>
+  <logger>main.BD</logger>
+  <level>SEVERE</level>
+  <class>main.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ya ha sido creada la tabla usuario</message>
+  <exception>
+    <message>java.sql.SQLException: table Usuario already exists</message>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>throwex</method>
+      <line>397</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeUpdate</method>
+      <line>116</line>
+    </frame>
+    <frame>
+      <class>main.BD</class>
+      <method>crearTabla</method>
+      <line>125</line>
+    </frame>
+    <frame>
+      <class>interfaz.crear_usuario</class>
+      <method>main</method>
+      <line>47</line>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-10-28T19:30:02</date>
+  <millis>1572287402656</millis>
+  <sequence>0</sequence>
+  <logger>main.BD</logger>
+  <level>SEVERE</level>
+  <class>main.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ya ha sido creada la tabla usuario</message>
+  <exception>
+    <message>java.sql.SQLException: near "tabffffle": syntax error</message>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>throwex</method>
+      <line>397</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeUpdate</method>
+      <line>116</line>
+    </frame>
+    <frame>
+      <class>main.BD</class>
+      <method>crearTabla</method>
+      <line>125</line>
+    </frame>
+    <frame>
+      <class>main.BD</class>
+      <method>main</method>
+      <line>168</line>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-10-28T19:30:16</date>
+  <millis>1572287416702</millis>
+  <sequence>0</sequence>
+  <logger>main.BD</logger>
+  <level>SEVERE</level>
+  <class>main.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ya ha sido creada la tabla usuario</message>
+  <exception>
+    <message>java.sql.SQLException: table Usuario already exists</message>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>throwex</method>
+      <line>397</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeUpdate</method>
+      <line>116</line>
+    </frame>
+    <frame>
+      <class>main.BD</class>
+      <method>crearTabla</method>
+      <line>125</line>
+    </frame>
+    <frame>
+      <class>main.BD</class>
+      <method>main</method>
+      <line>168</line>
+    </frame>
+  </exception>
+</record>
+</log>
