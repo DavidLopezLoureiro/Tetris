@@ -5,13 +5,16 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import java.awt.Color;	
+import java.awt.Color;
+import javax.swing.ImageIcon;	
 
 	@SuppressWarnings("serial")
 	public class menu_inicial extends JFrame {
@@ -39,7 +42,7 @@ import java.awt.Color;
 		 */
 		public menu_inicial() {
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			setBounds(100, 100, 850, 700);
+			setBounds(100, 100, 850, 609);
 			contentPane = new JPanel();
 			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 			setContentPane(contentPane);
@@ -49,7 +52,7 @@ import java.awt.Color;
 			btnCrearUsuario.setForeground(new Color(255, 255, 255));
 			btnCrearUsuario.setBackground(new Color(50, 205, 50));
 			btnCrearUsuario.setFont(new Font("Times New Roman", Font.BOLD, 20));
-			btnCrearUsuario.setBounds(113, 522, 623, 85);
+			btnCrearUsuario.setBounds(105, 432, 623, 85);
 			contentPane.add(btnCrearUsuario);
 			
 			JButton btnIniciarSesion = new JButton("INICIAR SESION");
@@ -65,19 +68,13 @@ import java.awt.Color;
 			btnIniciarSesion.setForeground(new Color(255, 255, 255));
 			btnIniciarSesion.setFont(new Font("Times New Roman", Font.BOLD, 20));
 			btnIniciarSesion.setBackground(new Color(50, 205, 50));
-			btnIniciarSesion.setBounds(113, 394, 623, 85);
+			btnIniciarSesion.setBounds(105, 304, 623, 85);
 			contentPane.add(btnIniciarSesion);
 			
-			JPanel panel = new JPanel();
-			panel.setBackground(new Color(220, 220, 220));
-			panel.setBounds(0, 0, 832, 93);
-			contentPane.add(panel);
-			panel.setLayout(null);
-			
-			JLabel lblTetris = new JLabel("TETRIS");
-			lblTetris.setFont(new Font("Times New Roman", Font.BOLD, 30));
-			lblTetris.setBounds(371, 13, 111, 56);
-			panel.add(lblTetris);
+			JLabel lblNewLabel = new JLabel("");
+			lblNewLabel.setIcon(new ImageIcon(menu_inicial.class.getResource("/imagenes/logo.png")));
+			lblNewLabel.setBounds(133, 31, 614, 221);
+			contentPane.add(lblNewLabel);
 			
 			btnCrearUsuario.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
