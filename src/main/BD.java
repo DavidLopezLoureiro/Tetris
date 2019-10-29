@@ -30,9 +30,9 @@ public class BD {
 	/**
 	 * Guarda lo que ha ocurrido en la BD en esa sesión en un logger.
 	 * 
-	 * @param level --> nivel del log.
+	 * @param level     --> nivel del log.
 	 * 
-	 * @param msg --> mensaje del log.
+	 * @param msg       --> mensaje del log.
 	 * 
 	 * @param excepcion --> excepciones que ocurren.
 	 * 
@@ -62,7 +62,7 @@ public class BD {
 	 * 
 	 * @exception ClassNotFoundException no encuentra la clase.
 	 * 
-	 * @exception SQLException fallo relacionado con SQL.
+	 * @exception SQLException           fallo relacionado con SQL.
 	 * 
 	 */
 	public static Connection iniciar() {
@@ -81,7 +81,7 @@ public class BD {
 	/**
 	 * Obtiene la ultima excepcion.
 	 * 
-	 *@return lastError --> ultimo error ocurrido.
+	 * @return lastError --> ultimo error ocurrido.
 	 * 
 	 */
 	public static Exception getLastError() {
@@ -91,11 +91,11 @@ public class BD {
 	/**
 	 * Inserta un usuario a la BD.
 	 * 
-	 * @param st --> tabla donde creara el usuario.
+	 * @param st      --> tabla donde creara el usuario.
 	 * 
-	 * @param u --> usuario que introducira en la BD.
+	 * @param u       --> usuario que introducira en la BD.
 	 * 
-	 * @param cod_usu --> codigo del usuario que se va a introducir.  
+	 * @param cod_usu --> codigo del usuario que se va a introducir.
 	 * 
 	 * @exception SQLException fallo relacionado con SQL.
 	 * 
@@ -116,9 +116,9 @@ public class BD {
 
 	}
 
-	
 	/**
-	 * Concatena los caracteres que seran permitidos y los que no sean permitidos no los guardara.
+	 * Concatena los caracteres que seran permitidos y los que no sean permitidos no
+	 * los guardara.
 	 * 
 	 * @param string --> String que queremos evaluar.
 	 * 
@@ -135,13 +135,12 @@ public class BD {
 		return ret.toString();
 	}
 
-	
 	/**
 	 * Obtiene los usuarios de la BD y los devuelve en un ArrayList.
 	 * 
 	 * @param con --> conexion con la BD.
 	 * 
-	 * @param st --> tabla Usuarios de donde sacara la informacion.
+	 * @param st  --> tabla Usuarios de donde sacara la informacion.
 	 * 
 	 * @exception SQLException error al intentar sacar el ArrayList de usuarios.
 	 * 
@@ -169,13 +168,13 @@ public class BD {
 		}
 	}
 
-	
 	/**
-	 * Metodo para crear tablas. (Esta preparado para que si la tabla a crear ya existe no de error sino que avise por consola de que la tabla ya existe.)
+	 * Metodo para crear tablas. (Esta preparado para que si la tabla a crear ya
+	 * existe no de error sino que avise por consola de que la tabla ya existe.)
 	 * 
 	 * @param con --> conexion con la BD.
 	 * 
-	 * @exception SQLException fallo relacionado con SQL. 
+	 * @exception SQLException fallo relacionado con SQL.
 	 * 
 	 * @return st --> Statement de la tabla.
 	 * 
@@ -184,54 +183,132 @@ public class BD {
 
 		try {
 			Statement statement = con.createStatement();
-			statement.setQueryTimeout(30); 
+			statement.setQueryTimeout(30);
 			statement.executeUpdate("create table Usuario " + "( id integer not null primary key AUTOINCREMENT ,"
 					+ "nombre text ," + "contra text ," + "MaxPuntu numeric ," + "email text ) ");
 		} catch (SQLException e) {
-			if(!e.getMessage().contains("table Usuario already exists")) {
+			if (!e.getMessage().contains("table Usuario already exists")) {
 				lastError = e;
 				log(Level.SEVERE, "ya ha sido creada la tabla usuario", e);
-			}else {
-				System.out.println("La tabla usuario ya existe.");
+			} else {
+
+				//
+				//System.out.println("La tabla usuario ya existe.");
+				//
 			}
 
 		}
 		return null;
 
 	}
+
+	/**
+	 * Buscar la ID de un usuario.
+	 * 
+	 * @param con    --> conexion con la BD.
+	 * 
+	 * @param st     --> tabla Usuarios de donde sacara la informacion.
+	 * 
+	 * @param nombre --> nombre del usuario que buscamos.
+	 * 
+	 * @exception SQLException fallo relacionado con SQL. PONERLO PARA QUE DISTINGA
+	 *                         ENTRE FALLO GENERAL Y FALLO DE QUE EL USUARIO BUSCADO
+	 *                         NO EXISTE.
+	 * 
+	 * @return ID --> ID del usuario (int). 
+	 * 
+	 */
+	public static int idUsuario(Connection con, Statement st, String nombre) {
+		String mensaje = "select id from Usuario where nombre = '" + nombre + "'";
+		try {
+			
+			ResultSet rs = st.executeQuery(mensaje);
+			
+			return rs.getInt("id");
+
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+
+		}
+		return 0;
+	}
+	
+	
+	/**
+	 * Buscar la contraseña de un usuario.
+	 * 
+	 * @param con    --> conexion con la BD.
+	 * 
+	 * @param st     --> tabla Usuarios de donde sacara la informacion.
+	 * 
+	 * @param nombre --> nombre del usuario que buscamos.
+	 * 
+	 * @exception SQLException fallo relacionado con SQL. PONERLO PARA QUE DISTINGA
+	 *                         ENTRE FALLO GENERAL Y FALLO DE QUE EL USUARIO BUSCADO
+	 *                         NO EXISTE.
+	 * 
+	 * @return ID --> contraseña del usuario (String). 
+	 * 
+	 */
+	public static String contUsuario(Connection con, Statement st, String nombre) {
+		String mensaje = "select contra from Usuario where nombre = '" + nombre + "'";
+		try {
+			
+			ResultSet rs = st.executeQuery(mensaje);
+			
+			return rs.getString("contra");
+
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+
+		}
+		return "";
+	}
+
+	
+	/**
+	 * Buscar un usuario.
+	 * 
+	 * @param con    --> conexion con la BD.
+	 * 
+	 * @param st     --> tabla Usuarios de donde sacara la informacion.
+	 * 
+	 * @param nombre --> nombre del usuario que buscamos.
+	 * 
+	 * @exception SQLException fallo relacionado con SQL. PONERLO PARA QUE DISTINGA
+	 *                         ENTRE FALLO GENERAL Y FALLO DE QUE EL USUARIO BUSCADO
+	 *                         NO EXISTE.
+	 * 
+	 * @return ID -->  usuario. 
+	 * 
+	 */
+	public static Usuario getUsuario(Connection con, Statement st, String nombre) {
+		String mensaje = "select * from Usuario where nombre = '" + nombre + "'";
+		try {
+			
+			ResultSet rs = st.executeQuery(mensaje);
+			
+			Usuario usuario = new Usuario(rs.getString("nombre"),rs.getString("contra"),rs.getString("email"));
+			
+			return usuario;
+
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+
+		}
+		return null;
+	}
+	
 	
 	/**
 	 * Buscar la ID de un usuario.
 	 * 
 	 * @param con --> conexion con la BD.
 	 * 
-	 * @param st --> tabla Usuarios de donde sacara la informacion.
-	 * 
-	 * @param nombre --> nombre del usuario que buscamos. 
-	 * 
-	 * @exception SQLException fallo relacionado con SQL.  PONERLO PARA QUE DISTINGA ENTRE FALLO GENERAL Y FALLO DE QUE EL USUARIO BUSCADO NO EXISTE.
-	 * 
-	 * @return ID --> ID del usuario (int).
-	 * 
-	 */
-	public static int idUsuario(Connection con, Statement st, String nombre) {
-		String mensaje = "select id from Usuario where nombre = '" + nombre + "'";
-		try {
-			ResultSet rs = st.executeQuery(mensaje);
-			return rs.getInt("id");
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return 0;
-	}
-
-	/**
-	 * Buscar la ID de un usuario.
-	 * 
-	 * @param con --> conexion con la BD.
-	 * 
-	 * @param st --> tabla Usuarios.
+	 * @param st  --> tabla Usuarios.
 	 * 
 	 * @exception SQLException fallo relacionado con SQL.
 	 * 
