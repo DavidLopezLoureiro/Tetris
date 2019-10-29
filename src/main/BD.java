@@ -264,7 +264,7 @@ public class BD {
 			e.printStackTrace();
 
 		}
-		return "";
+		return null;
 	}
 
 	

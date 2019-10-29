@@ -48,8 +48,8 @@ public class menu_inicial extends JFrame {
 	public menu_inicial() {
 
 		// INICIALIZACION DE LA BD
-		// Connection con = BD.iniciar();
-		// Statement st = BD.crearTabla(con);
+		Connection con = BD.iniciar();
+		Statement st = BD.crearTabla(con);
 
 		// AJUSTES GENERALES
 		setResizable(false);
@@ -87,7 +87,7 @@ public class menu_inicial extends JFrame {
 				if (e.getSource() == btnCrearUsuario) {
 					crear_usuario nuevaventana = new crear_usuario();
 					nuevaventana.setVisible(true);
-					// BD.cerrarBD(con, st);
+					BD.cerrarBD(con, st);
 					menu_inicial.this.dispose();
 				}
 			}
@@ -98,9 +98,13 @@ public class menu_inicial extends JFrame {
 				if (e.getSource() == btnIniciarSesion) {
 
 					// if (BD.cargaUsuario(con, st).size() != 0) {
+					
 					iniciar_sesion nuevaventana = new iniciar_sesion();
 					nuevaventana.setVisible(true);
-					// BD.cerrarBD(con, st);
+					
+					
+
+					BD.cerrarBD(con, st);
 					menu_inicial.this.dispose();
 
 					// } else if ((BD.cargaUsuario(con, st).size() != 0)) {
