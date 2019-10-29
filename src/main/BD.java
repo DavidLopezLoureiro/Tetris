@@ -17,11 +17,28 @@ public class BD {
 	private static Exception lastError = null;
 	public static Logger log;
 
-	// aï¿½adir situacion reciente de la base de datos
+	/**
+	 * Añadir situacion reciente de la BD.
+	 * 
+	 * @param logger --> mensajes de log de la BD.
+	 * 
+	 */
 	public static void setLogger(Logger logger) {
 		BD.log = logger;
 	}
 
+	/**
+	 * Guarda lo que ha ocurrido en la BD en esa sesión en un logger.
+	 * 
+	 * @param level --> nivel del log.
+	 * 
+	 * @param msg --> mensaje del log.
+	 * 
+	 * @param excepcion --> excepciones que ocurren.
+	 * 
+	 * @exception Exception fallo que ocurre al realizar el log.
+	 * 
+	 */
 	private static void log(Level level, String msg, Throwable excepcion) {
 		if (log == null) { // Logger por defecto local:
 			log = Logger.getLogger(BD.class.getName()); // Nombre del logger de la clase
@@ -39,9 +56,14 @@ public class BD {
 	}
 
 	/**
-	 * Inicia la conexion con la BD
+	 * Inicia la conexion con la BD.
 	 * 
-	 * @return con (conexion con la BD)
+	 * @return con --> conexion con la BD.
+	 * 
+	 * @exception ClassNotFoundException no encuentra la clase.
+	 * 
+	 * @exception SQLException fallo relacionado con SQL.
+	 * 
 	 */
 	public static Connection iniciar() {
 		try {
@@ -56,19 +78,35 @@ public class BD {
 		}
 	}
 
-	// para ontener la ultima excepion
+	/**
+	 * Obtiene la ultima excepcion.
+	 * 
+	 *@return lastError --> ultimo error ocurrido.
+	 * 
+	 */
 	public static Exception getLastError() {
 		return lastError;
 	}
 
-	// los correpsondientes insert
-	public static void insertarUsuarios(Statement state, Usuario u, int i) {
+	/**
+	 * Inserta un usuario a la BD.
+	 * 
+	 * @param st --> tabla donde creara el usuario.
+	 * 
+	 * @param u --> usuario que introducira en la BD.
+	 * 
+	 * @param cod_usu --> codigo del usuario que se va a introducir.  
+	 * 
+	 * @exception SQLException fallo relacionado con SQL.
+	 * 
+	 */
+	public static void insertarUsuarios(Statement st, Usuario u, int cod_usu) {
 		String sentSQL = "";
 
 		try {
-			sentSQL = "insert into Usuario values('" + i + "'" + ",'" + secu(u.getNombre()) + "'," + "'"
-					+ secu(u.getContra()) + "'," + u.getMaxPuntu() + "," + i + u.getEmail() + ")";
-			int val = state.executeUpdate(sentSQL);
+			sentSQL = "insert into Usuario values('" + cod_usu + "'" + ",'" + secu(u.getNombre()) + "'," + "'"
+					+ secu(u.getContra()) + "'," + u.getMaxPuntu() + "," + cod_usu + u.getEmail() + ")";
+			int val = st.executeUpdate(sentSQL);
 
 		} catch (SQLException e) {
 			lastError = e;
@@ -78,22 +116,38 @@ public class BD {
 
 	}
 
-	// objetivo de este mï¿½todo es concatenar los caracteres que seran premitidos y
-	// los que no
-	// se encuentren en los permitidos simplemente no se guaradran en la base de
-	// datos
+	
+	/**
+	 * Concatena los caracteres que seran permitidos y los que no sean permitidos no los guardara.
+	 * 
+	 * @param string --> String que queremos evaluar.
+	 * 
+	 * @return ret.toString() --> String un vez evaluado los caracteres.
+	 * 
+	 */
 	private static String secu(String string) {
 		StringBuffer ret = new StringBuffer();
 		for (char c : string.toCharArray()) {
 			if ("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.,:;-_(){}[]-+*=<>'\"ï¿½?ï¿½!&%$@#/\\0123456789"
 					.indexOf(c) >= 0)
-				ret.append(c);// para concatenar la palabras que si queremos que se guarde en la base de datos
+				ret.append(c);
 		}
 		return ret.toString();
 	}
 
-	// metodo para obtener todos los usuarios de la base de datos en formato
-	// arraylist
+	
+	/**
+	 * Obtiene los usuarios de la BD y los devuelve en un ArrayList.
+	 * 
+	 * @param con --> conexion con la BD.
+	 * 
+	 * @param st --> tabla Usuarios de donde sacara la informacion.
+	 * 
+	 * @exception SQLException error al intentar sacar el ArrayList de usuarios.
+	 * 
+	 * @return devolver --> ArrayList de usuarios de la BD.
+	 * 
+	 */
 	public static ArrayList<Usuario> cargaUsuario(Connection con, Statement st) {
 		String sentSQL = "";
 		ArrayList<Usuario> devolver = new ArrayList<>();
@@ -115,27 +169,51 @@ public class BD {
 		}
 	}
 
-	// metodo para crear tabas con la base de datos que en esta caso se va a emplear
-	// para crear la tabla Usuario
+	
+	/**
+	 * Metodo para crear tablas. (Esta preparado para que si la tabla a crear ya existe no de error sino que avise por consola de que la tabla ya existe.)
+	 * 
+	 * @param con --> conexion con la BD.
+	 * 
+	 * @exception SQLException fallo relacionado con SQL. 
+	 * 
+	 * @return st --> Statement de la tabla.
+	 * 
+	 */
 	public static Statement crearTabla(Connection con) {
 
 		try {
 			Statement statement = con.createStatement();
-			statement.setQueryTimeout(30); // poner timeout 30 msg
+			statement.setQueryTimeout(30); 
 			statement.executeUpdate("create table Usuario " + "( id integer not null primary key AUTOINCREMENT ,"
 					+ "nombre text ," + "contra text ," + "MaxPuntu numeric ," + "email text ) ");
 		} catch (SQLException e) {
 			if(!e.getMessage().contains("table Usuario already exists")) {
 				lastError = e;
 				log(Level.SEVERE, "ya ha sido creada la tabla usuario", e);
+			}else {
+				System.out.println("La tabla usuario ya existe.");
 			}
 
 		}
 		return null;
 
 	}
-
-	// para conseguir el id del usuario
+	
+	/**
+	 * Buscar la ID de un usuario.
+	 * 
+	 * @param con --> conexion con la BD.
+	 * 
+	 * @param st --> tabla Usuarios de donde sacara la informacion.
+	 * 
+	 * @param nombre --> nombre del usuario que buscamos. 
+	 * 
+	 * @exception SQLException fallo relacionado con SQL.  PONERLO PARA QUE DISTINGA ENTRE FALLO GENERAL Y FALLO DE QUE EL USUARIO BUSCADO NO EXISTE.
+	 * 
+	 * @return ID --> ID del usuario (int).
+	 * 
+	 */
 	public static int idUsuario(Connection con, Statement st, String nombre) {
 		String mensaje = "select id from Usuario where nombre = '" + nombre + "'";
 		try {
@@ -148,6 +226,16 @@ public class BD {
 		return 0;
 	}
 
+	/**
+	 * Buscar la ID de un usuario.
+	 * 
+	 * @param con --> conexion con la BD.
+	 * 
+	 * @param st --> tabla Usuarios.
+	 * 
+	 * @exception SQLException fallo relacionado con SQL.
+	 * 
+	 */
 	public static void cerrarBD(Connection con, Statement st) {
 		try {
 			if (st != null)
@@ -160,11 +248,5 @@ public class BD {
 			log(Level.SEVERE, "error al cerrar la base de datos", e);
 			e.printStackTrace();
 		}
-	}
-
-	public static void main(String[] args) {
-		// creamos la base de datos
-		Connection con = iniciar();
-		Statement estado = crearTabla(con);
 	}
 }
