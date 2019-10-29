@@ -103,7 +103,6 @@ public class menu_inicial extends JFrame {
 					nuevaventana.setVisible(true);
 					
 					
-
 					BD.cerrarBD(con, st);
 					menu_inicial.this.dispose();
 
