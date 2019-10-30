@@ -84,7 +84,7 @@ public class iniciar_sesion extends JFrame {
 		// PANELS
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(220, 220, 220));
-		panel.setBounds(0, 0, 832, 105);
+		panel.setBounds(0, 0, 844, 105);
 		contentPane.add(panel);
 		panel.setLayout(null);
 
@@ -139,26 +139,36 @@ public class iniciar_sesion extends JFrame {
 		btnIniciarSesion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				// COMPRUEBA QUE EL USAURIO EXISTE
-				if(textFieldNombre.getText().equals("")
+				// PROCESADO DE CONTRASEÑA
+				char clave[] = passwordFieldInicioSesion.getPassword();
+				String clave_pasada = new String(clave);
+				String cont_usu = BD.contUsuario(con, st, textFieldNombre.getText());
+
+				// COMPRUEBA QUE LOS CAMPOS NO ESTEN VACIOS
+				if (textFieldNombre.getText().equals("")
 						|| passwordFieldInicioSesion.getPassword().toString().equals("")) {
 
 					JOptionPane.showMessageDialog(null, "Introduce los datos antes de continuar");
 
-				}else if (BD.idUsuario(con, st, textFieldNombre.getText()) == 0) { // NO estoy seguro de esta parte
+					// COMPRUEBA QUE EL USAURIO EXISTE
+				} else if (BD.idUsuario(con, st, textFieldNombre.getText()) == 0) {
 
 					JOptionPane.showMessageDialog(null, "Este usuario no existe.");
 
-				} else if (!BD.contUsuario(con, st, textFieldNombre.getText())
-						.equals(passwordFieldInicioSesion.getPassword().toString())) {
+					// COMPRUEBA QUE LAS CONTRASEÑAS SEAN IGUALES
+				} else if (!cont_usu.equals(clave_pasada)) {
 
 					JOptionPane.showMessageDialog(null, "Contraseña incorrecta.");
 
 				} else {
 
-					//entrada = BD.getUsuario(con, st, textFieldNombre.getText());
+					//MARCA QUE USUARIO HA ENTRADO
+					entrada = BD.getUsuario(con, st, textFieldNombre.getText());
 
+					// CERRAR BD
 					BD.cerrarBD(con, st);
+
+					// CIERRA LA VENTAN ACTUAL
 					iniciar_sesion.this.dispose();
 				}
 			}

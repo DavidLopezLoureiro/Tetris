@@ -180,12 +180,19 @@ public class BD {
 	 * 
 	 */
 	public static Statement crearTabla(Connection con) {
-
+		
 		try {
+			
 			Statement statement = con.createStatement();
 			statement.setQueryTimeout(30);
-			statement.executeUpdate("create table Usuario " + "( id integer not null primary key AUTOINCREMENT ,"
-					+ "nombre text ," + "contra text ," + "MaxPuntu numeric ," + "email text ) ");
+			try {
+			statement.executeUpdate("create table Usuario " + "( id integer ,"
+					+ "nombre text ," + "contra text ," + "MaxPuntu integer ," + "email text ) ");
+			}catch(SQLException e) {
+				
+			}
+			
+			return statement;
 		} catch (SQLException e) {
 			if (!e.getMessage().contains("table Usuario already exists")) {
 				lastError = e;

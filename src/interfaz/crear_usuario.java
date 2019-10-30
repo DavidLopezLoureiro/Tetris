@@ -168,11 +168,9 @@ public class crear_usuario extends JFrame {
 					JOptionPane.showMessageDialog(null, "Ambas contraseñas tienen que coincidir.");
 
 					// REVISA QUE EL USUARIO A CREAR NO EXISTA YA
-					// } else if (BD.idUsuario(con, st, textFieldNombreUsuarioRegistro.getText()) !=
-					// 0) { // NO estoy seguro de
-					// esta parte
+				} else if (BD.idUsuario(con, st, textFieldNombreUsuarioRegistro.getText()) != 0) {
 
-					// JOptionPane.showMessageDialog(null, "Este usuario ya existe.");
+					JOptionPane.showMessageDialog(null, "Este usuario ya existe.");
 
 					// SI NADA DE LO ANTERIOR VA MAL, CREA EL USUARIO
 				} else {
@@ -180,12 +178,14 @@ public class crear_usuario extends JFrame {
 					Usuario usuario = new Usuario(textFieldNombreUsuarioRegistro.getText(),
 							textFieldContrasenaRegistro.getText(), textFieldEmail.getText());
 
-					// int cod_usu = BD.cargaUsuario(con, st).size() + 1;
+					int cod_usu = BD.cargaUsuario(con, st).size() + 1;
 
-					BD.insertarUsuarios(st, usuario, 1);
+					BD.insertarUsuarios(st, usuario, cod_usu);
 
 					// CIERRA LA BD
 					BD.cerrarBD(con, st);
+
+					// CIERRA LA VENTAN ACTUAL
 					crear_usuario.this.dispose();
 
 				}

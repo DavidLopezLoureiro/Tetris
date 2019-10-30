@@ -85,9 +85,15 @@ public class menu_inicial extends JFrame {
 		btnCrearUsuario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (e.getSource() == btnCrearUsuario) {
+					
+					// ABRE LA NUEVA VENTANA
 					crear_usuario nuevaventana = new crear_usuario();
 					nuevaventana.setVisible(true);
+					
+					//CIERRA LA BD
 					BD.cerrarBD(con, st);
+					
+					// CIERRA LA VENTAN ACTUAL
 					menu_inicial.this.dispose();
 				}
 			}
@@ -97,20 +103,23 @@ public class menu_inicial extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (e.getSource() == btnIniciarSesion) {
 
-					// if (BD.cargaUsuario(con, st).size() != 0) {
-					
-					iniciar_sesion nuevaventana = new iniciar_sesion();
-					nuevaventana.setVisible(true);
-					
-					
-					BD.cerrarBD(con, st);
-					menu_inicial.this.dispose();
+					if (BD.cargaUsuario(con, st).size() != 0) {
+						
+						// ABRE LA NUEVA VENTANA
+						iniciar_sesion nuevaventana = new iniciar_sesion();
+						nuevaventana.setVisible(true);
 
-					// } else if ((BD.cargaUsuario(con, st).size() != 0)) {
+						//CIERRA LA BD
+						BD.cerrarBD(con, st);
+						
+						// CIERRA LA VENTAN ACTUAL
+						menu_inicial.this.dispose();
 
-					// JOptionPane.showMessageDialog(null, "Crea un usuario antes.");
+					} else if ((BD.cargaUsuario(con, st).size() != 0)) {
 
-					// }
+						JOptionPane.showMessageDialog(null, "Crea un usuario antes.");
+
+					}
 				}
 			}
 		});
