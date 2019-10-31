@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import main.BD;
+import BD.BD;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -14,8 +14,6 @@ import javax.swing.JOptionPane;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.Statement;
 
 import javax.swing.JButton;
 import java.awt.Color;
@@ -48,8 +46,7 @@ public class menu_inicial extends JFrame {
 	public menu_inicial() {
 
 		// INICIALIZACION DE LA BD
-		Connection con = BD.iniciar();
-		Statement st = BD.crearTabla(con);
+		BD.connect();
 
 		// AJUSTES GENERALES
 		setResizable(false);
@@ -85,14 +82,11 @@ public class menu_inicial extends JFrame {
 		btnCrearUsuario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (e.getSource() == btnCrearUsuario) {
-					
+
 					// ABRE LA NUEVA VENTANA
 					crear_usuario nuevaventana = new crear_usuario();
 					nuevaventana.setVisible(true);
-					
-					//CIERRA LA BD
-					BD.cerrarBD(con, st);
-					
+
 					// CIERRA LA VENTAN ACTUAL
 					menu_inicial.this.dispose();
 				}
@@ -103,19 +97,18 @@ public class menu_inicial extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (e.getSource() == btnIniciarSesion) {
 
-					if (BD.cargaUsuario(con, st).size() != 0) {
-						
+					int n_usuarios = BD.getAllUsers().size();
+
+					if (n_usuarios != 0) {
+
 						// ABRE LA NUEVA VENTANA
 						iniciar_sesion nuevaventana = new iniciar_sesion();
 						nuevaventana.setVisible(true);
 
-						//CIERRA LA BD
-						BD.cerrarBD(con, st);
-						
 						// CIERRA LA VENTAN ACTUAL
 						menu_inicial.this.dispose();
 
-					} else if ((BD.cargaUsuario(con, st).size() != 0)) {
+					} else if (n_usuarios == 0) {
 
 						JOptionPane.showMessageDialog(null, "Crea un usuario antes.");
 
@@ -123,5 +116,6 @@ public class menu_inicial extends JFrame {
 				}
 			}
 		});
+
 	}
 }

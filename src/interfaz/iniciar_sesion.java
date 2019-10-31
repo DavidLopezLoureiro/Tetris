@@ -12,13 +12,12 @@ import javax.swing.JTextField;
 
 import interfaz.iniciar_sesion;
 import interfaz.menu_inicial;
-import main.BD;
+import BD.BD;
 import objetos.Usuario;
 
 import java.awt.Font;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.Statement;
+
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
@@ -52,10 +51,6 @@ public class iniciar_sesion extends JFrame {
 	 * Crea el frame.
 	 */
 	public iniciar_sesion() {
-
-		// INICIALIZACION DE LA BD
-		Connection con = BD.iniciar();
-		Statement st = BD.crearTabla(con);
 
 		// AJUSTES GENERALES
 		setResizable(false);
@@ -126,9 +121,6 @@ public class iniciar_sesion extends JFrame {
 					menu_inicial nuevaventana = new menu_inicial();
 					nuevaventana.setVisible(true);
 
-					// CIERRA LA BD
-					BD.cerrarBD(con, st);
-
 					// CIERRA LA VENTANA ACTUAL
 					iniciar_sesion.this.dispose();
 				}
@@ -142,7 +134,7 @@ public class iniciar_sesion extends JFrame {
 				// PROCESADO DE CONTRASEÑA
 				char clave[] = passwordFieldInicioSesion.getPassword();
 				String clave_pasada = new String(clave);
-				String cont_usu = BD.contUsuario(con, st, textFieldNombre.getText());
+				String cont_usu = BD.getCont(textFieldNombre.getText()).getContra();
 
 				// COMPRUEBA QUE LOS CAMPOS NO ESTEN VACIOS
 				if (textFieldNombre.getText().equals("")
@@ -151,7 +143,7 @@ public class iniciar_sesion extends JFrame {
 					JOptionPane.showMessageDialog(null, "Introduce los datos antes de continuar");
 
 					// COMPRUEBA QUE EL USAURIO EXISTE
-				} else if (BD.idUsuario(con, st, textFieldNombre.getText()) == 0) {
+				} else if (BD.getUserName(textFieldNombre.getText()).equals(null)) {
 
 					JOptionPane.showMessageDialog(null, "Este usuario no existe.");
 
@@ -163,10 +155,7 @@ public class iniciar_sesion extends JFrame {
 				} else {
 
 					//MARCA QUE USUARIO HA ENTRADO
-					entrada = BD.getUsuario(con, st, textFieldNombre.getText());
-
-					// CERRAR BD
-					BD.cerrarBD(con, st);
+					entrada = BD.getUserName(textFieldNombre.getText());
 
 					// CIERRA LA VENTAN ACTUAL
 					iniciar_sesion.this.dispose();

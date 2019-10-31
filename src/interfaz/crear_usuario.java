@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import main.BD;
+import BD.BD;
 import objetos.Usuario;
 
 import javax.swing.JLabel;
@@ -15,8 +15,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.Font;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.Statement;
+import java.util.List;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
@@ -49,10 +48,6 @@ public class crear_usuario extends JFrame {
 	 * Crea el frame.
 	 */
 	public crear_usuario() {
-
-		// INICIALIZACION DE LA BD
-		Connection con = BD.iniciar();
-		Statement st = BD.crearTabla(con);
 
 		// AJUSTES GENERALES
 		setResizable(false);
@@ -141,9 +136,6 @@ public class crear_usuario extends JFrame {
 					menu_inicial nuevaventana = new menu_inicial();
 					nuevaventana.setVisible(true);
 
-					// CIERRA LA BD
-					BD.cerrarBD(con, st);
-
 					// CIERRA LA VENTAN ACTUAL
 					crear_usuario.this.dispose();
 				}
@@ -152,6 +144,10 @@ public class crear_usuario extends JFrame {
 
 		btnIniciarSesion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				List<Usuario> usuarios_existentes = BD.getAllUsers();
+				int n = usuarios_existentes.size();
+				boolean pasar = false;
 
 				// REVISA QUE LOS TEXTFIELDS TENGAN ALGO
 				if (textFieldNombreUsuarioRegistro.getText().equals("")
@@ -166,29 +162,38 @@ public class crear_usuario extends JFrame {
 						.equals(textFieldConfirmaContrasenaRegistro.getText())) {
 
 					JOptionPane.showMessageDialog(null, "Ambas contraseñas tienen que coincidir.");
+					
+				}else if(pasar == false){	
+					
+						for (int i=0; i <= n - 1; i++){
+							
+							if(usuarios_existentes.get(i).getNombre().equals(textFieldNombreUsuarioRegistro.getText())) {
+								
+								pasar = true;
+								
+								JOptionPane.showMessageDialog(null, "Ese usuario ya existe.");
+							}
+							
+						// SI NADA DE LO ANTERIOR VA MAL, CREA EL USUARIO
+						}
+						
+						if (pasar == false){
 
-					// REVISA QUE EL USUARIO A CREAR NO EXISTA YA
-				} else if (BD.idUsuario(con, st, textFieldNombreUsuarioRegistro.getText()) != 0) {
+							int id = BD.getAllUsers().size() + 1;
 
-					JOptionPane.showMessageDialog(null, "Este usuario ya existe.");
+							Usuario usuario = new Usuario(id, textFieldNombreUsuarioRegistro.getText().toString(),
+									textFieldContrasenaRegistro.getText().toString(), 0, textFieldEmail.getText().toString());
 
-					// SI NADA DE LO ANTERIOR VA MAL, CREA EL USUARIO
-				} else {
+							BD.store(usuario);
 
-					Usuario usuario = new Usuario(textFieldNombreUsuarioRegistro.getText(),
-							textFieldContrasenaRegistro.getText(), textFieldEmail.getText());
+							menu_inicial nuevaventana = new menu_inicial();
+							nuevaventana.setVisible(true);
 
-					int cod_usu = BD.cargaUsuario(con, st).size() + 1;
+							// CIERRA LA VENTAN ACTUAL
+							crear_usuario.this.dispose();
 
-					BD.insertarUsuarios(st, usuario, cod_usu);
-
-					// CIERRA LA BD
-					BD.cerrarBD(con, st);
-
-					// CIERRA LA VENTAN ACTUAL
-					crear_usuario.this.dispose();
-
-				}
+						}
+				} 	
 			}
 		});
 

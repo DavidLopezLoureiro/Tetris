@@ -1,6 +1,7 @@
 package objetos;
 
 public class Usuario {
+	private int Id;
 	private String Nombre;
 	private String contra;
 	private int maxPuntu;
@@ -9,6 +10,8 @@ public class Usuario {
 	// CONSTRUCTORES
 	/**
 	 * Crea un usuario con puntuacion.
+	 * 
+	 * @param id   --> id del usuario.
 	 * 
 	 * @param nombre   --> nombre del usuario.
 	 * 
@@ -19,8 +22,9 @@ public class Usuario {
 	 * @param email    --> email del usuario.
 	 * 
 	 */
-	public Usuario(String nombre, String contra, int maxPuntu, String email) {
+	public Usuario(int id, String nombre, String contra, int maxPuntu, String email) {
 		super();
+		Id = id;
 		Nombre = nombre;
 		this.contra = contra;
 		this.maxPuntu = maxPuntu;
@@ -30,19 +34,43 @@ public class Usuario {
 	/**
 	 * Crea un usuario sin puntuacion.
 	 * 
-	 * @param nombre --> nombre del usuario.
+	 * @param id   --> id del usuario.
 	 * 
-	 * @param contra --> contraaseña del usuario.
+	 * @param nombre   --> nombre del usuario.
 	 * 
-	 * @param email  --> email del usuario.
+	 * @param contra   --> contraaseña del usuario.
+	 * 
+	 * @param email    --> email del usuario.
 	 * 
 	 */
-	public Usuario(String nombre, String contra, String email) {
+	public Usuario(int id, String nombre, String contra, String email) {
 		super();
+		Id = id;
 		Nombre = nombre;
 		this.contra = contra;
 		this.maxPuntu = 0;
 		this.email = email;
+	}
+
+	// ID
+	/**
+	 * Devuelve el id del usuario.
+	 * 
+	 * @return id --> id del usuario.
+	 * 
+	 */
+	public int getId() {
+		return Id;
+	}
+
+	/**
+	 * Asigna el Id al usuario.
+	 * 
+	 * @param id --> id del usuario.
+	 * 
+	 */
+	public void setId(int id) {
+		this.Id = id;
 	}
 
 	// NOMBRE
