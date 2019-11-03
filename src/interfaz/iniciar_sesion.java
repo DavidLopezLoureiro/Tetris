@@ -143,7 +143,7 @@ public class iniciar_sesion extends JFrame {
 					JOptionPane.showMessageDialog(null, "Introduce los datos antes de continuar");
 
 					// COMPRUEBA QUE EL USAURIO EXISTE
-				} else if (BD.getUserName(textFieldNombre.getText()).equals(null)) {
+				} else if (BD.getUserName(textFieldNombre.getText()).getNombre().equals("")) {
 
 					JOptionPane.showMessageDialog(null, "Este usuario no existe.");
 
@@ -157,7 +157,7 @@ public class iniciar_sesion extends JFrame {
 					//MARCA QUE USUARIO HA ENTRADO
 					entrada = BD.getUserName(textFieldNombre.getText());
 
-					// CIERRA LA VENTAN ACTUAL
+					// CIERRA LA VENTANA ACTUAL
 					iniciar_sesion.this.dispose();
 				}
 			}

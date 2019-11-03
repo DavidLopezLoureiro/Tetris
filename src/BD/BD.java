@@ -133,7 +133,7 @@ public class BD {
 			}
 		} catch (SQLException e) {
 			System.out.println("NO VA");
-			return null;
+			return new Usuario(0, "", "", 0, "");
 		}
 	}
 	
@@ -151,7 +151,7 @@ public class BD {
 			}
 		} catch (SQLException e) {
 			System.out.println("NO VA");
-			return null;
+			return new Usuario(0, "", "", 0, "");
 		}
 	}
 
