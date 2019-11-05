@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import BD.BD;
+import objetos.Usuario;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -14,6 +15,7 @@ import javax.swing.JOptionPane;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 import javax.swing.JButton;
 import java.awt.Color;
@@ -82,7 +84,7 @@ public class menu_inicial extends JFrame {
 		btnCrearUsuario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (e.getSource() == btnCrearUsuario) {
-
+					
 					// ABRE LA NUEVA VENTANA
 					crear_usuario nuevaventana = new crear_usuario();
 					nuevaventana.setVisible(true);
