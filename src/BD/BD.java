@@ -1,14 +1,15 @@
 package BD;
 
 import java.sql.Connection;
+
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 import java.util.ArrayList;
-
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.List;
 /*
 import java.util.logging.FileHandler;
@@ -16,39 +17,77 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 */
 import objetos.Usuario;
-
-
 public class BD {
 	
 	private static Connection conn = null; 
-
-	
+	public static Logger log;
+	private static Exception lastError = null;
 	
 	/**
-	 * Crea una conexión con la base de datos.
-	 * @throws SQLException Se produce cuando existe un problema con la creación de la conexión a la BD.
+	 * AÃ±adir situacion reciente de la BD.
+	 * 
+	 * @param logger --> mensajes de log de la BD.
+	 * 
+	 */
+	public static void setLogger(Logger logger) {
+		BD.log = logger;
+	}
+
+	/**
+	 * Guarda lo que ha ocurrido en la BD en esa sesiÃ³n en un logger.
+	 * 
+	 * @param level     --> nivel del log.
+	 * 
+	 * @param msg       --> mensaje del log.
+	 * 
+	 * @param excepcion --> excepciones que ocurren.
+	 * 
+	 * @exception Exception fallo que ocurre al realizar el log.
+	 * 
+	 */
+	private static void log(Level level, String msg, Throwable excepcion) {
+		if (log == null) { // Logger por defecto local:
+			log = Logger.getLogger(BD.class.getName()); // Nombre del logger de la clase
+			log.setLevel(Level.ALL); // Loguea todos los niveles
+			try {
+				log.addHandler(new FileHandler("bd.log.xml", true)); // Y saca el log a fichero xml
+			} catch (Exception e) {
+				log.log(Level.SEVERE, "No se pudo crear fichero de log", e);
+			}
+		}
+		if (excepcion == null)
+			log.log(level, msg);
+		else
+			log.log(level, msg, excepcion);
+	}
+
+	/**
+	 * Crea una conexiï¿½n con la base de datos.
+	 * @throws SQLException Se produce cuando existe un problema con la creaciï¿½n de la conexiï¿½n a la BD.
 	 */
 	public static void connect(){
 		try {
 			Class.forName("org.sqlite.JDBC");
 			conn = DriverManager.getConnection("jdbc:sqlite:Base_de_datos.db");
 		} catch (ClassNotFoundException e) {
-			System.out.println("NO VA");
+			lastError = e;
+			log(Level.SEVERE, "Error en uso de base de datos", e);
 		} catch (SQLException e) {
-			System.out.println("NO VA");
-			
+			lastError = e;
+			log(Level.SEVERE, "Error en uso de base de datos", e);
 		}
 	}
 	
 	/**
-	 * Cierra una conexión con la BD.
+	 * Cierra una conexiï¿½n con la BD.
 	 * @throws SQLException Se produce cuando existe un error a la hora de conectar con la BD.
 	 */
 	public static void disconnect(){
 		try {
 			conn.close();
 		} catch (SQLException e) {
-			System.out.println("NO VA");
+			lastError = e;
+			log(Level.SEVERE, "Error al desconectar bd", e);
 		
 		}
 	}
@@ -90,13 +129,14 @@ public class BD {
 			
 			return usuarios_Lista;
 		} catch (SQLException e) {
-			System.out.println("NO VA");
+			lastError = e;
+			log(Level.SEVERE, "Error en la extraccion del usuario", e);
 			return null;
 		}
 	}
 	
 	/**
-	 * Obtiene el usuario con el id indicado como parámetro.
+	 * Obtiene el usuario con el id indicado como parï¿½metro.
 	 * @param id ID del usuario a obtener de la BD
 	 * @return El usuario cuyo ID se encuentra en la BD. Devuelve un usuario vacio con id -1 si no se ha encontrado el usuario.
 	 * @throws SQLException
@@ -114,7 +154,8 @@ public class BD {
 				return new Usuario(rs.getInt("id"), rs.getString("name"), rs.getString("cont"), rs.getInt("maxPuntu"), rs.getString("email"));
 			}
 		} catch (SQLException e) {
-			System.out.println("NO VA");
+			lastError = e;
+			log(Level.SEVERE, "Usuario no encontrado", e);
 			return null;
 		}
 	}
@@ -132,7 +173,8 @@ public class BD {
 				return new Usuario(rs.getInt("id"), rs.getString("name"), rs.getString("cont"), rs.getInt("maxPuntu"), rs.getString("email"));
 			}
 		} catch (SQLException e) {
-			System.out.println("NO VA");
+			lastError = e;
+			log(Level.SEVERE, "Error en uso de base de datos", e);
 			return new Usuario(0, "", "", 0, "");
 		}
 	}
@@ -150,14 +192,15 @@ public class BD {
 				return new Usuario(rs.getInt("id"), rs.getString("name"), rs.getString("cont"), rs.getInt("maxPuntu"), rs.getString("email"));
 			}
 		} catch (SQLException e) {
-			System.out.println("NO VA");
+			lastError = e;
+			log(Level.SEVERE, "Error en uso de base de datos", e);
 			return new Usuario(0, "", "", 0, "");
 		}
 	}
 
 	
 	/**
-	 * Guarda el usuario por primera vez en la BD generando automáticamente un id.
+	 * Guarda el usuario por primera vez en la BD generando automï¿½ticamente un id.
 	 * @param user el objeto que debe ser guardado en la BD (el id es ignorado ya que se genera uno nuevo).
 	 * @throws SQLException Si se produce un error al guardar el usuario en la BD.
 	 */
@@ -178,14 +221,15 @@ public class BD {
 				System.out.println("NO VA EL ID");
 			}
 		} catch (SQLException e) {
-			System.out.println("NO VA");
+			lastError = e;
+			log(Level.SEVERE, "Error en uso de base de datos", e);
 		}
 	}
 	
 	/**
 	 * Actualiza un usuario que ya existe en la base de datos (el id debe existir y no cambia)
 	 * @param user Usuario cuyos datos deben ser actualizados en la base de datos
-	 * @throws SQLException Si se produce un error durante la actualización de los datos
+	 * @throws SQLException Si se produce un error durante la actualizaciï¿½n de los datos
 	 */
 	public static void update(Usuario user)  {
 		try (PreparedStatement stmt = conn.prepareStatement("UPDATE usuarios SET name=?, cont=?, maxPuntu=?, email=? WHERE id=?")) {
@@ -197,7 +241,8 @@ public class BD {
 			
 			stmt.executeUpdate();
 		} catch (SQLException e) {
-			System.out.println("NO VA");
+			lastError = e;
+			log(Level.SEVERE, "Usuario no actualizado", e);
 		}
 	}
 	
@@ -211,7 +256,8 @@ public class BD {
 			stmt.setInt(1, user.getId());
 			stmt.executeUpdate();
 		} catch (SQLException e) {
-			System.out.println("NO VA");
+			lastError = e;
+			log(Level.SEVERE, "Usuario no borrado", e);
 		}
 	}
 
