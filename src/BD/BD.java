@@ -12,11 +12,6 @@ import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.List;
-/*
-import java.util.logging.FileHandler;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-*/
 import objetos.Usuario;
 public class BD {
 	
@@ -180,24 +175,25 @@ public class BD {
 		}
 	}
 	
-	public static Usuario getCont(String name){
+	public static String getCont(String name){
 		try (PreparedStatement stmt = conn.prepareStatement("SELECT id, name, cont, maxPuntu, email FROM usuarios WHERE name = ?")) {
 			stmt.setString(1, name);
 			
 			ResultSet rs = stmt.executeQuery();
 
 			if (rs.next()) {
-				Usuario user = new Usuario(rs.getInt("id"), rs.getString("name"), rs.getString("cont"), rs.getInt("maxPuntu"), rs.getString("email"));
-				return user;
+				return rs.getString("cont");
 			} else {
-				return new Usuario(rs.getInt("id"), rs.getString("name"), rs.getString("cont"), rs.getInt("maxPuntu"), rs.getString("email"));
+				return rs.getString("cont");
 			}
 		} catch (SQLException e) {
 			lastError = e;
 			log(Level.SEVERE, "Error en uso de base de datos", e);
-			return new Usuario(0, "", "", 0, "");
+			return "";
 		}
 	}
+	
+	
 
 	
 	/**

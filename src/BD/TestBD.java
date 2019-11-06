@@ -54,5 +54,19 @@ public class TestBD {
 		assertEquals(punt, 0);
 		assertEquals(id, 1);
 	}
+	
+	@Test
+	public void testgetUserId() {
+	
+	}
+	
+	@Test
+	public void testgetUserName() {
+	
+	}
+	@Test
+	public void testgetcont() {
+	
+	}
 
 }

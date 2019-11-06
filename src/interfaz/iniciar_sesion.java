@@ -134,7 +134,7 @@ public class iniciar_sesion extends JFrame {
 				// PROCESADO DE CONTRASEÑA
 				char clave[] = passwordFieldInicioSesion.getPassword();
 				String clave_pasada = new String(clave);
-				String cont_usu = BD.getCont(textFieldNombre.getText()).getContra();
+				String cont_usu = BD.getCont(textFieldNombre.getText());
 
 				// COMPRUEBA QUE LOS CAMPOS NO ESTEN VACIOS
 				if (textFieldNombre.getText().equals("")
