@@ -156,6 +156,14 @@ public class BD {
 		}
 	}
 	
+	/**
+	 * Devuelve el Usuario del nombre que buscamos.
+	 * 
+	 * @param name --> nombre del usuario.
+	 * 
+	 * @return Usuario --> usuario.
+	 * 
+	 */
 	public static Usuario getUserName(String name){
 		try (PreparedStatement stmt = conn.prepareStatement("SELECT id, name, cont, maxPuntu, email FROM usuarios WHERE name = ?")) {
 			stmt.setString(1, name);
@@ -175,6 +183,14 @@ public class BD {
 		}
 	}
 	
+	/**
+	 * Devuelve la contraseña del nombre que buscamos.
+	 * 
+	 * @param name --> nombre del usuario.
+	 * 
+	 * @return cont --> contraseña del usuario.
+	 * 
+	 */
 	public static String getCont(String name){
 		try (PreparedStatement stmt = conn.prepareStatement("SELECT id, name, cont, maxPuntu, email FROM usuarios WHERE name = ?")) {
 			stmt.setString(1, name);

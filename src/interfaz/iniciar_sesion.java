@@ -13,6 +13,8 @@ import javax.swing.JTextField;
 import interfaz.iniciar_sesion;
 import interfaz.menu_inicial;
 import BD.BD;
+import objetos.Cuadrado;
+import objetos.Pieza;
 import objetos.Usuario;
 
 import java.awt.Font;
@@ -153,7 +155,7 @@ public class iniciar_sesion extends JFrame {
 					JOptionPane.showMessageDialog(null, "Contraseña incorrecta.");
 
 				} else {
-
+					
 					//MARCA QUE USUARIO HA ENTRADO
 					entrada = BD.getUserName(textFieldNombre.getText());
 
