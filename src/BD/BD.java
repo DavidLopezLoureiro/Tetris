@@ -17,6 +17,7 @@ public class BD {
 	
 	private static Connection conn = null; 
 	public static Logger log;
+	@SuppressWarnings("unused")
 	private static Exception lastError = null;
 	
 	/**
