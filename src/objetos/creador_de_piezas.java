@@ -2,14 +2,14 @@ package objetos;
 
 public class creador_de_piezas {
 
-	//AUN QUEDA PONER LA POSICION DE CADA CUADRADO DE FORMA CORRECTA
-	
 	
 	public Pieza crear_pieza(String cod_pieza) {
 
 		// GENERAL
 		String orientacion = "Original"; // siempre empieza en orientacion original
 		String color = "blanco"; // el color se asigna más tarde pero estamos obligados a inicializarlo
+		
+		// array[21][9]
 
 		// C0
 		int x_0 = 0;
@@ -48,29 +48,29 @@ public class creador_de_piezas {
 			//				  			2
 
 			// C0
-			x_0 = 1;
-			y_0 = 1;
+			x_0 = 4;
+			y_0 = 20;
 			choca_abajo_0 = false;
 			choca_izquierda_0 = false;
 			choca_derecha_0 = false;
 
 			// C1
-			x_1 = 1;
-			y_1 = 1;
+			x_1 = 5;
+			y_1 = 20;
 			choca_abajo_0 = true;
 			choca_izquierda_0 = false;
 			choca_derecha_0 = true;
 
 			// C2
-			x_2 = 1;
-			y_2 = 1;
+			x_2 = 4;
+			y_2 = 19;
 			choca_abajo_0 = true;
 			choca_izquierda_0 = true;
 			choca_derecha_0 = true;
 
 			// C3
-			x_3 = 1;
-			y_3 = 1;
+			x_3 = 3;
+			y_3 = 20;
 			choca_abajo_0 = true;
 			choca_izquierda_0 = true;
 			choca_derecha_0 = false;
@@ -86,29 +86,29 @@ public class creador_de_piezas {
 			//			 			   3
 			
 			// C0
-			x_0 = 1;
-			y_0 = 1;
+			x_0 = 4;
+			y_0 = 20;
 			choca_abajo_0 = false;
 			choca_izquierda_0 = true;
 			choca_derecha_0 = true;
 
 			// C1
-			x_1 = 1;
-			y_1 = 1;
+			x_1 = 4;
+			y_1 = 19;
 			choca_abajo_0 = false;
 			choca_izquierda_0 = true;
 			choca_derecha_0 = true;
 
 			// C2
-			x_2 = 1;
-			y_2 = 1;
+			x_2 = 4;
+			y_2 = 18;
 			choca_abajo_0 = false;
 			choca_izquierda_0 = true;
 			choca_derecha_0 = true;
 
 			// C3
-			x_3 = 1;
-			y_3 = 1;
+			x_3 = 4;
+			y_3 = 17;
 			choca_abajo_0 = true;
 			choca_izquierda_0 = true;
 			choca_derecha_0 = true;
@@ -122,29 +122,29 @@ public class creador_de_piezas {
 			//				  		   2 3
 
 			// C0
-			x_0 = 1;
-			y_0 = 1;
+			x_0 = 4;
+			y_0 = 20;
 			choca_abajo_0 = false;
 			choca_izquierda_0 = true;
 			choca_derecha_0 = false;
 
 			// C1
-			x_1 = 1;
-			y_1 = 1;
+			x_1 = 5;
+			y_1 = 20;
 			choca_abajo_0 = false;
 			choca_izquierda_0 = false;
 			choca_derecha_0 = true;
 
 			// C2
-			x_2 = 1;
-			y_2 = 1;
+			x_2 = 4;
+			y_2 = 19;
 			choca_abajo_0 = true;
 			choca_izquierda_0 = true;
 			choca_derecha_0 = false;
 
 			// C3
-			x_3 = 1;
-			y_3 = 1;
+			x_3 = 5;
+			y_3 = 19;
 			choca_abajo_0 = true;
 			choca_izquierda_0 = false;
 			choca_derecha_0 = true;
@@ -152,36 +152,36 @@ public class creador_de_piezas {
 		} else if (cod_pieza.equals("S")) {
 
 			// COLOR
-			color = "rojo";
+			color = "verde";
 			
 			//ORIENTACION ORIGINAL --> 0 
 			//				  		   1 2
 			//							 3
 
 			// C0
-			x_0 = 1;
-			y_0 = 1;
+			x_0 = 4;
+			y_0 = 20;
 			choca_abajo_0 = false;
 			choca_izquierda_0 = true;
 			choca_derecha_0 = true;
 
 			// C1
-			x_1 = 1;
-			y_1 = 1;
+			x_1 = 4;
+			y_1 = 19;
 			choca_abajo_0 = true;
 			choca_izquierda_0 = true;
 			choca_derecha_0 = false;
 
 			// C2
-			x_2 = 1;
-			y_2 = 1;
+			x_2 = 5;
+			y_2 = 19;
 			choca_abajo_0 = false;
 			choca_izquierda_0 = false;
 			choca_derecha_0 = true;
 
 			// C3
-			x_3 = 1;
-			y_3 = 1;
+			x_3 = 5;
+			y_3 = 18;
 			choca_abajo_0 = true;
 			choca_izquierda_0 = true;
 			choca_derecha_0 = true;
@@ -189,36 +189,36 @@ public class creador_de_piezas {
 		} else if (cod_pieza.equals("Z")) {
 
 			// COLOR
-			color = "verde";
+			color = "rojo";
 			
 			//ORIENTACION ORIGINAL -->   0 
 			//				  		   1 2
 			//						   3
 
 			// C0
-			x_0 = 1;
-			y_0 = 1;
+			x_0 = 4;
+			y_0 = 20;
 			choca_abajo_0 = false;
 			choca_izquierda_0 = true;
 			choca_derecha_0 = true;
 
 			// C1
-			x_1 = 1;
-			y_1 = 1;
+			x_1 = 3;
+			y_1 = 19;
 			choca_abajo_0 = false;
 			choca_izquierda_0 = true;
 			choca_derecha_0 = false;
 
 			// C2
-			x_2 = 1;
-			y_2 = 1;
+			x_2 = 4;
+			y_2 = 19;
 			choca_abajo_0 = true;
 			choca_izquierda_0 = false;
 			choca_derecha_0 = true;
 
 			// C3
-			x_3 = 1;
-			y_3 = 1;
+			x_3 = 3;
+			y_3 = 18;
 			choca_abajo_0 = true;
 			choca_izquierda_0 = true;
 			choca_derecha_0 = true;
@@ -226,36 +226,36 @@ public class creador_de_piezas {
 		} else if (cod_pieza.equals("L")) {
 
 			// COLOR
-			color = "azul";
+			color = "naranja";
 			
 			//ORIENTACION ORIGINAL --> 0 
 			//				  		   1 
 			//						   2 3
 
 			// C0
-			x_0 = 1;
-			y_0 = 1;
+			x_0 = 4;
+			y_0 = 20;
 			choca_abajo_0 = false;
 			choca_izquierda_0 = true;
 			choca_derecha_0 = true;
 
 			// C1
-			x_1 = 1;
-			y_1 = 1;
+			x_1 = 4;
+			y_1 = 19;
 			choca_abajo_0 = false;
 			choca_izquierda_0 = true;
 			choca_derecha_0 = true;
 
 			// C2
-			x_2 = 1;
-			y_2 = 1;
+			x_2 = 4;
+			y_2 = 18;
 			choca_abajo_0 = true;
 			choca_izquierda_0 = true;
 			choca_derecha_0 = false;
 
 			// C3
-			x_3 = 1;
-			y_3 = 1;
+			x_3 = 5;
+			y_3 = 18;
 			choca_abajo_0 = true;
 			choca_izquierda_0 = false;
 			choca_derecha_0 = true;
@@ -263,36 +263,36 @@ public class creador_de_piezas {
 		} else if (cod_pieza.equals("R")) {
 
 			// COLOR
-			color = "naranja";
+			color = "azul";
 			
 			//ORIENTACION ORIGINAL -->   0 
 			//				  		     1 
 			//						   3 2
 
 			// C0
-			x_0 = 1;
-			y_0 = 1;
+			x_0 = 4;
+			y_0 = 20;
 			choca_abajo_0 = false;
 			choca_izquierda_0 = true;
 			choca_derecha_0 = true;
 
 			// C1
-			x_1 = 1;
-			y_1 = 1;
+			x_1 = 4;
+			y_1 = 19;
 			choca_abajo_0 = false;
 			choca_izquierda_0 = true;
 			choca_derecha_0 = true;
 
 			// C2
-			x_2 = 1;
-			y_2 = 1;
+			x_2 = 4;
+			y_2 = 18;
 			choca_abajo_0 = true;
 			choca_izquierda_0 = false;
 			choca_derecha_0 = true;
 
 			// C3
-			x_3 = 1;
-			y_3 = 1;
+			x_3 = 3;
+			y_3 = 18;
 			choca_abajo_0 = true;
 			choca_izquierda_0 = true;
 			choca_derecha_0 = false;
