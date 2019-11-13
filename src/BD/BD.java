@@ -89,7 +89,8 @@ public class BD {
 		}
 	}
 	
-	/*
+	/* No ejecutar estas funciones
+	 * 
 	public static void createUserTable() {
 		try (Statement stmt = conn.createStatement()) {
 			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR, cont VARCHAR, maxPuntu INTEGER, email VARCHAR)");

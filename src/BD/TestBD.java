@@ -40,13 +40,13 @@ public class TestBD {
 	@Test
 	public void testgetAllUsers() {
 
-		List<Usuario> datos = BD.getAllUsers();
+		List<Usuario> all = BD.getAllUsers();
 
-		String nombre = datos.get(0).getNombre();
-		String email = datos.get(0).getEmail();
-		int punt = datos.get(0).getMaxPuntu();
-		String cont = datos.get(0).getContra();
-		int id = datos.get(0).getId();
+		String nombre = all.get(0).getNombre();
+		String email = all.get(0).getEmail();
+		int punt = all.get(0).getMaxPuntu();
+		String cont = all.get(0).getContra();
+		int id = all.get(0).getId();
 		
 		assertEquals(nombre, "David");
 		assertEquals(cont, "cont");
@@ -57,15 +57,47 @@ public class TestBD {
 	
 	@Test
 	public void testgetUserId() {
+		
+		Usuario id = BD.getUserId(1);
+		
+		String nombre = id.getNombre();
+		String email = id.getEmail();
+		int punt = id.getMaxPuntu();
+		String cont = id.getContra();
+		int iD = id.getId();
+		
+		assertEquals(nombre, "David");
+		assertEquals(cont, "cont");
+		assertEquals(email, "david.lopez.loureiro@opendeusto.es");
+		assertEquals(punt, 0);
+		assertEquals(iD, 1);
 	
 	}
 	
 	@Test
 	public void testgetUserName() {
+
+		Usuario nombre = BD.getUserName("David");
+		
+		String nombre1 = nombre.getNombre();
+		String email = nombre.getEmail();
+		int punt = nombre.getMaxPuntu();
+		String cont = nombre.getContra();
+		int id1 = nombre.getId();
+		
+		assertEquals(nombre1, "David");
+		assertEquals(cont, "cont");
+		assertEquals(email, "david.lopez.loureiro@opendeusto.es");
+		assertEquals(punt, 0);
+		assertEquals(id1, 1);
 	
 	}
 	@Test
 	public void testgetcont() {
+		
+		String cont = BD.getCont("David");
+		
+		assertEquals(cont, "cont");
 	
 	}
 
