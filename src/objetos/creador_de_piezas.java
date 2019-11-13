@@ -3,7 +3,7 @@ package objetos;
 public class creador_de_piezas {
 
 	
-	public Pieza crear_pieza(String cod_pieza) {
+	public static Pieza crear_pieza(String cod_pieza) {
 
 		// GENERAL
 		String orientacion = "Original"; // siempre empieza en orientacion original
@@ -308,6 +308,7 @@ public class creador_de_piezas {
 		Cuadrado c3 = new Cuadrado(cod_pieza + "_3", color, x_3, y_3, choca_abajo_3, choca_izquierda_3,
 				choca_derecha_3);
 
-		return new Pieza(cod_pieza, orientacion, c0, c1, c2, c3);
+		Pieza p = new Pieza(cod_pieza, orientacion, c0, c1, c2, c3);
+		return p;
 	}
 }

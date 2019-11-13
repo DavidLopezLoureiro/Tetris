@@ -7,7 +7,13 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
+
+import objetos.Cuadrado;
+import objetos.Pieza;
+import objetos.Usuario;
+import objetos.creador_de_piezas;
 
 @SuppressWarnings("serial")
 public class Ventana extends JFrame {
@@ -41,14 +47,14 @@ public class Ventana extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JPanel Pieza_guardada = new JPanel();
-		Pieza_guardada.setBounds(10, 11, 122, 121);
-		contentPane.add(Pieza_guardada);
-		Pieza_guardada.setLayout(null);
+		JPanel t_guardada = new JPanel();
+		t_guardada.setBounds(10, 11, 122, 121);
+		contentPane.add(t_guardada);
+		t_guardada.setLayout(null);
 
 		JLabel pieza_guardada = new JLabel("");
 		pieza_guardada.setBounds(10, 11, 102, 99);
-		Pieza_guardada.add(pieza_guardada);
+		t_guardada.add(pieza_guardada);
 
 		JPanel Siguiente_siguientes = new JPanel();
 		Siguiente_siguientes.setBounds(455, 11, 132, 478);
@@ -117,5 +123,37 @@ public class Ventana extends JFrame {
 		JButton Ajustes = new JButton("Ajustes");
 		Ajustes.setBounds(455, 500, 132, 64);
 		contentPane.add(Ajustes);
+		
+		String[][] campo;
+		campo = new String[21][9];
+		
+		Pieza t = creador_de_piezas.crear_pieza("T");
+		
+		campo[t.getc0().gety()][t.getc0().getx()] = t.getc0().getCod_cuadrado();
+		
+		campo[t.getc1().gety()][t.getc1().getx()] =t.getc1().getCod_cuadrado();
+		
+		campo[ t.getc2().gety()][t.getc2().getx()] = t.getc2().getCod_cuadrado();
+		
+		campo[ t.getc3().gety()][ t.getc3().getx()] =  t.getc3().getCod_cuadrado();
+		
+		String ESO = "";
+		 for (int i=campo.length;i>0;i--){
+		System.out.print("\n");
+		ESO = ESO + "\n";
+	            for(int j=0;j<campo[0].length;j++){
+	            	ESO = ESO + campo[i-1][j]+ " ";
+	            	System.out.print(campo[i-1][j]+ " ");
+	            }
+	        }
+		
+		 JOptionPane.showMessageDialog(null, ESO);
+
+		
+
+		
+	
+		
 	}
+
 }

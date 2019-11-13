@@ -10,8 +10,7 @@ public class Cuadrado {
 	private boolean choca_izquierda;
 	private boolean choca_derecha;
 
-	public Cuadrado(String cod_cuadrado, String color, int x, int y, boolean choca_abajo, boolean choca_izquierda,
-			boolean choca_derecha) {
+	public Cuadrado(String cod_cuadrado, String color, int x, int y, boolean choca_abajo, boolean choca_izquierda, boolean choca_derecha) {	
 		super();
 		Cod_cuadrado = cod_cuadrado; 
 		this.color = color;
@@ -60,11 +59,11 @@ public class Cuadrado {
 	
 		//SETS DE X Y
 	public void setx(int x) {
-		this.x = x;
+		
 	}
 	
 	public void sety(int y) {
-		this.y = y;
+		
 	}
 	
 	
@@ -75,26 +74,24 @@ public class Cuadrado {
 
 		// T
 		if (Cod_pieza.equals("T") && orientacion.equals("Derecha")) {
-			this.x = x + 2;
-			this.choca_abajo = true;
-			this.choca_izquierda = true;
+			this.choca_abajo = false;
+			this.choca_izquierda = false;
 			this.choca_derecha = true;
 		} else if (Cod_pieza.equals("T") && orientacion.equals("Izquierda")) {
-			this.x = x + 2;
-			this.choca_abajo = true;
+			this.choca_abajo = false;
 			this.choca_izquierda = true;
-			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("T") && orientacion.equals("Abajo")) {
-			this.x = x + 2;
+			this.choca_derecha = false;
+		} else if (Cod_pieza.equals("T") && orientacion.equals("Alreves")) {
 			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
+			this.choca_izquierda = false;
+			this.choca_derecha = false;
 		} else if (Cod_pieza.equals("T") && orientacion.equals("Original")) {
-			this.x = x + 2;
-			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
+			this.choca_abajo = false;
+			this.choca_izquierda = false;
+			this.choca_derecha = false;
 
+			//Hasta aqui llego el viaje
+			
 			// I
 		} else if (Cod_pieza.equals("I") && orientacion.equals("Derecha")) {
 			this.x = x + 2;
@@ -106,7 +103,7 @@ public class Cuadrado {
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
 			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("I") && orientacion.equals("Abajo")) {
+		} else if (Cod_pieza.equals("I") && orientacion.equals("Alreves")) {
 			this.x = x + 2;
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
@@ -128,7 +125,7 @@ public class Cuadrado {
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
 			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("S") && orientacion.equals("Abajo")) {
+		} else if (Cod_pieza.equals("S") && orientacion.equals("Alreves")) {
 			this.x = x + 2;
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
@@ -150,7 +147,7 @@ public class Cuadrado {
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
 			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("Z") && orientacion.equals("Abajo")) {
+		} else if (Cod_pieza.equals("Z") && orientacion.equals("Alreves")) {
 			this.x = x + 2;
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
@@ -172,7 +169,7 @@ public class Cuadrado {
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
 			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("L") && orientacion.equals("Abajo")) {
+		} else if (Cod_pieza.equals("L") && orientacion.equals("Alreves")) {
 			this.x = x + 2;
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
@@ -194,7 +191,7 @@ public class Cuadrado {
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
 			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("R") && orientacion.equals("Abajo")) {
+		} else if (Cod_pieza.equals("R") && orientacion.equals("Alreves")) {
 			this.x = x + 2;
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
@@ -212,22 +209,18 @@ public class Cuadrado {
 
 		// T
 		if (Cod_pieza.equals("T") && orientacion.equals("Derecha")) {
-			this.y = y + 2;
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
 			this.choca_derecha = true;
 		} else if (Cod_pieza.equals("T") && orientacion.equals("Izquierda")) {
-			this.y = y + 2;
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
 			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("T") && orientacion.equals("Abajo")) {
-			this.y = y + 2;
+		} else if (Cod_pieza.equals("T") && orientacion.equals("Alreves")) {	
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
 			this.choca_derecha = true;
 		} else if (Cod_pieza.equals("T") && orientacion.equals("Original")) {
-			this.y = y + 2;
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
 			this.choca_derecha = true;
@@ -243,7 +236,7 @@ public class Cuadrado {
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
 			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("I") && orientacion.equals("Abajo")) {
+		} else if (Cod_pieza.equals("I") && orientacion.equals("Alreves")) {
 			this.y = y + 2;
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
@@ -265,7 +258,7 @@ public class Cuadrado {
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
 			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("S") && orientacion.equals("Abajo")) {
+		} else if (Cod_pieza.equals("S") && orientacion.equals("Alreves")) {
 			this.y = y + 2;
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
@@ -287,7 +280,7 @@ public class Cuadrado {
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
 			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("Z") && orientacion.equals("Abajo")) {
+		} else if (Cod_pieza.equals("Z") && orientacion.equals("Alreves")) {
 			this.y = y + 2;
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
@@ -309,7 +302,7 @@ public class Cuadrado {
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
 			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("L") && orientacion.equals("Abajo")) {
+		} else if (Cod_pieza.equals("L") && orientacion.equals("Alreves")) {
 			this.y = y + 2;
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
@@ -331,7 +324,7 @@ public class Cuadrado {
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
 			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("R") && orientacion.equals("Abajo")) {
+		} else if (Cod_pieza.equals("R") && orientacion.equals("Alreves")) {
 			this.y = y + 2;
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
@@ -358,7 +351,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("T") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("T") && orientacion.equals("Alreves")) {
 				this.x = x + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -380,7 +373,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("I") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("I") && orientacion.equals("Alreves")) {
 				this.x = x + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -402,7 +395,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("S") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("S") && orientacion.equals("Alreves")) {
 				this.x = x + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -424,7 +417,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("Z") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("Z") && orientacion.equals("Alreves")) {
 				this.x = x + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -446,7 +439,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("L") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("L") && orientacion.equals("Alreves")) {
 				this.x = x + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -468,7 +461,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("R") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("R") && orientacion.equals("Alreves")) {
 				this.x = x + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -495,7 +488,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("T") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("T") && orientacion.equals("Alreves")) {
 				this.y = y + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -517,7 +510,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("I") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("I") && orientacion.equals("Alreves")) {
 				this.y = y + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -539,7 +532,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("S") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("S") && orientacion.equals("Alreves")) {
 				this.y = y + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -561,7 +554,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("Z") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("Z") && orientacion.equals("Alreves")) {
 				this.y = y + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -583,7 +576,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("L") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("L") && orientacion.equals("Alreves")) {
 				this.y = y + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -605,7 +598,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("R") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("R") && orientacion.equals("Alreves")) {
 				this.y = y + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -631,7 +624,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("T") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("T") && orientacion.equals("Alreves")) {
 				this.x = x + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -653,7 +646,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("I") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("I") && orientacion.equals("Alreves")) {
 				this.x = x + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -675,7 +668,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("S") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("S") && orientacion.equals("Alreves")) {
 				this.x = x + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -697,7 +690,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("Z") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("Z") && orientacion.equals("Alreves")) {
 				this.x = x + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -719,7 +712,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("L") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("L") && orientacion.equals("Alreves")) {
 				this.x = x + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -741,7 +734,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("R") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("R") && orientacion.equals("Alreves")) {
 				this.x = x + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -768,7 +761,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("T") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("T") && orientacion.equals("Alreves")) {
 				this.y = y + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -790,7 +783,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("I") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("I") && orientacion.equals("Alreves")) {
 				this.y = y + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -812,7 +805,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("S") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("S") && orientacion.equals("Alreves")) {
 				this.y = y + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -834,7 +827,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("Z") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("Z") && orientacion.equals("Alreves")) {
 				this.y = y + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -856,7 +849,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("L") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("L") && orientacion.equals("Alreves")) {
 				this.y = y + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -878,7 +871,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("R") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("R") && orientacion.equals("Alreves")) {
 				this.y = y + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -904,7 +897,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("T") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("T") && orientacion.equals("Alreves")) {
 				this.x = x + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -926,7 +919,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("I") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("I") && orientacion.equals("Alreves")) {
 				this.x = x + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -948,7 +941,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("S") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("S") && orientacion.equals("Alreves")) {
 				this.x = x + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -970,7 +963,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("Z") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("Z") && orientacion.equals("Alreves")) {
 				this.x = x + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -992,7 +985,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("L") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("L") && orientacion.equals("Alreves")) {
 				this.x = x + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -1014,7 +1007,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("R") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("R") && orientacion.equals("Alreves")) {
 				this.x = x + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -1041,7 +1034,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("T") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("T") && orientacion.equals("Alreves")) {
 				this.y = y + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -1063,7 +1056,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("I") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("I") && orientacion.equals("Alreves")) {
 				this.y = y + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -1085,7 +1078,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("S") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("S") && orientacion.equals("Alreves")) {
 				this.y = y + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -1107,7 +1100,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("Z") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("Z") && orientacion.equals("Alreves")) {
 				this.y = y + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -1129,7 +1122,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("L") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("L") && orientacion.equals("Alreves")) {
 				this.y = y + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
@@ -1151,7 +1144,7 @@ public class Cuadrado {
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("R") && orientacion.equals("Abajo")) {
+			} else if (Cod_pieza.equals("R") && orientacion.equals("Alreves")) {
 				this.y = y + 2;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;

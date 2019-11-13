@@ -19,6 +19,22 @@ public class Pieza {
 		this.c3 = c3;
 	}
 
+	public Cuadrado getc0() {
+		return c0;
+	}
+	
+	public Cuadrado getc1() {
+		return c1;
+	}
+	
+	public Cuadrado getc2() {
+		return c2;
+	}
+	
+	public Cuadrado getc3() {
+		return c3;
+	}
+	
 	public String getCod_pieza() {
 		return Cod_pieza;
 	}
