@@ -59,18 +59,18 @@ public class Cuadrado {
 	
 		//SETS DE X Y
 	public void setx(int x) {
-		
+		this.x = x;
 	}
 	
 	public void sety(int y) {
-		
+		this.y = y;
 	}
 	
 	
 	// FALTA DE ADAPTAR ESTOS METODOS PARA CADA PIEZA Y CADA ORIENTACION
 
 	// C0
-	public void girarx0(String Cod_pieza, String orientacion) {
+	public void girar0(String Cod_pieza, String orientacion) {
 
 		// T
 		if (Cod_pieza.equals("T") && orientacion.equals("Derecha")) {
@@ -89,32 +89,34 @@ public class Cuadrado {
 			this.choca_abajo = false;
 			this.choca_izquierda = false;
 			this.choca_derecha = false;
-
-			//Hasta aqui llego el viaje
 			
 			// I
 		} else if (Cod_pieza.equals("I") && orientacion.equals("Derecha")) {
-			this.x = x + 2;
+			this.x = x + 1;
+			this.y = y - 1;
 			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
+			this.choca_izquierda = false;
+			this.choca_derecha = false;
 		} else if (Cod_pieza.equals("I") && orientacion.equals("Izquierda")) {
-			this.x = x + 2;
+			this.x = x - 1;
+			this.y = y + 1;
 			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
+			this.choca_izquierda = false;
+			this.choca_derecha = false;
 		} else if (Cod_pieza.equals("I") && orientacion.equals("Alreves")) {
-			this.x = x + 2;
-			this.choca_abajo = true;
+			this.x = x - 1;
+			this.y = y - 1;
+			this.choca_abajo = false;
 			this.choca_izquierda = true;
 			this.choca_derecha = true;
 		} else if (Cod_pieza.equals("I") && orientacion.equals("Original")) {
-			this.x = x + 2;
-			this.choca_abajo = true;
+			this.x = x + 1;
+			this.y = y + 1;
+			this.choca_abajo = false;
 			this.choca_izquierda = true;
 			this.choca_derecha = true;
 
-			// S
+			// S AUN NO ESTA HECHA
 		} else if (Cod_pieza.equals("S") && orientacion.equals("Derecha")) {
 			this.x = x + 2;
 			this.choca_abajo = true;
@@ -136,7 +138,7 @@ public class Cuadrado {
 			this.choca_izquierda = true;
 			this.choca_derecha = true;
 
-			// Z
+			// Z AUN NO ESTA HECHA
 		} else if (Cod_pieza.equals("Z") && orientacion.equals("Derecha")) {
 			this.x = x + 2;
 			this.choca_abajo = true;
@@ -162,202 +164,77 @@ public class Cuadrado {
 		} else if (Cod_pieza.equals("L") && orientacion.equals("Derecha")) {
 			this.x = x + 2;
 			this.choca_abajo = true;
-			this.choca_izquierda = true;
+			this.choca_izquierda = false;
 			this.choca_derecha = true;
 		} else if (Cod_pieza.equals("L") && orientacion.equals("Izquierda")) {
-			this.x = x + 2;
+			this.x = x - 2;
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
-			this.choca_derecha = true;
+			this.choca_derecha = false;
 		} else if (Cod_pieza.equals("L") && orientacion.equals("Alreves")) {
-			this.x = x + 2;
-			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("L") && orientacion.equals("Original")) {
-			this.x = x + 2;
-			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
-
-			// R
-		} else if (Cod_pieza.equals("R") && orientacion.equals("Derecha")) {
-			this.x = x + 2;
-			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("R") && orientacion.equals("Izquierda")) {
-			this.x = x + 2;
-			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("R") && orientacion.equals("Alreves")) {
-			this.x = x + 2;
-			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("R") && orientacion.equals("Original")) {
-			this.x = x + 2;
-			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
-		}
-
-	}
-
-	public void girary0(String Cod_pieza, String orientacion) {
-
-		// T
-		if (Cod_pieza.equals("T") && orientacion.equals("Derecha")) {
-			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("T") && orientacion.equals("Izquierda")) {
-			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("T") && orientacion.equals("Alreves")) {	
-			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("T") && orientacion.equals("Original")) {
-			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
-
-			// I
-		} else if (Cod_pieza.equals("I") && orientacion.equals("Derecha")) {
-			this.y = y + 2;
-			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("I") && orientacion.equals("Izquierda")) {
-			this.y = y + 2;
-			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("I") && orientacion.equals("Alreves")) {
-			this.y = y + 2;
-			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("I") && orientacion.equals("Original")) {
-			this.y = y + 2;
-			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
-
-			// S
-		} else if (Cod_pieza.equals("S") && orientacion.equals("Derecha")) {
-			this.y = y + 2;
-			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("S") && orientacion.equals("Izquierda")) {
-			this.y = y + 2;
-			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("S") && orientacion.equals("Alreves")) {
-			this.y = y + 2;
-			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("S") && orientacion.equals("Original")) {
-			this.y = y + 2;
-			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
-
-			// Z
-		} else if (Cod_pieza.equals("Z") && orientacion.equals("Derecha")) {
-			this.y = y + 2;
-			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("Z") && orientacion.equals("Izquierda")) {
-			this.y = y + 2;
-			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("Z") && orientacion.equals("Alreves")) {
-			this.y = y + 2;
-			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("Z") && orientacion.equals("Original")) {
-			this.y = y + 2;
-			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
-
-			// L
-		} else if (Cod_pieza.equals("L") && orientacion.equals("Derecha")) {
-			this.y = y + 2;
-			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("L") && orientacion.equals("Izquierda")) {
-			this.y = y + 2;
-			this.choca_abajo = true;
-			this.choca_izquierda = true;
-			this.choca_derecha = true;
-		} else if (Cod_pieza.equals("L") && orientacion.equals("Alreves")) {
-			this.y = y + 2;
+			this.y = y - 2;
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
 			this.choca_derecha = true;
 		} else if (Cod_pieza.equals("L") && orientacion.equals("Original")) {
 			this.y = y + 2;
-			this.choca_abajo = true;
+			this.choca_abajo = false;
 			this.choca_izquierda = true;
 			this.choca_derecha = true;
 
 			// R
 		} else if (Cod_pieza.equals("R") && orientacion.equals("Derecha")) {
-			this.y = y + 2;
+			this.y = y - 2;
 			this.choca_abajo = true;
-			this.choca_izquierda = true;
+			this.choca_izquierda = false;
 			this.choca_derecha = true;
 		} else if (Cod_pieza.equals("R") && orientacion.equals("Izquierda")) {
 			this.y = y + 2;
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
-			this.choca_derecha = true;
+			this.choca_derecha = false;
 		} else if (Cod_pieza.equals("R") && orientacion.equals("Alreves")) {
-			this.y = y + 2;
+			this.x = x - 2;
 			this.choca_abajo = true;
 			this.choca_izquierda = true;
 			this.choca_derecha = true;
 		} else if (Cod_pieza.equals("R") && orientacion.equals("Original")) {
-			this.y = y + 2;
-			this.choca_abajo = true;
+			this.x = x + 2;
+			this.choca_abajo = false;
 			this.choca_izquierda = true;
 			this.choca_derecha = true;
 		}
-	}
 
+	}
+	
+	//booleans no cambiados apartir de aqui
+
+	
 	// C1
-		public void girarx1(String Cod_pieza, String orientacion) {
+		public void girar1(String Cod_pieza, String orientacion) {
 
 			// T
 			if (Cod_pieza.equals("T") && orientacion.equals("Derecha")) {
-				this.x = x + 2;
+				this.x = x - 1;
+				this.y = y - 1;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
 			} else if (Cod_pieza.equals("T") && orientacion.equals("Izquierda")) {
-				this.x = x + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
+				x = x + 1;
+				y = y + 1;
+				choca_abajo = true;
+				choca_izquierda = true;
+				choca_derecha = true;
 			} else if (Cod_pieza.equals("T") && orientacion.equals("Alreves")) {
-				this.x = x + 2;
+				this.x = x - 1;
+				this.y = y + 1;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
 			} else if (Cod_pieza.equals("T") && orientacion.equals("Original")) {
-				this.x = x + 2;
+				this.x = x + 1;
+				this.y = y - 1;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
@@ -475,162 +352,32 @@ public class Cuadrado {
 
 		}
 
-		public void girary1(String Cod_pieza, String orientacion) {
-
-			// T
-			if (Cod_pieza.equals("T") && orientacion.equals("Derecha")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("T") && orientacion.equals("Izquierda")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("T") && orientacion.equals("Alreves")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("T") && orientacion.equals("Original")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-
-				// I
-			} else if (Cod_pieza.equals("I") && orientacion.equals("Derecha")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("I") && orientacion.equals("Izquierda")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("I") && orientacion.equals("Alreves")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("I") && orientacion.equals("Original")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-
-				// S
-			} else if (Cod_pieza.equals("S") && orientacion.equals("Derecha")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("S") && orientacion.equals("Izquierda")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("S") && orientacion.equals("Alreves")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("S") && orientacion.equals("Original")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-
-				// Z
-			} else if (Cod_pieza.equals("Z") && orientacion.equals("Derecha")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("Z") && orientacion.equals("Izquierda")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("Z") && orientacion.equals("Alreves")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("Z") && orientacion.equals("Original")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-
-				// L
-			} else if (Cod_pieza.equals("L") && orientacion.equals("Derecha")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("L") && orientacion.equals("Izquierda")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("L") && orientacion.equals("Alreves")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("L") && orientacion.equals("Original")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-
-				// R
-			} else if (Cod_pieza.equals("R") && orientacion.equals("Derecha")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("R") && orientacion.equals("Izquierda")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("R") && orientacion.equals("Alreves")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("R") && orientacion.equals("Original")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			}
-		}
+	
 		// C2
-		public void girarx2(String Cod_pieza, String orientacion) {
+		public void girar2(String Cod_pieza, String orientacion) {
 
 			// T
 			if (Cod_pieza.equals("T") && orientacion.equals("Derecha")) {
-				this.x = x + 2;
+				this.x = x - 1;
+				this.y = y + 1;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
 			} else if (Cod_pieza.equals("T") && orientacion.equals("Izquierda")) {
-				this.x = x + 2;
+				this.x = x + 1;
+				this.y = y - 1;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
 			} else if (Cod_pieza.equals("T") && orientacion.equals("Alreves")) {
-				this.x = x + 2;
+				this.x = x + 1;
+				this.y = y + 1;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
 			} else if (Cod_pieza.equals("T") && orientacion.equals("Original")) {
-				this.x = x + 2;
+				this.x = x - 1;
+				this.y = y - 1;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
@@ -748,162 +495,31 @@ public class Cuadrado {
 
 		}
 
-		public void girary2(String Cod_pieza, String orientacion) {
-
-			// T
-			if (Cod_pieza.equals("T") && orientacion.equals("Derecha")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("T") && orientacion.equals("Izquierda")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("T") && orientacion.equals("Alreves")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("T") && orientacion.equals("Original")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-
-				// I
-			} else if (Cod_pieza.equals("I") && orientacion.equals("Derecha")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("I") && orientacion.equals("Izquierda")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("I") && orientacion.equals("Alreves")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("I") && orientacion.equals("Original")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-
-				// S
-			} else if (Cod_pieza.equals("S") && orientacion.equals("Derecha")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("S") && orientacion.equals("Izquierda")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("S") && orientacion.equals("Alreves")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("S") && orientacion.equals("Original")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-
-				// Z
-			} else if (Cod_pieza.equals("Z") && orientacion.equals("Derecha")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("Z") && orientacion.equals("Izquierda")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("Z") && orientacion.equals("Alreves")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("Z") && orientacion.equals("Original")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-
-				// L
-			} else if (Cod_pieza.equals("L") && orientacion.equals("Derecha")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("L") && orientacion.equals("Izquierda")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("L") && orientacion.equals("Alreves")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("L") && orientacion.equals("Original")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-
-				// R
-			} else if (Cod_pieza.equals("R") && orientacion.equals("Derecha")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("R") && orientacion.equals("Izquierda")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("R") && orientacion.equals("Alreves")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("R") && orientacion.equals("Original")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			}
-		}
 		// C3
-		public void girarx3(String Cod_pieza, String orientacion) {
+		public void girar3(String Cod_pieza, String orientacion) {
 
 			// T
 			if (Cod_pieza.equals("T") && orientacion.equals("Derecha")) {
-				this.x = x + 2;
+				this.x = x + 1;
+				this.y = y + 1;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
 			} else if (Cod_pieza.equals("T") && orientacion.equals("Izquierda")) {
-				this.x = x + 2;
+				this.x = x - 1;
+				this.y = y - 1;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
 			} else if (Cod_pieza.equals("T") && orientacion.equals("Alreves")) {
-				this.x = x + 2;
+				this.x = x + 1;
+				this.y = y - 1;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
 			} else if (Cod_pieza.equals("T") && orientacion.equals("Original")) {
-				this.x = x + 2;
+				this.x = x - 1;
+				this.y = y + 1;
 				this.choca_abajo = true;
 				this.choca_izquierda = true;
 				this.choca_derecha = true;
@@ -1021,139 +637,5 @@ public class Cuadrado {
 
 		}
 
-		public void girary3(String Cod_pieza, String orientacion) {
-
-			// T
-			if (Cod_pieza.equals("T") && orientacion.equals("Derecha")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("T") && orientacion.equals("Izquierda")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("T") && orientacion.equals("Alreves")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("T") && orientacion.equals("Original")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-
-				// I
-			} else if (Cod_pieza.equals("I") && orientacion.equals("Derecha")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("I") && orientacion.equals("Izquierda")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("I") && orientacion.equals("Alreves")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("I") && orientacion.equals("Original")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-
-				// S
-			} else if (Cod_pieza.equals("S") && orientacion.equals("Derecha")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("S") && orientacion.equals("Izquierda")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("S") && orientacion.equals("Alreves")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("S") && orientacion.equals("Original")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-
-				// Z
-			} else if (Cod_pieza.equals("Z") && orientacion.equals("Derecha")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("Z") && orientacion.equals("Izquierda")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("Z") && orientacion.equals("Alreves")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("Z") && orientacion.equals("Original")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-
-				// L
-			} else if (Cod_pieza.equals("L") && orientacion.equals("Derecha")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("L") && orientacion.equals("Izquierda")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("L") && orientacion.equals("Alreves")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("L") && orientacion.equals("Original")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-
-				// R
-			} else if (Cod_pieza.equals("R") && orientacion.equals("Derecha")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("R") && orientacion.equals("Izquierda")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("R") && orientacion.equals("Alreves")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			} else if (Cod_pieza.equals("R") && orientacion.equals("Original")) {
-				this.y = y + 2;
-				this.choca_abajo = true;
-				this.choca_izquierda = true;
-				this.choca_derecha = true;
-			}
-		}
+	
 }

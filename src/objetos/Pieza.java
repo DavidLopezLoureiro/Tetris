@@ -45,19 +45,17 @@ public class Pieza {
 
 	public void setOrientacion(String orientacion) {
 
-		c0.girarx0(Cod_pieza, orientacion);
-		c0.girary0(Cod_pieza, orientacion);
+		c0.girar0(Cod_pieza, orientacion);
+		
 
-		c1.girarx1(Cod_pieza, orientacion);
-		c1.girary1(Cod_pieza, orientacion);
+		c1.girar1(Cod_pieza, orientacion);
+	
 
-		c2.girarx2(Cod_pieza, orientacion);
-		c2.girary2(Cod_pieza, orientacion);
+		c2.girar2(Cod_pieza, orientacion);
+		
 
-		c3.girarx3(Cod_pieza, orientacion);
-		c3.girary3(Cod_pieza, orientacion);
-
-		this.orientacion = orientacion;
+		c3.girar3(Cod_pieza, orientacion);
+		
 	}
 
 }

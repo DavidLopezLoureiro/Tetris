@@ -10,9 +10,9 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JButton;
 
-import objetos.Cuadrado;
+
 import objetos.Pieza;
-import objetos.Usuario;
+
 import objetos.creador_de_piezas;
 
 @SuppressWarnings("serial")
@@ -124,10 +124,24 @@ public class Ventana extends JFrame {
 		Ajustes.setBounds(455, 500, 132, 64);
 		contentPane.add(Ajustes);
 		
+		JLabel label = new JLabel("");
+		label.setBounds(0, 0, 306, 553);
+		panel.add(label);
+		
 		String[][] campo;
-		campo = new String[21][9];
+		campo = new String[23][12];
+		
+		//EL ARRAY TIENE QUE SER DE 21 * 9 PERO ESTA AUMENTADO PARA PROBAR LOS GIROS
 		
 		Pieza t = creador_de_piezas.crear_pieza("T");
+		
+		//El orden de giro ha de ser siempre ORIGINAL --> DERECHA --> ALREVES --> IZQUIERDA --> ORIGINAL...
+		
+		t.setOrientacion("Derecha");
+		t.setOrientacion("Alreves");
+		t.setOrientacion("Izquierda");
+		t.setOrientacion("Original");
+		
 		
 		campo[t.getc0().gety()][t.getc0().getx()] = t.getc0().getCod_cuadrado();
 		
@@ -136,6 +150,8 @@ public class Ventana extends JFrame {
 		campo[ t.getc2().gety()][t.getc2().getx()] = t.getc2().getCod_cuadrado();
 		
 		campo[ t.getc3().gety()][ t.getc3().getx()] =  t.getc3().getCod_cuadrado();
+		
+		
 		
 		String ESO = "";
 		 for (int i=campo.length;i>0;i--){
@@ -147,9 +163,8 @@ public class Ventana extends JFrame {
 	            }
 	        }
 		
-		 JOptionPane.showMessageDialog(null, ESO);
-
 		
+		 JOptionPane.showMessageDialog(null, ESO);
 
 		
 	

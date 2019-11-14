@@ -64,7 +64,7 @@ public class ajustes extends JFrame {
 		btnReiniciar.setBounds(65, 546, 292, 65);
 		contentPane.add(btnReiniciar);
 		
-		JButton btnReanudar = new JButton("RENAUDAR");
+		JButton btnReanudar = new JButton("REANUDAR");
 		btnReanudar.setBackground(new Color(173, 255, 47));
 		btnReanudar.setForeground(new Color(255, 255, 255));
 		btnReanudar.addActionListener(new ActionListener() {
