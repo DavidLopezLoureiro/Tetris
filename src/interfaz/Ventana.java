@@ -131,16 +131,29 @@ public class Ventana extends JFrame {
 		String[][] campo;
 		campo = new String[23][12];
 		
-		//EL ARRAY TIENE QUE SER DE 21 * 9 PERO ESTA AUMENTADO PARA PROBAR LOS GIROS
+		//EL ARRAY TIENE QUE SER DE 21 * 9 PERO ESTA AUMENTADO PARA PROBAR LOS GIROS (sin que de error por out of index)
 		
 		Pieza t = creador_de_piezas.crear_pieza("T");
 		
 		//El orden de giro ha de ser siempre ORIGINAL --> DERECHA --> ALREVES --> IZQUIERDA --> ORIGINAL...
 		
+		//GIROS
 		t.setOrientacion("Derecha");
 		t.setOrientacion("Alreves");
 		t.setOrientacion("Izquierda");
 		t.setOrientacion("Original");
+		
+		
+		
+		//Estas lineas manda la ficha al final del array
+		
+		t.getc2().sety(0); //sabemos que el fondo es 0
+		
+		//sabemos que estos bloques estan 1 por encima de c2 en este caso
+		t.getc0().sety(t.getc2().gety()+1); 
+		t.getc1().sety(t.getc2().gety()+1);
+		t.getc3().sety(t.getc2().gety()+1);
+		
 		
 		
 		campo[t.getc0().gety()][t.getc0().getx()] = t.getc0().getCod_cuadrado();
