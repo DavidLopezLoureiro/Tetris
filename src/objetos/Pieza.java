@@ -43,7 +43,24 @@ public class Pieza {
 		return orientacion;
 	}
 
-	public void setOrientacion(String orientacion) {
+	public void setOrientacion() {
+		
+		if(orientacion.equals("Original")) {
+			
+			orientacion = "Derecha";
+			
+		}else if(orientacion.equals("Derecha")) {
+			
+			orientacion = "Alreves";
+			
+		}else if(orientacion.equals("Alreves")) {
+			
+			orientacion = "Izquierda";
+			
+		}else if(orientacion.equals("Izquierda")) {
+			
+			orientacion = "Original";
+		}
 
 		c0.girar0(Cod_pieza, orientacion);
 		

@@ -138,13 +138,12 @@ public class Ventana extends JFrame {
 		//El orden de giro ha de ser siempre ORIGINAL --> DERECHA --> ALREVES --> IZQUIERDA --> ORIGINAL...
 		
 		//GIROS
-		t.setOrientacion("Derecha");
-		t.setOrientacion("Alreves");
-		t.setOrientacion("Izquierda");
-		t.setOrientacion("Original");
+		
+	
+		t.setOrientacion();	//Cada vez que llamas a la funcion gira la pieza ( ORIGINAL --> DERECHA --> ALREVES --> IZQUIERDA --> ORIGINAL... )
 		
 		
-		
+		/*
 		//Estas lineas manda la ficha al final del array
 		
 		t.getc2().sety(0); //sabemos que el fondo es 0
@@ -153,7 +152,7 @@ public class Ventana extends JFrame {
 		t.getc0().sety(t.getc2().gety()+1); 
 		t.getc1().sety(t.getc2().gety()+1);
 		t.getc3().sety(t.getc2().gety()+1);
-		
+		*/
 		
 		
 		campo[t.getc0().gety()][t.getc0().getx()] = t.getc0().getCod_cuadrado();
