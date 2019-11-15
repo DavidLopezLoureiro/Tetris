@@ -57,6 +57,7 @@ public class iniciar_sesion extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 850, 700);
 		contentPane = new JPanel();
+		contentPane.setForeground(new Color(255, 255, 255));
 		contentPane.setBorder(null);
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -64,15 +65,15 @@ public class iniciar_sesion extends JFrame {
 		// BOTONES
 		JButton btnIniciarSesion = new JButton("ENTRAR");
 		btnIniciarSesion.setForeground(new Color(255, 255, 255));
-		btnIniciarSesion.setBackground(new Color(127, 255, 0));
-		btnIniciarSesion.setFont(new Font("Times New Roman", Font.BOLD, 25));
+		btnIniciarSesion.setBackground(new Color(255, 165, 0));
+		btnIniciarSesion.setFont(new Font("Times New Roman", Font.BOLD, 30));
 		btnIniciarSesion.setBounds(437, 492, 277, 105);
 		contentPane.add(btnIniciarSesion);
 
 		JButton btnVolver = new JButton("ATRAS");
-		btnVolver.setForeground(Color.BLACK);
-		btnVolver.setFont(new Font("Times New Roman", Font.BOLD, 25));
-		btnVolver.setBackground(new Color(135, 206, 235));
+		btnVolver.setForeground(new Color(255, 255, 255));
+		btnVolver.setFont(new Font("Times New Roman", Font.BOLD, 30));
+		btnVolver.setBackground(new Color(152, 251, 152));
 		btnVolver.setBounds(116, 492, 277, 105);
 		contentPane.add(btnVolver);
 

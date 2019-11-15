@@ -16,6 +16,7 @@ import javax.swing.JButton;
 import objetos.Pieza;
 
 import objetos.creador_de_piezas;
+import java.awt.Font;
 
 @SuppressWarnings("serial")
 public class Ventana extends JFrame {
@@ -45,7 +46,7 @@ public class Ventana extends JFrame {
 		
 		//AJUSTES GENERALES
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			setBounds(100, 100, 613, 614);
+			setBounds(100, 100, 700, 850);
 			contentPane = new JPanel();
 			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 			setContentPane(contentPane);
@@ -58,49 +59,49 @@ public class Ventana extends JFrame {
 			t_guardada.setLayout(null);
 			
 			JPanel Siguiente_siguientes = new JPanel();
-			Siguiente_siguientes.setBounds(455, 11, 132, 478);
+			Siguiente_siguientes.setBounds(517, 11, 153, 687);
 			contentPane.add(Siguiente_siguientes);
 			Siguiente_siguientes.setLayout(null);
 			
 			JPanel Siguientes = new JPanel();
-			Siguientes.setBounds(10, 144, 112, 328);
+			Siguientes.setBounds(10, 165, 131, 509);
 			Siguiente_siguientes.add(Siguientes);
 			Siguientes.setLayout(null);
 	
 			JPanel Siguiente = new JPanel();
-			Siguiente.setBounds(10, 11, 112, 122);
+			Siguiente.setBounds(10, 11, 131, 141);
 			Siguiente_siguientes.add(Siguiente);
 			Siguiente.setLayout(null);
 			
 			JPanel Info = new JPanel();
-			Info.setBounds(10, 397, 122, 167);
+			Info.setBounds(10, 382, 122, 408);
 			contentPane.add(Info);
 			Info.setLayout(null);
 			
 			JPanel panel = new JPanel();
-			panel.setBounds(139, 11, 306, 553);
+			panel.setBounds(144, 11, 361, 779);
 			contentPane.add(panel);
 		
 		
 		//LABELS
 			JLabel pieza_guardada = new JLabel("");
-			pieza_guardada.setBounds(10, 11, 102, 99);
+			pieza_guardada.setBounds(10, 11, 102, 102 );
 			t_guardada.add(pieza_guardada);
 	
 			JLabel pieza_siguiente = new JLabel("");
-			pieza_siguiente.setBounds(10, 11, 92, 100);
+			pieza_siguiente.setBounds(10, 11, 109, 109);
 			Siguiente.add(pieza_siguiente);
 	
 			JLabel pieza_siguiente_2 = new JLabel("");
-			pieza_siguiente_2.setBounds(10, 11, 92, 92);
+			pieza_siguiente_2.setBounds(10, 25, 109, 109);
 			Siguientes.add(pieza_siguiente_2);
 	
 			JLabel pieza_siguiente_3 = new JLabel("");
-			pieza_siguiente_3.setBounds(10, 114, 92, 92);
+			pieza_siguiente_3.setBounds(10, 203, 109, 109);
 			Siguientes.add(pieza_siguiente_3);
 	
 			JLabel pieza_siguiente_4 = new JLabel("");
-			pieza_siguiente_4.setBounds(10, 225, 92, 92);
+			pieza_siguiente_4.setBounds(10, 376, 109, 109);
 			Siguientes.add(pieza_siguiente_4);
 	
 			JLabel lblUsuario = new JLabel("Usuario:  ");
@@ -133,8 +134,9 @@ public class Ventana extends JFrame {
 
 		
 		//BOTONES
-			JButton Ajustes = new JButton("Ajustes");
-			Ajustes.setBounds(455, 500, 132, 64);
+			JButton Ajustes = new JButton("AJUSTES");
+			Ajustes.setFont(new Font("Times New Roman", Font.BOLD, 25));
+			Ajustes.setBounds(517, 719, 153, 71);
 			contentPane.add(Ajustes);
 			
 			JButton btnGirar = new JButton("Girar");
