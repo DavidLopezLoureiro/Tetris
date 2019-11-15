@@ -57,23 +57,23 @@ public class creador_de_piezas {
 			// C1
 			x_1 = 5;
 			y_1 = 20;
-			choca_abajo_0 = true;
-			choca_izquierda_0 = false;
-			choca_derecha_0 = true;
+			choca_abajo_1 = true;
+			choca_izquierda_1 = false;
+			choca_derecha_1 = true;
 
 			// C2
 			x_2 = 4;
 			y_2 = 19;
-			choca_abajo_0 = true;
-			choca_izquierda_0 = true;
-			choca_derecha_0 = true;
+			choca_abajo_2 = true;
+			choca_izquierda_2 = true;
+			choca_derecha_2 = true;
 
 			// C3
 			x_3 = 3;
 			y_3 = 20;
-			choca_abajo_0 = true;
-			choca_izquierda_0 = true;
-			choca_derecha_0 = false;
+			choca_abajo_3 = true;
+			choca_izquierda_3 = true;
+			choca_derecha_3 = false;
 
 		} else if (cod_pieza.equals("I")) {
 
@@ -95,23 +95,23 @@ public class creador_de_piezas {
 			// C1
 			x_1 = 4;
 			y_1 = 19;
-			choca_abajo_0 = false;
-			choca_izquierda_0 = true;
-			choca_derecha_0 = true;
+			choca_abajo_1 = false;
+			choca_izquierda_1 = true;
+			choca_derecha_1 = true;
 
 			// C2
 			x_2 = 4;
 			y_2 = 18;
-			choca_abajo_0 = false;
-			choca_izquierda_0 = true;
-			choca_derecha_0 = true;
+			choca_abajo_2 = false;
+			choca_izquierda_2 = true;
+			choca_derecha_2 = true;
 
 			// C3
 			x_3 = 4;
 			y_3 = 17;
-			choca_abajo_0 = true;
-			choca_izquierda_0 = true;
-			choca_derecha_0 = true;
+			choca_abajo_3 = true;
+			choca_izquierda_3 = true;
+			choca_derecha_3 = true;
 
 		} else if (cod_pieza.equals("O")) {
 
@@ -131,23 +131,23 @@ public class creador_de_piezas {
 			// C1
 			x_1 = 5;
 			y_1 = 20;
-			choca_abajo_0 = false;
-			choca_izquierda_0 = false;
-			choca_derecha_0 = true;
+			choca_abajo_1 = false;
+			choca_izquierda_1 = false;
+			choca_derecha_1 = true;
 
 			// C2
 			x_2 = 4;
 			y_2 = 19;
-			choca_abajo_0 = true;
-			choca_izquierda_0 = true;
-			choca_derecha_0 = false;
+			choca_abajo_2 = true;
+			choca_izquierda_2 = true;
+			choca_derecha_2 = false;
 
 			// C3
 			x_3 = 5;
 			y_3 = 19;
-			choca_abajo_0 = true;
-			choca_izquierda_0 = false;
-			choca_derecha_0 = true;
+			choca_abajo_3 = true;
+			choca_izquierda_3 = false;
+			choca_derecha_3 = true;
 
 		} else if (cod_pieza.equals("S")) {
 
@@ -168,23 +168,23 @@ public class creador_de_piezas {
 			// C1
 			x_1 = 4;
 			y_1 = 19;
-			choca_abajo_0 = true;
-			choca_izquierda_0 = true;
-			choca_derecha_0 = false;
+			choca_abajo_1 = true;
+			choca_izquierda_1 = true;
+			choca_derecha_1 = false;
 
 			// C2
 			x_2 = 5;
 			y_2 = 19;
-			choca_abajo_0 = false;
-			choca_izquierda_0 = false;
-			choca_derecha_0 = true;
+			choca_abajo_2 = false;
+			choca_izquierda_2 = false;
+			choca_derecha_2 = true;
 
 			// C3
 			x_3 = 5;
 			y_3 = 18;
-			choca_abajo_0 = true;
-			choca_izquierda_0 = true;
-			choca_derecha_0 = true;
+			choca_abajo_3 = true;
+			choca_izquierda_3 = true;
+			choca_derecha_3 = true;
 
 		} else if (cod_pieza.equals("Z")) {
 
@@ -205,23 +205,23 @@ public class creador_de_piezas {
 			// C1
 			x_1 = 3;
 			y_1 = 19;
-			choca_abajo_0 = false;
-			choca_izquierda_0 = true;
-			choca_derecha_0 = false;
+			choca_abajo_1 = false;
+			choca_izquierda_1 = true;
+			choca_derecha_1 = false;
 
 			// C2
 			x_2 = 4;
 			y_2 = 19;
-			choca_abajo_0 = true;
-			choca_izquierda_0 = false;
-			choca_derecha_0 = true;
+			choca_abajo_2 = true;
+			choca_izquierda_2 = false;
+			choca_derecha_2 = true;
 
 			// C3
 			x_3 = 3;
 			y_3 = 18;
-			choca_abajo_0 = true;
-			choca_izquierda_0 = true;
-			choca_derecha_0 = true;
+			choca_abajo_3 = true;
+			choca_izquierda_3 = true;
+			choca_derecha_3 = true;
 
 		} else if (cod_pieza.equals("L")) {
 
@@ -242,23 +242,23 @@ public class creador_de_piezas {
 			// C1
 			x_1 = 4;
 			y_1 = 19;
-			choca_abajo_0 = false;
-			choca_izquierda_0 = true;
-			choca_derecha_0 = true;
+			choca_abajo_1 = false;
+			choca_izquierda_1 = true;
+			choca_derecha_1 = true;
 
 			// C2
 			x_2 = 4;
 			y_2 = 18;
-			choca_abajo_0 = true;
-			choca_izquierda_0 = true;
-			choca_derecha_0 = false;
+			choca_abajo_2 = true;
+			choca_izquierda_2 = true;
+			choca_derecha_2 = false;
 
 			// C3
 			x_3 = 5;
 			y_3 = 18;
-			choca_abajo_0 = true;
-			choca_izquierda_0 = false;
-			choca_derecha_0 = true;
+			choca_abajo_3 = true;
+			choca_izquierda_3 = false;
+			choca_derecha_3 = true;
 
 		} else if (cod_pieza.equals("R")) {
 
@@ -279,23 +279,23 @@ public class creador_de_piezas {
 			// C1
 			x_1 = 4;
 			y_1 = 19;
-			choca_abajo_0 = false;
-			choca_izquierda_0 = true;
-			choca_derecha_0 = true;
+			choca_abajo_1 = false;
+			choca_izquierda_1 = true;
+			choca_derecha_1 = true;
 
 			// C2
 			x_2 = 4;
 			y_2 = 18;
-			choca_abajo_0 = true;
-			choca_izquierda_0 = false;
-			choca_derecha_0 = true;
+			choca_abajo_2 = true;
+			choca_izquierda_2 = false;
+			choca_derecha_2 = true;
 
 			// C3
 			x_3 = 3;
 			y_3 = 18;
-			choca_abajo_0 = true;
-			choca_izquierda_0 = true;
-			choca_derecha_0 = false;
+			choca_abajo_3 = true;
+			choca_izquierda_3 = true;
+			choca_derecha_3 = false;
 
 		}
 
