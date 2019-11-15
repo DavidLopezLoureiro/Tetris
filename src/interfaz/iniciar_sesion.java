@@ -64,13 +64,13 @@ public class iniciar_sesion extends JFrame {
 		// BOTONES
 		JButton btnIniciarSesion = new JButton("ENTRAR");
 		btnIniciarSesion.setForeground(new Color(255, 255, 255));
-		btnIniciarSesion.setBackground(new Color(50, 205, 50));
+		btnIniciarSesion.setBackground(new Color(127, 255, 0));
 		btnIniciarSesion.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		btnIniciarSesion.setBounds(437, 492, 277, 105);
 		contentPane.add(btnIniciarSesion);
 
 		JButton btnVolver = new JButton("ATRAS");
-		btnVolver.setForeground(Color.WHITE);
+		btnVolver.setForeground(Color.BLACK);
 		btnVolver.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		btnVolver.setBackground(new Color(135, 206, 235));
 		btnVolver.setBounds(116, 492, 277, 105);

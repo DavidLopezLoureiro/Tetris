@@ -102,15 +102,15 @@ public class ajustes extends JFrame {
 		//BOTONES
 		
 		JButton btnReiniciar = new JButton("REINICIAR");
-		btnReiniciar.setForeground(new Color(255, 255, 255));
+		btnReiniciar.setForeground(Color.BLACK);
 		btnReiniciar.setBackground(new Color(0, 191, 255));
 		btnReiniciar.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		btnReiniciar.setBounds(65, 546, 292, 65);
 		contentPane.add(btnReiniciar);
 		
 		JButton btnReanudar = new JButton("REANUDAR");
-		btnReanudar.setBackground(new Color(173, 255, 47));
-		btnReanudar.setForeground(new Color(255, 255, 255));
+		btnReanudar.setBackground(new Color(127, 255, 0));
+		btnReanudar.setForeground(Color.WHITE);
 		btnReanudar.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		btnReanudar.setBounds(273, 457, 292, 65);
 		contentPane.add(btnReanudar);

@@ -62,23 +62,29 @@ public class menu_inicial extends JFrame {
 		// BOTONES
 		JButton btnCrearUsuario = new JButton("REGISTRARSE");
 		btnCrearUsuario.setForeground(new Color(255, 255, 255));
-		btnCrearUsuario.setBackground(new Color(50, 205, 50));
+		btnCrearUsuario.setBackground(new Color(127, 255, 0));
 		btnCrearUsuario.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		btnCrearUsuario.setBounds(105, 432, 623, 85);
+		btnCrearUsuario.setBounds(103, 435, 296, 66);
 		contentPane.add(btnCrearUsuario);
 
 		JButton btnIniciarSesion = new JButton("INICIAR SESION");
 		btnIniciarSesion.setForeground(new Color(255, 255, 255));
 		btnIniciarSesion.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		btnIniciarSesion.setBackground(new Color(50, 205, 50));
-		btnIniciarSesion.setBounds(105, 304, 623, 85);
+		btnIniciarSesion.setBackground(new Color(127, 255, 0));
+		btnIniciarSesion.setBounds(103, 320, 296, 66);
 		contentPane.add(btnIniciarSesion);
-
-		// LABELS
+		
+		JLabel lblimagen = new JLabel();
+		lblimagen.setIcon(new ImageIcon(menu_inicial.class.getResource("/imagenes/tetris.gif")));
+		lblimagen.setBounds(516, 40, 296, 498);
+		contentPane.add(lblimagen);
+		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(menu_inicial.class.getResource("/imagenes/logo.png")));
-		lblNewLabel.setBounds(133, 31, 614, 221);
+		lblNewLabel.setIcon(new ImageIcon(menu_inicial.class.getResource("/imagenes/logoo.png")));
+		lblNewLabel.setBounds(54, 45, 391, 174);
 		contentPane.add(lblNewLabel);
+		
+		
 
 		// ACTION LISTENERS
 		btnCrearUsuario.addActionListener(new ActionListener() {
