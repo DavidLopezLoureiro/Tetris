@@ -156,6 +156,9 @@ public class iniciar_sesion extends JFrame {
 					
 					//MARCA QUE USUARIO HA ENTRADO
 					entrada = BD.getUserName(textFieldNombre.getText());
+					
+					Ventana nuevaventana = new Ventana();
+					nuevaventana.setVisible(true);
 
 					// CIERRA LA VENTANA ACTUAL
 					iniciar_sesion.this.dispose();
