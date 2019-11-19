@@ -3,6 +3,8 @@ package interfaz;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Calendar;
+import java.util.Date;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -43,6 +45,9 @@ public class Ventana extends JFrame {
 	 * Create the frame.
 	 */
 	public Ventana() {
+		
+		Calendar calendario = Calendar.getInstance();
+		
 		
 		//AJUSTES GENERALES
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -104,11 +109,11 @@ public class Ventana extends JFrame {
 			pieza_siguiente_4.setBounds(10, 376, 109, 109);
 			Siguientes.add(pieza_siguiente_4);
 	
-			JLabel lblUsuario = new JLabel("Usuario:  ");
+			JLabel lblUsuario = new JLabel("Usuario:  " + iniciar_sesion.entrada.getNombre());
 			lblUsuario.setBounds(10, 11, 122, 22);
 			Info.add(lblUsuario);
 	
-			JLabel lblPuntuacion = new JLabel("Puntuacion: ");
+			JLabel lblPuntuacion = new JLabel("Puntuacion: " + iniciar_sesion.entrada.getMaxPuntu());
 			lblPuntuacion.setBounds(10, 41, 122, 14);
 			Info.add(lblPuntuacion);
 	
@@ -119,18 +124,28 @@ public class Ventana extends JFrame {
 			JLabel lblDificultad = new JLabel("Dificultad: ");
 			lblDificultad.setBounds(10, 91, 122, 14);
 			Info.add(lblDificultad);
-	
-			JLabel lblFecha = new JLabel("Fecha:");
+			
+			
+			java.util.Date fecha = new Date();
+			
+			JLabel lblFecha = new JLabel("Fecha: " + fecha);
 			lblFecha.setBounds(10, 116, 122, 14);
 			Info.add(lblFecha);
 	
-			JLabel lblHora = new JLabel("Hora:");
+			JLabel lblHora = new JLabel("Hora: " + calendario.get(Calendar.HOUR_OF_DAY) + ":" + calendario.get(Calendar.MINUTE));
 			lblHora.setBounds(10, 141, 122, 14);
 			Info.add(lblHora);
 			
 			JLabel label = new JLabel("");
 			label.setBounds(0, 0, 306, 553);
 			panel.add(label);
+			
+			javax.swing.Timer timer = new javax.swing.Timer(1, new java.awt.event.ActionListener() {
+
+				public void actionPerformed(java.awt.event.ActionEvent ae) {
+					lblHora .setText("Hora: " + calendario.get(Calendar.HOUR_OF_DAY) + ":" + calendario.get(Calendar.MINUTE));
+				}
+			});
 
 		
 		//BOTONES
