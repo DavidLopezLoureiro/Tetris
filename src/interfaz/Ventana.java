@@ -109,7 +109,7 @@ public class Ventana extends JFrame {
 			pieza_siguiente_4.setBounds(10, 225, 92, 92);
 			Siguientes.add(pieza_siguiente_4);
 	
-	/*
+	
 			JLabel lblUsuario = new JLabel("Usuario:  " + iniciar_sesion.entrada.getNombre());
 			lblUsuario.setBounds(10, 11, 122, 22);
 			Info.add(lblUsuario);
@@ -118,7 +118,7 @@ public class Ventana extends JFrame {
 			lblPuntuacion.setBounds(10, 41, 122, 14);
 			Info.add(lblPuntuacion);
 	
-	*/
+	
 			JLabel lblLineas = new JLabel("Lineas:");
 			lblLineas.setBounds(10, 66, 122, 14);
 			Info.add(lblLineas);
