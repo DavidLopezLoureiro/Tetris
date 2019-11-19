@@ -1,6 +1,8 @@
 package interfaz;
 
+
 import java.awt.EventQueue;
+import javax.swing.ImageIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Calendar;
@@ -18,13 +20,13 @@ import javax.swing.JButton;
 import objetos.Pieza;
 
 import objetos.creador_de_piezas;
-import java.awt.Font;
-import javax.swing.ImageIcon;
 
 @SuppressWarnings("serial")
 public class Ventana extends JFrame {
 
 	private JPanel contentPane;
+	
+	public static String Cod_pieza_actual;
 
 	/**
 	 * Launch the application.
@@ -47,12 +49,10 @@ public class Ventana extends JFrame {
 	 */
 	public Ventana() {
 		
-		Calendar calendario = Calendar.getInstance();
-		
-		
 		//AJUSTES GENERALES
+			setResizable(false);
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			setBounds(100, 100, 700, 850);
+			setBounds(100, 100, 613, 704);
 			contentPane = new JPanel();
 			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 			setContentPane(contentPane);
@@ -65,50 +65,51 @@ public class Ventana extends JFrame {
 			t_guardada.setLayout(null);
 			
 			JPanel Siguiente_siguientes = new JPanel();
-			Siguiente_siguientes.setBounds(517, 11, 153, 687);
+			Siguiente_siguientes.setBounds(455, 11, 132, 478);
 			contentPane.add(Siguiente_siguientes);
 			Siguiente_siguientes.setLayout(null);
 			
 			JPanel Siguientes = new JPanel();
-			Siguientes.setBounds(10, 165, 131, 509);
+			Siguientes.setBounds(10, 144, 112, 328);
 			Siguiente_siguientes.add(Siguientes);
 			Siguientes.setLayout(null);
 	
 			JPanel Siguiente = new JPanel();
-			Siguiente.setBounds(10, 11, 131, 141);
+			Siguiente.setBounds(10, 11, 112, 122);
 			Siguiente_siguientes.add(Siguiente);
 			Siguiente.setLayout(null);
 			
 			JPanel Info = new JPanel();
-			Info.setBounds(10, 382, 122, 408);
+			Info.setBounds(10, 397, 122, 167);
 			contentPane.add(Info);
 			Info.setLayout(null);
 			
 			JPanel panel = new JPanel();
-			panel.setBounds(144, 11, 361, 779);
+			panel.setBounds(161, 11, 270, 630);
 			contentPane.add(panel);
 		
 		
 		//LABELS
 			JLabel pieza_guardada = new JLabel("");
-			pieza_guardada.setBounds(10, 11, 102, 102 );
+			pieza_guardada.setBounds(10, 11, 102, 99);
 			t_guardada.add(pieza_guardada);
 	
 			JLabel pieza_siguiente = new JLabel("");
-			pieza_siguiente.setBounds(10, 11, 109, 109);
+			pieza_siguiente.setBounds(10, 11, 92, 100);
 			Siguiente.add(pieza_siguiente);
 	
 			JLabel pieza_siguiente_2 = new JLabel("");
-			pieza_siguiente_2.setBounds(10, 25, 109, 109);
+			pieza_siguiente_2.setBounds(10, 11, 92, 92);
 			Siguientes.add(pieza_siguiente_2);
 	
 			JLabel pieza_siguiente_3 = new JLabel("");
-			pieza_siguiente_3.setBounds(10, 203, 109, 109);
+			pieza_siguiente_3.setBounds(10, 114, 92, 92);
 			Siguientes.add(pieza_siguiente_3);
 	
 			JLabel pieza_siguiente_4 = new JLabel("");
-			pieza_siguiente_4.setBounds(10, 376, 109, 109);
+			pieza_siguiente_4.setBounds(10, 225, 92, 92);
 			Siguientes.add(pieza_siguiente_4);
+	
 	
 			JLabel lblUsuario = new JLabel("Usuario:  " + iniciar_sesion.entrada.getNombre());
 			lblUsuario.setBounds(10, 11, 122, 22);
@@ -117,6 +118,7 @@ public class Ventana extends JFrame {
 			JLabel lblPuntuacion = new JLabel("Puntuacion: " + iniciar_sesion.entrada.getMaxPuntu());
 			lblPuntuacion.setBounds(10, 41, 122, 14);
 			Info.add(lblPuntuacion);
+	
 	
 			JLabel lblLineas = new JLabel("Lineas:");
 			lblLineas.setBounds(10, 66, 122, 14);
@@ -133,80 +135,91 @@ public class Ventana extends JFrame {
 			lblFecha.setBounds(10, 116, 122, 14);
 			Info.add(lblFecha);
 	
-			JLabel lblHora = new JLabel("Hora: " + calendario.get(Calendar.HOUR_OF_DAY) + ":" + calendario.get(Calendar.MINUTE));
+			JLabel lblHora = new JLabel("Hora: ");
 			lblHora.setBounds(10, 141, 122, 14);
 			Info.add(lblHora);
-			
-			JLabel label = new JLabel("");
-			label.setBounds(0, 0, 306, 553);
-			panel.add(label);
-			
-			javax.swing.Timer timer = new javax.swing.Timer(1, new java.awt.event.ActionListener() {
-
-				public void actionPerformed(java.awt.event.ActionEvent ae) {
-					lblHora .setText("Hora: " + calendario.get(Calendar.HOUR_OF_DAY) + ":" + calendario.get(Calendar.MINUTE));
-				}
-			});
-
-		
-		//BOTONES
-			JButton Ajustes = new JButton("AJUSTES");
-			Ajustes.setFont(new Font("Times New Roman", Font.BOLD, 25));
-			Ajustes.setBounds(517, 719, 153, 71);
-			contentPane.add(Ajustes);
-			
-			JButton btnGirar = new JButton("Girar");
-			btnGirar.setBounds(102, 502, 97, 25);
-			panel.add(btnGirar);
-			
-			JButton btnSacarBool = new JButton("SACAR BOOL");
-			btnSacarBool.setBounds(66, 464, 168, 25);
-			panel.add(btnSacarBool);
-			
-			JButton btnSacarX = new JButton("SACAR X");
-			btnSacarX.setBounds(102, 430, 97, 25);
-			panel.add(btnSacarX);
-			
-			JButton btnSacarY = new JButton("SACAR Y");
-			btnSacarY.setBounds(102, 392, 97, 25);
-			panel.add(btnSacarY);
-			
-			JButton btnT = new JButton("T");
-			btnT.setBounds(20, 153, 97, 25);
-			contentPane.add(btnT);
-			
-			JButton btnI = new JButton("I");
-			btnI.setBounds(20, 187, 97, 25);
-			contentPane.add(btnI);
-			
-			JButton btnO = new JButton("O");
-			btnO.setBounds(20, 219, 97, 25);
-			contentPane.add(btnO);
-			
-			JButton btnL = new JButton("L");
-			btnL.setBounds(20, 248, 97, 25);
-			contentPane.add(btnL);
-			
-			JButton btnR = new JButton("R");
-			btnR.setBounds(20, 276, 97, 25);
-			contentPane.add(btnR);
-			
-			JButton btnS = new JButton("S");
-			btnS.setBounds(20, 306, 97, 25);
-			contentPane.add(btnS);
-			
-			JButton btnZ = new JButton("Z");
-			btnZ.setBounds(20, 338, 97, 25);
-			contentPane.add(btnZ);
-			
-			JButton btnBajar = new JButton("BAJAR");
-			btnBajar.setBounds(102, 354, 97, 25);
-			panel.add(btnBajar);
 			
 			JLabel lblNewLabel = new JLabel("");
 			lblNewLabel.setIcon(new ImageIcon(Ventana.class.getResource("/imagenes/fondoTetris.jpg")));
 			lblNewLabel.setBounds(0, 0, 682, 803);
 			contentPane.add(lblNewLabel);
+			
+			javax.swing.Timer timer = new javax.swing.Timer(1, new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent ae) {
+					
+					Calendar calendario = Calendar.getInstance();
+					
+					int hora = calendario.get(Calendar.HOUR_OF_DAY);
+					int minutos = calendario.get(Calendar.MINUTE);
+					
+					//PARA EL PARPADEO DE LOS PUNTOS
+					if(calendario.get(Calendar.SECOND)%2 == 1) {
+						
+					lblHora .setText("Hora: " + hora + " " + minutos);
+					
+					}else if(calendario.get(Calendar.SECOND)%2 == 0) {
+					
+					lblHora .setText("Hora: " + hora + ":" + minutos);
+					
+					}
+					
+				}
+			});
+			timer.start();
+			panel.setLayout(null);
+			
+		//BOTONES
+			JButton Ajustes = new JButton("Ajustes");
+			Ajustes.setBounds(455, 500, 132, 64);
+			contentPane.add(Ajustes);
+			
+			JButton btnGirar = new JButton("Girar");
+			btnGirar.setBounds(102, 534, 97, 25);
+			panel.add(btnGirar);
+			
+			JButton btnSacarBool = new JButton("SACAR BOOL");
+			btnSacarBool.setBounds(66, 496, 168, 25);
+			panel.add(btnSacarBool);
+			
+			JButton btnSacarX = new JButton("SACAR X");
+			btnSacarX.setBounds(102, 462, 97, 25);
+			panel.add(btnSacarX);
+			
+			JButton btnSacarY = new JButton("SACAR Y");
+			btnSacarY.setBounds(102, 428, 97, 25);
+			panel.add(btnSacarY);
+			
+			JButton btnT = new JButton("T");
+			btnT.setBounds(20, 193, 97, 25);
+			contentPane.add(btnT);
+			
+			JButton btnI = new JButton("I");
+			btnI.setBounds(20, 222, 97, 25);
+			contentPane.add(btnI);
+			
+			JButton btnO = new JButton("O");
+			btnO.setBounds(20, 251, 97, 25);
+			contentPane.add(btnO);
+			
+			JButton btnL = new JButton("L");
+			btnL.setBounds(20, 280, 97, 25);
+			contentPane.add(btnL);
+			
+			JButton btnR = new JButton("R");
+			btnR.setBounds(20, 308, 97, 25);
+			contentPane.add(btnR);
+			
+			JButton btnS = new JButton("S");
+			btnS.setBounds(20, 338, 97, 25);
+			contentPane.add(btnS);
+			
+			JButton btnZ = new JButton("Z");
+			btnZ.setBounds(20, 370, 97, 25);
+			contentPane.add(btnZ);
+			
+			JButton btnBajar = new JButton("BAJAR");
+			btnBajar.setBounds(102, 396, 97, 25);
+			panel.add(btnBajar);
 		
 		
 		//CODIGO
@@ -245,7 +258,7 @@ public class Ventana extends JFrame {
 				 btnT.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent arg0) {
 							if (arg0.getSource() == btnT) {
-								
+							 
 								Pieza t = creador_de_piezas.crear_pieza("T");
 								
 								//METE CADA CUADRADO EN SU LUGAR DEL ARRAY
@@ -270,9 +283,16 @@ public class Ventana extends JFrame {
 								            }
 								        }
 									 
-								//ENSEÑA EL CAMPO 
+								//ENSEÃ‘A EL CAMPO 
+									 
+									 panel.getGraphics().clearRect(0, 0, 630, 270);
 									 
 									 JOptionPane.showMessageDialog(null, ESO);
+	
+									    panel.getGraphics().fillRect(t.getc0().getx()*30,(20 - t.getc0().gety()) * 30 ,30,30);
+									    panel.getGraphics().fillRect(t.getc1().getx()*30,(20 - t.getc1().gety()) * 30 ,30,30);
+									    panel.getGraphics().fillRect(t.getc2().getx()*30,(20 - t.getc2().gety()) * 30 ,30,30);
+									    panel.getGraphics().fillRect(t.getc3().getx()*30,(20 - t.getc3().gety()) * 30 ,30,30);
 									
 									
 								//RESETEA EL CAMPO
@@ -295,6 +315,8 @@ public class Ventana extends JFrame {
 						public void actionPerformed(ActionEvent arg0) {
 							if (arg0.getSource() == btnI) {
 								
+								 panel.getGraphics().clearRect(0, 0, 630, 270);
+								 
 								Pieza t = creador_de_piezas.crear_pieza("I");
 								
 								//METE CADA CUADRADO EN SU LUGAR DEL ARRAY
@@ -319,9 +341,14 @@ public class Ventana extends JFrame {
 								            }
 								        }
 									 
-								//ENSEÑA EL CAMPO 
+								//ENSEÃ‘A EL CAMPO 
 									 
 									 JOptionPane.showMessageDialog(null, ESO);
+
+									    panel.getGraphics().fillRect(t.getc0().getx()*30,(20 - t.getc0().gety()) * 30 ,30,30);
+									    panel.getGraphics().fillRect(t.getc1().getx()*30,(20 - t.getc1().gety()) * 30 ,30,30);
+									    panel.getGraphics().fillRect(t.getc2().getx()*30,(20 - t.getc2().gety()) * 30 ,30,30);
+									    panel.getGraphics().fillRect(t.getc3().getx()*30,(20 - t.getc3().gety()) * 30 ,30,30);
 									 
 								//RESETEA EL CAMPO
 									 
@@ -342,6 +369,8 @@ public class Ventana extends JFrame {
 				 btnL.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent arg0) {
 							if (arg0.getSource() == btnL) {
+								
+								 panel.getGraphics().clearRect(0, 0, 630, 270);
 								
 								Pieza t = creador_de_piezas.crear_pieza("L");
 								
@@ -367,9 +396,14 @@ public class Ventana extends JFrame {
 								            }
 								        }
 									 
-								//ENSEÑA EL CAMPO 
+								//ENSEÃ‘A EL CAMPO 
 									 
 									 JOptionPane.showMessageDialog(null, ESO);
+									    
+									    panel.getGraphics().fillRect(t.getc0().getx()*30,(20 - t.getc0().gety()) * 30 ,30,30);
+									    panel.getGraphics().fillRect(t.getc1().getx()*30,(20 - t.getc1().gety()) * 30 ,30,30);
+									    panel.getGraphics().fillRect(t.getc2().getx()*30,(20 - t.getc2().gety()) * 30 ,30,30);
+									    panel.getGraphics().fillRect(t.getc3().getx()*30,(20 - t.getc3().gety()) * 30 ,30,30);
 									 
 								//RESETEA EL CAMPO
 									 
@@ -389,6 +423,8 @@ public class Ventana extends JFrame {
 				 btnO.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent arg0) {
 							if (arg0.getSource() == btnO) {
+								
+								 panel.getGraphics().clearRect(0, 0, 630, 270);
 								
 								Pieza t = creador_de_piezas.crear_pieza("O");
 								
@@ -414,9 +450,14 @@ public class Ventana extends JFrame {
 								            }
 								        }
 									 
-								//ENSEÑA EL CAMPO 
+								//ENSEÃ‘A EL CAMPO 
 									 
 									 JOptionPane.showMessageDialog(null, ESO);
+									    
+									    panel.getGraphics().fillRect(t.getc0().getx()*30,(20 - t.getc0().gety()) * 30 ,30,30);
+									    panel.getGraphics().fillRect(t.getc1().getx()*30,(20 - t.getc1().gety()) * 30 ,30,30);
+									    panel.getGraphics().fillRect(t.getc2().getx()*30,(20 - t.getc2().gety()) * 30 ,30,30);
+									    panel.getGraphics().fillRect(t.getc3().getx()*30,(20 - t.getc3().gety()) * 30 ,30,30);
 									 
 								//RESETEA EL CAMPO
 									 
@@ -437,6 +478,8 @@ public class Ventana extends JFrame {
 				 btnR.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent arg0) {
 							if (arg0.getSource() == btnR) {
+								
+								 panel.getGraphics().clearRect(0, 0, 630, 270);
 								
 								Pieza t = creador_de_piezas.crear_pieza("R");
 								
@@ -462,9 +505,15 @@ public class Ventana extends JFrame {
 								            }
 								        }
 									 
-								//ENSEÑA EL CAMPO 
+								//ENSEÃ‘A EL CAMPO 
 									 
 									 JOptionPane.showMessageDialog(null, ESO);
+									 
+									    
+									    panel.getGraphics().fillRect(t.getc0().getx()*30,(20 - t.getc0().gety()) * 30 ,30,30);
+									    panel.getGraphics().fillRect(t.getc1().getx()*30,(20 - t.getc1().gety()) * 30 ,30,30);
+									    panel.getGraphics().fillRect(t.getc2().getx()*30,(20 - t.getc2().gety()) * 30 ,30,30);
+									    panel.getGraphics().fillRect(t.getc3().getx()*30,(20 - t.getc3().gety()) * 30 ,30,30);
 									 
 								//RESETEA EL CAMPO
 									 
@@ -484,6 +533,8 @@ public class Ventana extends JFrame {
 				 btnS.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent arg0) {
 							if (arg0.getSource() == btnS) {
+								
+								 panel.getGraphics().clearRect(0, 0, 630, 270);
 								
 								Pieza t = creador_de_piezas.crear_pieza("S");
 								
@@ -509,9 +560,14 @@ public class Ventana extends JFrame {
 								            }
 								        }
 									 
-								//ENSEÑA EL CAMPO 
+								//ENSEÃ‘A EL CAMPO 
 									 
 									 JOptionPane.showMessageDialog(null, ESO);
+									 
+									    panel.getGraphics().fillRect(t.getc0().getx()*30,(20 - t.getc0().gety()) * 30 ,30,30);
+									    panel.getGraphics().fillRect(t.getc1().getx()*30,(20 - t.getc1().gety()) * 30 ,30,30);
+									    panel.getGraphics().fillRect(t.getc2().getx()*30,(20 - t.getc2().gety()) * 30 ,30,30);
+									    panel.getGraphics().fillRect(t.getc3().getx()*30,(20 - t.getc3().gety()) * 30 ,30,30);
 									 
 								//RESETEA EL CAMPO
 									 
@@ -533,6 +589,8 @@ public class Ventana extends JFrame {
 				 btnZ.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent arg0) {
 							if (arg0.getSource() == btnZ) {
+								
+								 panel.getGraphics().clearRect(0, 0, 630, 270);
 								
 								Pieza t = creador_de_piezas.crear_pieza("Z");
 								
@@ -558,9 +616,14 @@ public class Ventana extends JFrame {
 								            }
 								        }
 									 
-								//ENSEÑA EL CAMPO 
+								//ENSEÃ‘A EL CAMPO 
 									 
 									 JOptionPane.showMessageDialog(null, ESO);
+									    
+									    panel.getGraphics().fillRect(t.getc0().getx()*30,(20 - t.getc0().gety()) * 30 ,30,30);
+									    panel.getGraphics().fillRect(t.getc1().getx()*30,(20 - t.getc1().gety()) * 30 ,30,30);
+									    panel.getGraphics().fillRect(t.getc2().getx()*30,(20 - t.getc2().gety()) * 30 ,30,30);
+									    panel.getGraphics().fillRect(t.getc3().getx()*30,(20 - t.getc3().gety()) * 30 ,30,30);
 									 
 								//RESETEA EL CAMPO
 									 
@@ -610,7 +673,7 @@ public class Ventana extends JFrame {
 								            }
 								        }
 									 
-								//ENSEÑA EL CAMPO 
+								//ENSEÃ‘A EL CAMPO 
 									 
 									 JOptionPane.showMessageDialog(null, ESO);
 									 
@@ -754,7 +817,7 @@ public class Ventana extends JFrame {
 								
 								Pieza t = creador_de_piezas.crear_pieza("T");					
 									 
-								//ENSEÑA EL CAMPO 
+								//ENSEÃ‘A EL CAMPO 
 									
 									System.out.println("La orientacion es: " + t.getOrientacion());
 									
@@ -800,7 +863,7 @@ public class Ventana extends JFrame {
 								Pieza t = creador_de_piezas.crear_pieza("T");
 								
 									 
-								//ENSEÑA EL CAMPO 
+								//ENSEÃ‘A EL CAMPO 
 									System.out.println("");
 									System.out.println("La orientacion es: " + t.getOrientacion());
 									System.out.println("");
@@ -830,7 +893,7 @@ public class Ventana extends JFrame {
 								
 								Pieza t = creador_de_piezas.crear_pieza("T");
 									 
-								//ENSEÑA EL CAMPO 
+								//ENSEÃ‘A EL CAMPO 
 								
 									System.out.println("");
 									System.out.println("La orientacion es: " + t.getOrientacion());
@@ -861,11 +924,13 @@ public class Ventana extends JFrame {
 							
 							Pieza t = creador_de_piezas.crear_pieza("T");
 							
+							 panel.getGraphics().clearRect(0, 0, 630, 270);
+							
 							//MOVIMIENTO DE LA PIEZA
 				
 							//Estas lineas manda la ficha al final del array
 							
-							t.getc2().sety(0); //sabemos que el fondo es 0
+							t.getc2().sety(0); //sabemos que el fondo del campo es 0
 							
 							//sabemos que estos bloques estan 1 por encima de c2 en este caso
 							t.getc0().sety(t.getc2().gety()+1); 
@@ -874,13 +939,13 @@ public class Ventana extends JFrame {
 							
 							//METE CADA CUADRADO EN SU LUGAR DEL ARRAY
 							
-								campo[t.getc0().gety()][t.getc0().getx()] = t.getc0().getCod_cuadrado();
+								campo[t.getc0().gety()] [t.getc0().getx()] = t.getc0().getCod_cuadrado();
 								
-								campo[t.getc1().gety()][t.getc1().getx()] =t.getc1().getCod_cuadrado();
+								campo[t.getc1().gety()] [t.getc1().getx()] = t.getc1().getCod_cuadrado();
 								
-								campo[ t.getc2().gety()][t.getc2().getx()] = t.getc2().getCod_cuadrado();
+								campo[t.getc2().gety()] [t.getc2().getx()] = t.getc2().getCod_cuadrado();
 								
-								campo[ t.getc3().gety()][ t.getc3().getx()] =  t.getc3().getCod_cuadrado();
+								campo[t.getc3().gety()] [t.getc3().getx()] = t.getc3().getCod_cuadrado();
 								
 							//DIBUJA EL CAMPO
 							
@@ -894,10 +959,15 @@ public class Ventana extends JFrame {
 							            }
 							        }
 								 
-							//ENSEÑA EL CAMPO 
+							//ENSEÃ‘A EL CAMPO 
 								 
-								 JOptionPane.showMessageDialog(null, ESO);
-								
+								JOptionPane.showMessageDialog(null, ESO);
+							    
+							    panel.getGraphics().fillRect(t.getc0().getx()*30,(20 - t.getc0().gety()) * 30 ,30,30);
+							    panel.getGraphics().fillRect(t.getc1().getx()*30,(20 - t.getc1().gety()) * 30 ,30,30);
+							    panel.getGraphics().fillRect(t.getc2().getx()*30,(20 - t.getc2().gety()) * 30 ,30,30);
+							    panel.getGraphics().fillRect(t.getc3().getx()*30,(20 - t.getc3().gety()) * 30 ,30,30);
+						
 								
 							//RESETEA EL CAMPO
 								 
@@ -906,10 +976,12 @@ public class Ventana extends JFrame {
 						            for(int j=0;j<campo[0].length;j++){
 						            	
 							            	campo[i][j]= null;
+							            	
+							            	
 							            }
 							        }
 						}
-					});	 
-				 
-	}
+				});	 		 
+		}
+
 }
