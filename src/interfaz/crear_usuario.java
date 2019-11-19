@@ -67,16 +67,18 @@ public class crear_usuario extends JFrame {
 
 		// BOTONES
 		JButton btnIniciarSesion = new JButton("REGISTRARSE");
-		btnIniciarSesion.setBackground(new Color(127, 255, 0));
+		btnIniciarSesion.setBackground(new Color(255, 165, 0));
 		btnIniciarSesion.setForeground(Color.WHITE);
-		btnIniciarSesion.setFont(new Font("Times New Roman", Font.BOLD, 25));
+		btnIniciarSesion.setFont(new Font("Times New Roman", Font.BOLD, 30));
 		btnIniciarSesion.setBounds(447, 550, 255, 91);
 		contentPane.add(btnIniciarSesion);
 
 		JButton btnAtras = new JButton("ATRAS");
+
 		btnAtras.setBackground(new Color(135, 206, 235));
 		btnAtras.setForeground(Color.WHITE);
 		btnAtras.setFont(new Font("Times New Roman", Font.BOLD, 25));
+
 		btnAtras.setBounds(135, 550, 255, 91);
 		contentPane.add(btnAtras);
 

@@ -102,21 +102,22 @@ public class ajustes extends JFrame {
 		//BOTONES
 		
 		JButton btnReiniciar = new JButton("REINICIAR");
-		btnReiniciar.setForeground(Color.BLACK);
-		btnReiniciar.setBackground(new Color(0, 191, 255));
+		btnReiniciar.setForeground(new Color(255, 255, 255));
+		btnReiniciar.setBackground(new Color(152, 251, 152));
 		btnReiniciar.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		btnReiniciar.setBounds(65, 546, 292, 65);
 		contentPane.add(btnReiniciar);
 		
 		JButton btnReanudar = new JButton("REANUDAR");
-		btnReanudar.setBackground(new Color(127, 255, 0));
+		btnReanudar.setBackground(new Color(255, 165, 0));
 		btnReanudar.setForeground(Color.WHITE);
 		btnReanudar.setFont(new Font("Times New Roman", Font.BOLD, 25));
-		btnReanudar.setBounds(273, 457, 292, 65);
+		btnReanudar.setBounds(265, 452, 292, 65);
 		contentPane.add(btnReanudar);
 		
 		JButton btnGuardarYSalir = new JButton("GUARDAR Y SALIR");
-		btnGuardarYSalir.setBackground(new Color(0, 191, 255));
+		btnGuardarYSalir.setForeground(new Color(255, 255, 255));
+		btnGuardarYSalir.setBackground(new Color(152, 251, 152));
 		btnGuardarYSalir.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		btnGuardarYSalir.setBounds(468, 546, 292, 65);
 		contentPane.add(btnGuardarYSalir);

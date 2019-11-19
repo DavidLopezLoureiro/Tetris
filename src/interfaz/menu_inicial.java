@@ -62,15 +62,18 @@ public class menu_inicial extends JFrame {
 		// BOTONES
 		JButton btnCrearUsuario = new JButton("REGISTRARSE");
 		btnCrearUsuario.setForeground(new Color(255, 255, 255));
-		btnCrearUsuario.setBackground(new Color(127, 255, 0));
+		btnCrearUsuario.setBackground(new Color(152, 251, 152));
 		btnCrearUsuario.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnCrearUsuario.setBounds(103, 435, 296, 66);
 		contentPane.add(btnCrearUsuario);
 
 		JButton btnIniciarSesion = new JButton("INICIAR SESION");
 		btnIniciarSesion.setForeground(new Color(255, 255, 255));
+
 		btnIniciarSesion.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnIniciarSesion.setBackground(new Color(135, 206, 235));
+
+	
 		btnIniciarSesion.setBounds(103, 320, 296, 66);
 		contentPane.add(btnIniciarSesion);
 		

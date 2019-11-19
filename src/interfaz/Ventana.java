@@ -283,7 +283,9 @@ public class Ventana extends JFrame {
 								            }
 								        }
 									 
-								//ENSEÑA EL CAMPO 
+								//ENSEÃ‘A EL CAMPO 
+									 
+									 panel.getGraphics().clearRect(0, 0, 630, 270);
 									 
 									 panel.getGraphics().clearRect(0, 0, 630, 270);
 									 
@@ -341,7 +343,7 @@ public class Ventana extends JFrame {
 								            }
 								        }
 									 
-								//ENSEÑA EL CAMPO 
+								//ENSEÃ‘A EL CAMPO 
 									 
 									 JOptionPane.showMessageDialog(null, ESO);
 
@@ -396,7 +398,7 @@ public class Ventana extends JFrame {
 								            }
 								        }
 									 
-								//ENSEÑA EL CAMPO 
+								//ENSEÃ‘A EL CAMPO 
 									 
 									 JOptionPane.showMessageDialog(null, ESO);
 									    
@@ -450,7 +452,7 @@ public class Ventana extends JFrame {
 								            }
 								        }
 									 
-								//ENSEÑA EL CAMPO 
+								//ENSEÃ‘A EL CAMPO 
 									 
 									 JOptionPane.showMessageDialog(null, ESO);
 									    
@@ -505,7 +507,7 @@ public class Ventana extends JFrame {
 								            }
 								        }
 									 
-								//ENSEÑA EL CAMPO 
+								//ENSEÃ‘A EL CAMPO 
 									 
 									 JOptionPane.showMessageDialog(null, ESO);
 									 
@@ -560,7 +562,7 @@ public class Ventana extends JFrame {
 								            }
 								        }
 									 
-								//ENSEÑA EL CAMPO 
+								//ENSEÃ‘A EL CAMPO 
 									 
 									 JOptionPane.showMessageDialog(null, ESO);
 									 
@@ -616,7 +618,7 @@ public class Ventana extends JFrame {
 								            }
 								        }
 									 
-								//ENSEÑA EL CAMPO 
+								//ENSEÃ‘A EL CAMPO 
 									 
 									 JOptionPane.showMessageDialog(null, ESO);
 									    
@@ -673,7 +675,7 @@ public class Ventana extends JFrame {
 								            }
 								        }
 									 
-								//ENSEÑA EL CAMPO 
+								//ENSEÃ‘A EL CAMPO 
 									 
 									 JOptionPane.showMessageDialog(null, ESO);
 									 
@@ -817,7 +819,7 @@ public class Ventana extends JFrame {
 								
 								Pieza t = creador_de_piezas.crear_pieza("T");					
 									 
-								//ENSEÑA EL CAMPO 
+								//ENSEÃ‘A EL CAMPO 
 									
 									System.out.println("La orientacion es: " + t.getOrientacion());
 									
@@ -863,7 +865,7 @@ public class Ventana extends JFrame {
 								Pieza t = creador_de_piezas.crear_pieza("T");
 								
 									 
-								//ENSEÑA EL CAMPO 
+								//ENSEÃ‘A EL CAMPO 
 									System.out.println("");
 									System.out.println("La orientacion es: " + t.getOrientacion());
 									System.out.println("");
@@ -893,7 +895,7 @@ public class Ventana extends JFrame {
 								
 								Pieza t = creador_de_piezas.crear_pieza("T");
 									 
-								//ENSEÑA EL CAMPO 
+								//ENSEÃ‘A EL CAMPO 
 								
 									System.out.println("");
 									System.out.println("La orientacion es: " + t.getOrientacion());
@@ -959,7 +961,7 @@ public class Ventana extends JFrame {
 							            }
 							        }
 								 
-							//ENSEÑA EL CAMPO 
+							//ENSEÃ‘A EL CAMPO 
 								 
 								JOptionPane.showMessageDialog(null, ESO);
 							    
