@@ -139,11 +139,6 @@ public class Ventana extends JFrame {
 			lblHora.setBounds(10, 141, 122, 14);
 			Info.add(lblHora);
 			
-			JLabel lblNewLabel = new JLabel("");
-			lblNewLabel.setIcon(new ImageIcon(Ventana.class.getResource("/imagenes/fondoTetris.jpg")));
-			lblNewLabel.setBounds(0, 0, 682, 803);
-			contentPane.add(lblNewLabel);
-			
 			javax.swing.Timer timer = new javax.swing.Timer(1, new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent ae) {
 					
@@ -221,7 +216,12 @@ public class Ventana extends JFrame {
 			btnBajar.setBounds(102, 396, 97, 25);
 			panel.add(btnBajar);
 		
-		
+			//FONDO	
+			JLabel lblNewLabel = new JLabel("");
+			lblNewLabel.setIcon(new ImageIcon(Ventana.class.getResource("/imagenes/fondoTetris.jpg")));
+			lblNewLabel.setBounds(0, 0, 682, 803);
+			contentPane.add(lblNewLabel);
+			
 		//CODIGO
 			
 			//CREACION DEL ARRAY

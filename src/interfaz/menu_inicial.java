@@ -72,8 +72,6 @@ public class menu_inicial extends JFrame {
 
 		btnIniciarSesion.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnIniciarSesion.setBackground(new Color(135, 206, 235));
-
-	
 		btnIniciarSesion.setBounds(103, 320, 296, 66);
 		contentPane.add(btnIniciarSesion);
 		
