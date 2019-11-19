@@ -19,6 +19,7 @@ import objetos.Pieza;
 
 import objetos.creador_de_piezas;
 import java.awt.Font;
+import javax.swing.ImageIcon;
 
 @SuppressWarnings("serial")
 public class Ventana extends JFrame {
@@ -201,6 +202,11 @@ public class Ventana extends JFrame {
 			JButton btnBajar = new JButton("BAJAR");
 			btnBajar.setBounds(102, 354, 97, 25);
 			panel.add(btnBajar);
+			
+			JLabel lblNewLabel = new JLabel("");
+			lblNewLabel.setIcon(new ImageIcon(Ventana.class.getResource("/imagenes/fondoTetris.jpg")));
+			lblNewLabel.setBounds(0, 0, 682, 803);
+			contentPane.add(lblNewLabel);
 		
 		
 		//CODIGO
@@ -906,5 +912,4 @@ public class Ventana extends JFrame {
 					});	 
 				 
 	}
-
 }
