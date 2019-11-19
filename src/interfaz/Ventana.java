@@ -287,7 +287,6 @@ public class Ventana extends JFrame {
 									 
 									 panel.getGraphics().clearRect(0, 0, 630, 270);
 									 
-									 panel.getGraphics().clearRect(0, 0, 630, 270);
 									 
 									 JOptionPane.showMessageDialog(null, ESO);
 	
