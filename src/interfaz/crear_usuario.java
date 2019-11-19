@@ -75,7 +75,7 @@ public class crear_usuario extends JFrame {
 
 		JButton btnAtras = new JButton("ATRAS");
 		btnAtras.setBackground(new Color(135, 206, 235));
-		btnAtras.setForeground(Color.BLACK);
+		btnAtras.setForeground(Color.WHITE);
 		btnAtras.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		btnAtras.setBounds(135, 550, 255, 91);
 		contentPane.add(btnAtras);

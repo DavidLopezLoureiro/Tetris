@@ -70,7 +70,7 @@ public class iniciar_sesion extends JFrame {
 		contentPane.add(btnIniciarSesion);
 
 		JButton btnVolver = new JButton("ATRAS");
-		btnVolver.setForeground(Color.BLACK);
+		btnVolver.setForeground(new Color(255, 255, 255));
 		btnVolver.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		btnVolver.setBackground(new Color(135, 206, 235));
 		btnVolver.setBounds(116, 492, 277, 105);
