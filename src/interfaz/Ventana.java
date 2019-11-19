@@ -924,7 +924,7 @@ public class Ventana extends JFrame {
 				
 							//Estas lineas manda la ficha al final del array
 							
-							t.getc2().sety(0); //sabemos que el fondo es 0
+							t.getc2().sety(0); //sabemos que el fondo del campo es 0
 							
 							//sabemos que estos bloques estan 1 por encima de c2 en este caso
 							t.getc0().sety(t.getc2().gety()+1); 
