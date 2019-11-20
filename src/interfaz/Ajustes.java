@@ -18,7 +18,7 @@ import java.awt.Color;
 import javax.swing.JRadioButton;
 
 @SuppressWarnings("serial")
-public class ajustes extends JFrame {
+public class Ajustes extends JFrame {
 
 	private JPanel contentPane;
 
@@ -29,7 +29,7 @@ public class ajustes extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ajustes frame = new ajustes();
+					Ajustes frame = new Ajustes();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -41,7 +41,7 @@ public class ajustes extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ajustes() {
+	public Ajustes() {
 		
 		
 		//AJUSTES GENERALES
@@ -149,7 +149,7 @@ public class ajustes extends JFrame {
 				nuevaventana.setVisible(true);
 
 				// CIERRA LA VENTAN ACTUAL
-				ajustes.this.dispose();
+				Ajustes.this.dispose();
 	        
 			}
 		});

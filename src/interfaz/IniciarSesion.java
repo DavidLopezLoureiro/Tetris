@@ -10,9 +10,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
-import interfaz.iniciar_sesion;
-import interfaz.menu_inicial;
-import BD.BD;
+import bd.BD;
+import interfaz.IniciarSesion;
+import interfaz.MenuInicial;
 import objetos.Usuario;
 
 import java.awt.Font;
@@ -24,7 +24,7 @@ import java.awt.Color;
 import javax.swing.JPasswordField;
 
 @SuppressWarnings("serial")
-public class iniciar_sesion extends JFrame {
+public class IniciarSesion extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textFieldNombre;
@@ -38,7 +38,7 @@ public class iniciar_sesion extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					iniciar_sesion frame = new iniciar_sesion();
+					IniciarSesion frame = new IniciarSesion();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -50,7 +50,7 @@ public class iniciar_sesion extends JFrame {
 	/**
 	 * Crea el frame.
 	 */
-	public iniciar_sesion() {
+	public IniciarSesion() {
 
 		// AJUSTES GENERALES
 		setResizable(false);
@@ -120,11 +120,11 @@ public class iniciar_sesion extends JFrame {
 				if (arg0.getSource() == btnVolver) {
 
 					// ABRE LA NUEVA VENTANA
-					menu_inicial nuevaventana = new menu_inicial();
+					MenuInicial nuevaventana = new MenuInicial();
 					nuevaventana.setVisible(true);
 
 					// CIERRA LA VENTANA ACTUAL
-					iniciar_sesion.this.dispose();
+					IniciarSesion.this.dispose();
 				}
 
 			}
@@ -163,7 +163,7 @@ public class iniciar_sesion extends JFrame {
 					nuevaventana.setVisible(true);
 
 					// CIERRA LA VENTANA ACTUAL
-					iniciar_sesion.this.dispose();
+					IniciarSesion.this.dispose();
 				}
 			}
 		});

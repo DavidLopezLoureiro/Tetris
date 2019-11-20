@@ -1,8 +1,14 @@
 package objetos;
 
-public class creador_de_piezas {
+public class CreadorDePiezas {
 
-	
+	/**
+	 * Crea la pieza automaticamente pasandole solo el codigo de la pieza que queremos crear ( T, I, O, L, R, S, Z)
+	 * 
+	 * @param cod_pieza --> String del codigo de la pieza que queremos crear.
+	 * 
+	 * @return Pieza --> Un objeto Pieza.
+	 */
 	public static Pieza crear_pieza(String cod_pieza) {
 
 		// GENERAL

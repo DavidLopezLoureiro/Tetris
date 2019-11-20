@@ -6,8 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import BD.BD;
-
+import bd.BD;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -22,7 +21,7 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 
 @SuppressWarnings("serial")
-public class menu_inicial extends JFrame {
+public class MenuInicial extends JFrame {
 
 	private JPanel contentPane;
 
@@ -33,7 +32,7 @@ public class menu_inicial extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					menu_inicial frame = new menu_inicial();
+					MenuInicial frame = new MenuInicial();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -45,7 +44,7 @@ public class menu_inicial extends JFrame {
 	/**
 	 * Crea el frame.
 	 */
-	public menu_inicial() {
+	public MenuInicial() {
 
 		// INICIALIZACION DE LA BD
 		BD.connect();
@@ -76,12 +75,12 @@ public class menu_inicial extends JFrame {
 		contentPane.add(btnIniciarSesion);
 		
 		JLabel lblimagen = new JLabel();
-		lblimagen.setIcon(new ImageIcon(menu_inicial.class.getResource("/imagenes/tetris.gif")));
+		lblimagen.setIcon(new ImageIcon(MenuInicial.class.getResource("/imagenes/tetris.gif")));
 		lblimagen.setBounds(516, 40, 296, 498);
 		contentPane.add(lblimagen);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(menu_inicial.class.getResource("/imagenes/logoo.png")));
+		lblNewLabel.setIcon(new ImageIcon(MenuInicial.class.getResource("/imagenes/logoo.png")));
 		lblNewLabel.setBounds(54, 45, 391, 174);
 		contentPane.add(lblNewLabel);
 		
@@ -93,11 +92,11 @@ public class menu_inicial extends JFrame {
 				if (e.getSource() == btnCrearUsuario) {
 					
 					// ABRE LA NUEVA VENTANA
-					crear_usuario nuevaventana = new crear_usuario();
+					CrearUsuario nuevaventana = new CrearUsuario();
 					nuevaventana.setVisible(true);
 
 					// CIERRA LA VENTAN ACTUAL
-					menu_inicial.this.dispose();
+					MenuInicial.this.dispose();
 				}
 			}
 		});
@@ -111,11 +110,11 @@ public class menu_inicial extends JFrame {
 					if (n_usuarios != 0) {
 
 						// ABRE LA NUEVA VENTANA
-						iniciar_sesion nuevaventana = new iniciar_sesion();
+						IniciarSesion nuevaventana = new IniciarSesion();
 						nuevaventana.setVisible(true);
 
 						// CIERRA LA VENTAN ACTUAL
-						menu_inicial.this.dispose();
+						MenuInicial.this.dispose();
 
 					} else if (n_usuarios == 0) {
 

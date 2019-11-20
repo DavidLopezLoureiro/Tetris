@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import BD.BD;
+import bd.BD;
 import objetos.Usuario;
 
 import javax.swing.JLabel;
@@ -20,7 +20,7 @@ import java.awt.event.ActionEvent;
 import java.awt.Color;
 
 @SuppressWarnings("serial")
-public class crear_usuario extends JFrame {
+public class CrearUsuario extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textFieldNombreUsuarioRegistro;
@@ -35,7 +35,7 @@ public class crear_usuario extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					crear_usuario frame = new crear_usuario();
+					CrearUsuario frame = new CrearUsuario();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -47,7 +47,7 @@ public class crear_usuario extends JFrame {
 	/**
 	 * Crea el frame.
 	 */
-	public crear_usuario() {
+	public CrearUsuario() {
 
 		// AJUSTES GENERALES
 		setResizable(false);
@@ -135,11 +135,11 @@ public class crear_usuario extends JFrame {
 				if (e.getSource() == btnAtras) {
 
 					// ABRE LA NUEVA VENTANA
-					menu_inicial nuevaventana = new menu_inicial();
+					MenuInicial nuevaventana = new MenuInicial();
 					nuevaventana.setVisible(true);
 
 					// CIERRA LA VENTAN ACTUAL
-					crear_usuario.this.dispose();
+					CrearUsuario.this.dispose();
 				}
 			}
 		});
@@ -188,11 +188,11 @@ public class crear_usuario extends JFrame {
 
 							BD.store(usuario);
 
-							menu_inicial nuevaventana = new menu_inicial();
+							MenuInicial nuevaventana = new MenuInicial();
 							nuevaventana.setVisible(true);
 
 							// CIERRA LA VENTAN ACTUAL
-							crear_usuario.this.dispose();
+							CrearUsuario.this.dispose();
 
 						}
 				} 	

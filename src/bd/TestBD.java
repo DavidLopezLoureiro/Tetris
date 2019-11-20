@@ -1,4 +1,4 @@
-package BD;
+package bd;
 
 import static org.junit.Assert.assertEquals;
 
