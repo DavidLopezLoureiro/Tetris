@@ -20,6 +20,7 @@ import objetos.Pieza;
 import objetos.creador_de_piezas;
 import java.awt.Font;
 import javax.swing.ImageIcon;
+import java.awt.Color;
 
 @SuppressWarnings("serial")
 public class Ventana extends JFrame {
@@ -151,6 +152,8 @@ public class Ventana extends JFrame {
 		
 		//BOTONES
 			JButton Ajustes = new JButton("AJUSTES");
+			Ajustes.setForeground(new Color(255, 255, 255));
+			Ajustes.setBackground(new Color(65, 105, 225));
 			Ajustes.setFont(new Font("Times New Roman", Font.BOLD, 25));
 			Ajustes.setBounds(517, 719, 153, 71);
 			contentPane.add(Ajustes);
