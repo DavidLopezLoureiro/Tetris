@@ -5,12 +5,20 @@ import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 
-public class tablero extends JPanel {
-	public tablero() {
+public class Tablero extends JPanel {
+	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L; //PARA LA VERSION
+
+	public Tablero() {
 		setBorder(new LineBorder(Color.BLACK));
 		this.setSize(270, 630);
 		this.setVisible(true);
 	}
+	
 	@Override
 	public void paint(Graphics arg0) {
 		// TODO Auto-generated method stub
@@ -50,15 +58,17 @@ public class tablero extends JPanel {
 		arg0.drawLine(240,0,240,630 );
 		arg0.drawLine(270,0,270,630 );
 		arg0.drawLine(300,0,300,630 );
-	
+		
+		arg0.fillRect(Ventana.x_0, Ventana.y_0, 30, 30);
+		arg0.fillRect(Ventana.x_1, Ventana.y_1, 30, 30);
+		arg0.fillRect(Ventana.x_2, Ventana.y_2, 30, 30);
+		arg0.fillRect(Ventana.x_3, Ventana.y_3, 30, 30);
 		
 		repaint();
-		
-		
-		
-		
+	
 		
 	}
-	
+
+
 
 }
