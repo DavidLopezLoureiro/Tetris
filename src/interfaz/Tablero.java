@@ -7,6 +7,18 @@ import java.awt.Color;
 
 public class Tablero extends JPanel {
 	
+	public static int y_0;
+	public static int x_0;
+	
+	public static int y_1;
+	public static int x_1;
+	
+	public static int y_2;
+	public static int x_2;
+	
+	public static int y_3;
+	public static int x_3;
+	
 	/**
 	 * 
 	 */
@@ -58,8 +70,8 @@ public class Tablero extends JPanel {
 		arg0.drawLine(270,0,270,630 );
 		arg0.drawLine(300,0,300,630 );
 		
-		//PARA EL PINTADO DE LAS PIEZAS QUE ESTEN YA PUESTAS
-			if(Ventana.campo[0][0] != null){
+		
+		if(Ventana.campo[0][0] != null){
 			arg0.fillRect(0,600,30,30);
 			}
 
@@ -818,7 +830,7 @@ public class Tablero extends JPanel {
 
 		
 		
-		//PINTA LA PIEZA EN MOVIMIENTO
+		//PINTA LA PIEZA EN MO
 		arg0.fillRect(Ventana.x_0, Ventana.y_0, 30, 30);
 		arg0.fillRect(Ventana.x_1, Ventana.y_1, 30, 30);
 		arg0.fillRect(Ventana.x_2, Ventana.y_2, 30, 30);

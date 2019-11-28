@@ -61,24 +61,26 @@ public class Ventana extends JFrame implements KeyListener{
 	@Override
 	public void keyPressed(KeyEvent e) {
 		
-		
 		int key = e.getKeyCode();
 		
 		 if (key == KeyEvent.VK_DOWN) {
 			 
-		  System.out.println("Presionó Espacio!" + (char) key);
+			 while(choque_abajo() == false) {
+					
+					movimientoabajo();
+			 }
 		  
 		 } 
-		 
-		 if (key == KeyEvent.VK_RIGHT) {
-		 
-		  System.out.println("Presionó Enter!" + (char) key);
-		  
-		 }
-		
+	
 		 if (key == KeyEvent.VK_LEFT) {
 			 
-		  System.out.println("Presionó Espacio!" + (char) key);
+			 movimientoizquierda();
+		  
+		 }
+		 
+		 if (key == KeyEvent.VK_RIGHT) {
+			 
+			 movimientoderecha();
 		  
 		 }
 		 
@@ -137,6 +139,7 @@ public class Ventana extends JFrame implements KeyListener{
 			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 			setContentPane(contentPane);
 			contentPane.setLayout(null);
+			
 		
 			
 		//PANELES
@@ -151,6 +154,7 @@ public class Ventana extends JFrame implements KeyListener{
 				Tablero tablero = new Tablero();
 				tablero.setBounds(10, 10, 270, 630);
 				panel.add(tablero);
+				
 				
 			
 			//GUARDAR
@@ -270,6 +274,7 @@ public class Ventana extends JFrame implements KeyListener{
 				Ajustes.setFont(new Font("Consolas", Font.PLAIN, 12));
 				Ajustes.setBounds(469, 575, 132, 78);
 				contentPane.add(Ajustes);
+				Ajustes.addKeyListener(this);
 			
 			//TIEMPO
 			
@@ -477,7 +482,7 @@ public class Ventana extends JFrame implements KeyListener{
 		 	
 		 	if(choque_abajo() == false) {
 		 		
-		 		borrar_donde_estaba_abajo();
+		 		borrar_donde_estaba();
 	
 				Pieza.getc0().sety(Pieza.getc0().gety() - 1);
 				y_0 = (20 - Pieza.getc0().gety()) * 30;
@@ -500,9 +505,63 @@ public class Ventana extends JFrame implements KeyListener{
 	
 	}
 	
-	public void borrar_donde_estaba_abajo() {
+	public void movimientoizquierda() {	 	
+	 	
+	 	if(choque_izquierda() == false) {
+	 		
+	 		borrar_donde_estaba();
+
+			Pieza.getc0().setx(Pieza.getc0().getx() - 1);
+			x_0 = Pieza.getc0().getx() * 30;
+			
+			Pieza.getc1().setx(Pieza.getc1().getx() - 1);
+			x_1 = Pieza.getc1().getx() * 30;
+			
+			Pieza.getc2().setx(Pieza.getc2().getx() - 1);
+			x_2 = Pieza.getc2().getx() * 30;
+			
+			Pieza.getc3().setx(Pieza.getc3().getx() - 1);
+			x_3 = Pieza.getc3().getx() * 30;
+			
+			campo[Pieza.getc0().gety()][Pieza.getc0().getx()] = Pieza.getc0().getCod_cuadrado();
+			campo[Pieza.getc1().gety()][Pieza.getc1().getx()] = Pieza.getc1().getCod_cuadrado();
+			campo[Pieza.getc2().gety()][Pieza.getc2().getx()] = Pieza.getc2().getCod_cuadrado();
+			campo[Pieza.getc3().gety()][Pieza.getc3().getx()] = Pieza.getc3().getCod_cuadrado();
+		
+	 	}
+
+}
+	
+	public void movimientoderecha() {	 	
+	 	
+	 	if(choque_derecha() == false) {
+	 		
+	 		borrar_donde_estaba();
+
+			Pieza.getc0().setx(Pieza.getc0().getx() + 1);
+			x_0 = Pieza.getc0().getx() * 30;
+			
+			Pieza.getc1().setx(Pieza.getc1().getx() + 1);
+			x_1 = Pieza.getc1().getx() * 30;
+			
+			Pieza.getc2().setx(Pieza.getc2().getx() + 1);
+			x_2 = Pieza.getc2().getx() * 30;
+			
+			Pieza.getc3().setx(Pieza.getc3().getx() + 1);
+			x_3 = Pieza.getc3().getx() * 30;
+			
+			campo[Pieza.getc0().gety()][Pieza.getc0().getx()] = Pieza.getc0().getCod_cuadrado();
+			campo[Pieza.getc1().gety()][Pieza.getc1().getx()] = Pieza.getc1().getCod_cuadrado();
+			campo[Pieza.getc2().gety()][Pieza.getc2().getx()] = Pieza.getc2().getCod_cuadrado();
+			campo[Pieza.getc3().gety()][Pieza.getc3().getx()] = Pieza.getc3().getCod_cuadrado();
+		
+	 	}
+	}
+	
+	public void borrar_donde_estaba() {
 		
 		//BORRA LA POSICION EN LA QUE ESTABA EL CUADRADO
+		
 		campo[Pieza.getc0().gety()][Pieza.getc0().getx()] = null;
 		campo[Pieza.getc1().gety()][Pieza.getc1().getx()] = null;
 		campo[Pieza.getc2().gety()][Pieza.getc2().getx()] = null;
@@ -560,6 +619,127 @@ public class Ventana extends JFrame implements KeyListener{
 		if(Pieza.getc3().getabajo() == true) {
 			
 			if(campo[Pieza.getc3().gety()-1][Pieza.getc3().getx()] == null) {
+				
+				
+			}else {
+				return true;
+			}
+		
+		}
+		return false;
+	}
+	
+	public boolean choque_izquierda() {
+		
+		//COMPRUEBA QUE LA PIEZA AL BAJAR NO CHOQUE
+		
+		if(Pieza.getc0().getx() == 0 || Pieza.getc1().getx() == 0 || Pieza.getc2().getx() == 0 || Pieza.getc3().getx() == 0) {
+			
+			return true;
+			
+		}
+		
+		if(Pieza.getc0().getizquierda() == true){
+			
+			if(campo[Pieza.getc0().gety()][Pieza.getc0().getx() - 1] == null) {
+				
+				
+			}else {
+				
+				return true;
+				
+			}
+			
+		}
+		
+		if(Pieza.getc1().getizquierda() == true) {
+			
+			if(campo[Pieza.getc1().gety()][Pieza.getc1().getx()-1] == null) {
+				
+				
+			}else {
+				
+				return true;
+				
+			}
+			
+		}
+		
+		if(Pieza.getc2().getizquierda() == true) {
+			
+			if(campo[Pieza.getc2().gety()][Pieza.getc2().getx()-1] == null) {
+				
+				
+			}else {
+				return true;
+			}
+			
+		}
+		
+		if(Pieza.getc3().getizquierda() == true) {
+			
+			if(campo[Pieza.getc3().gety()][Pieza.getc3().getx()-1] == null) {
+				
+				
+			}else {
+				return true;
+			}
+		
+		}
+		return false;
+	}
+	
+	
+	public boolean choque_derecha() {
+		
+		//COMPRUEBA QUE LA PIEZA AL BAJAR NO CHOQUE
+		
+		if(Pieza.getc0().getx() == 8 || Pieza.getc1().getx() == 8 || Pieza.getc2().getx() == 8 || Pieza.getc3().getx() == 8) {
+			
+			return true;
+			
+		}
+		
+		if(Pieza.getc0().getderecha() == true){
+			
+			if(campo[Pieza.getc0().gety()][Pieza.getc0().getx() + 1] == null) {
+				
+				
+			}else {
+				
+				return true;
+				
+			}
+			
+		}
+		
+		if(Pieza.getc1().getderecha() == true) {
+			
+			if(campo[Pieza.getc1().gety()][Pieza.getc1().getx()+1] == null) {
+				
+				
+			}else {
+				
+				return true;
+				
+			}
+			
+		}
+		
+		if(Pieza.getc2().getderecha() == true) {
+			
+			if(campo[Pieza.getc2().gety()][Pieza.getc2().getx()+1] == null) {
+				
+				
+			}else {
+				return true;
+			}
+			
+		}
+		
+		if(Pieza.getc3().getderecha() == true) {
+			
+			if(campo[Pieza.getc3().gety()][Pieza.getc3().getx()+1] == null) {
 				
 				
 			}else {
