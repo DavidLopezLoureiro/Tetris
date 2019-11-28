@@ -52,7 +52,56 @@ public class CreadorDePiezas {
 		return lista;	
 	}
 	
-	
+	public static Pieza mover_guardada(String transito) {
+		
+			
+			if(transito.equals("T")) {
+				
+				PiezaT t = new PiezaT();
+				
+				return t;
+				
+			}else if(transito.equals("I")) {
+				
+				PiezaI t = new PiezaI();
+				
+				return t;
+				
+			}else if(transito.equals("O")) {
+				
+				PiezaO t = new PiezaO();
+				
+				return t;
+				
+			}else if(transito.equals("L")) {
+				
+				PiezaL t = new PiezaL();
+				
+				return t;
+				
+			}else if(transito.equals("R")) {
+				
+				PiezaR t = new PiezaR();
+				
+				return t;
+				
+			}else if(transito.equals("S")) {
+				
+				PiezaS t = new PiezaS();
+			
+				return t;
+				
+			}else if(transito.equals("Z")) {
+				
+				PiezaZ t = new PiezaZ();
+				
+				return t;
+				
+			}
+			
+			return null;
+		
+	}
 	
 	public static Pieza mover_lista() {
 		
