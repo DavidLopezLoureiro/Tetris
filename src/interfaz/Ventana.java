@@ -40,7 +40,14 @@ public class Ventana extends JFrame implements KeyListener{
 	public static ArrayList<String> lista;
 	private static int lineas;
 	public static Dificultad dificultad;
-	private static Pieza guardada; //para guardar la pieza 
+	
+	private static String guardada; //para guardar la pieza 
+	public static JLabel pieza_guardada;
+	
+	public static JLabel pieza_siguiente;
+	public static JLabel pieza_siguiente_2;
+	public static JLabel pieza_siguiente_3;
+	public static JLabel pieza_siguiente_4;
 	
 	public static int x_0;
 	public static int y_0;
@@ -88,7 +95,63 @@ public class Ventana extends JFrame implements KeyListener{
 		 
 		 if (key == KeyEvent.VK_SPACE) {
 			 
-		  System.out.println("Presionó Espacio!" + (char) key);
+		  System.out.println("Los giros");
+		  
+		 }
+		 
+		 if (key == KeyEvent.VK_ENTER) {
+		 
+			 if(guardada == null) {
+				 
+			 guardada = Pieza.getCod_pieza();
+			 pieza_guardada.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(guardada))));
+			 borrar_donde_estaba();
+			 CreadorDePiezas.mover_lista();
+			 
+			 	pieza_siguiente.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(0)))));
+				pieza_siguiente_2.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(1)))));
+				pieza_siguiente_3.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(2)))));
+				pieza_siguiente_4.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(3)))));
+				
+				campo[Pieza.getc0().gety()][Pieza.getc0().getx()] = Pieza.getc0().getCod_cuadrado();
+				
+				campo[Pieza.getc1().gety()][Pieza.getc1().getx()] = Pieza.getc1().getCod_cuadrado();
+				
+				campo[Pieza.getc2().gety()][Pieza.getc2().getx()] = Pieza.getc2().getCod_cuadrado();
+				
+				campo[Pieza.getc3().gety()][Pieza.getc3().getx()] = Pieza.getc3().getCod_cuadrado();
+				
+				x_0 = (Pieza.getc0().getx() * 30);
+				x_1 = (Pieza.getc1().getx() * 30);
+				x_2 = (Pieza.getc2().getx() * 30);
+				x_3 = (Pieza.getc3().getx() * 30);
+			 
+			 }else if(guardada != null) {
+				 
+				 String transito = guardada;
+				 guardada = Pieza.getCod_pieza();
+				 
+				 pieza_guardada.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(guardada))));
+				 borrar_donde_estaba();
+				 
+				 CreadorDePiezas.mover_guardada(transito);
+					
+					campo[Pieza.getc0().gety()][Pieza.getc0().getx()] = Pieza.getc0().getCod_cuadrado();
+					
+					campo[Pieza.getc1().gety()][Pieza.getc1().getx()] = Pieza.getc1().getCod_cuadrado();
+					
+					campo[Pieza.getc2().gety()][Pieza.getc2().getx()] = Pieza.getc2().getCod_cuadrado();
+					
+					campo[Pieza.getc3().gety()][Pieza.getc3().getx()] = Pieza.getc3().getCod_cuadrado();
+					
+					x_0 = (Pieza.getc0().getx() * 30);
+					x_1 = (Pieza.getc1().getx() * 30);
+					x_2 = (Pieza.getc2().getx() * 30);
+					x_3 = (Pieza.getc3().getx() * 30);
+		    
+			 }
+		
+			 
 		  
 		 }
 		 
@@ -217,19 +280,19 @@ public class Ventana extends JFrame implements KeyListener{
 		
 		//LABELS
 			
-			JLabel pieza_siguiente = new JLabel("");
+			 pieza_siguiente = new JLabel("");
 			pieza_siguiente.setBounds(10, 11, 92, 92);
 			Siguiente.add(pieza_siguiente);
 	
-			JLabel pieza_siguiente_2 = new JLabel("");
+			pieza_siguiente_2 = new JLabel("");
 			pieza_siguiente_2.setBounds(10, 11, 92, 92);
 			panel_siguiente_1.add(pieza_siguiente_2);
 	
-			JLabel pieza_siguiente_3 = new JLabel("");
+			pieza_siguiente_3 = new JLabel("");
 			pieza_siguiente_3.setBounds(10, 11, 92, 92);
 			panel_siguiente_2.add(pieza_siguiente_3);
 	
-			JLabel pieza_siguiente_4 = new JLabel("");
+			pieza_siguiente_4 = new JLabel("");
 			pieza_siguiente_4.setBounds(10, 11, 92, 92);
 			panel_siguiente_3.add(pieza_siguiente_4);
 			
@@ -240,7 +303,7 @@ public class Ventana extends JFrame implements KeyListener{
 			lblEspera.setFont(new Font("Consolas", Font.PLAIN, 12));
 			lblEspera.setHorizontalAlignment(SwingConstants.CENTER);
 			
-			JLabel pieza_guardada = new JLabel("");
+			pieza_guardada = new JLabel("");
 			pieza_guardada.setBounds(16, 16, 92, 92);
 			panel_guardar.add(pieza_guardada);
 			pieza_guardada.setBackground(Color.WHITE);
@@ -380,9 +443,6 @@ public class Ventana extends JFrame implements KeyListener{
 						pieza_siguiente_3.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(2)))));
 						pieza_siguiente_4.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(3)))));
 						
-						//pieza_guardada.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(3))))); para poner la imagen de la foto de la pieza que este guardada
-			
-					
 					//Inicializa el campo
 						
 
@@ -444,7 +504,8 @@ public class Ventana extends JFrame implements KeyListener{
 												 
 											}
 										}
-											CreadorDePiezas.mover_lista();
+											
+										CreadorDePiezas.mover_lista();
 											
 												
 												//MUEVE LA LISTA
