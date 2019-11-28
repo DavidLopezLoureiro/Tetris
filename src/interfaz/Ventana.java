@@ -280,7 +280,7 @@ public class Ventana extends JFrame implements KeyListener{
 		
 		//LABELS
 			
-			 pieza_siguiente = new JLabel("");
+			pieza_siguiente = new JLabel("");
 			pieza_siguiente.setBounds(10, 11, 92, 92);
 			Siguiente.add(pieza_siguiente);
 	
@@ -371,6 +371,7 @@ public class Ventana extends JFrame implements KeyListener{
 						
 							if(calendario.get(Calendar.SECOND)%2 == 1) {
 								
+								lblLineas.setText("Lineas: " + lineas);
 								
 								if (minutos > 9) {
 								
@@ -494,6 +495,9 @@ public class Ventana extends JFrame implements KeyListener{
 											if(campo[20][i] != null) {
 												 JOptionPane.showMessageDialog(null, "GAME OVER");
 												 
+												 pieza_guardada.setIcon(new ImageIcon(Ventana.class.getResource("")));
+												 guardada = null;
+												 
 												 for (int P = 0;P<campo.length;P++){
 													 
 											            for(int j=0;j<campo[0].length;j++){
@@ -504,7 +508,27 @@ public class Ventana extends JFrame implements KeyListener{
 												 
 											}
 										}
-											
+											for(int u = 0 ; u < 21 ; u++) {
+												
+												if(campo[u][0]!= null && campo[u][1]!= null && campo[u][2]!= null && campo[u][3]!= null && campo[u][4]!= null && campo[u][5]!= null && campo[u][6]!= null && campo[u][7]!= null && campo[u][8]!= null) {
+													
+													lineas = lineas + 1;
+													
+													for(int t = 0; t < 9 ; t++) {
+														
+														campo[u][t] = null;
+														
+														for(int r = u; r < 20 ; r++) {
+															
+															campo[r][t] = campo[r+1][t];
+															
+														}
+														
+														
+													}
+													
+												}
+											}
 										CreadorDePiezas.mover_lista();
 											
 												

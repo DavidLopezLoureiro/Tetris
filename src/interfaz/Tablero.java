@@ -32,7 +32,7 @@ public class Tablero extends JPanel {
 	
 	@Override
 	public void paint(Graphics arg0) {
-		// TODO Auto-generated method stub
+		
 		super.paint(arg0);
 		//pintamos las diferentes lineas del tablero
 		//lineas horizontales
@@ -71,7 +71,7 @@ public class Tablero extends JPanel {
 		arg0.drawLine(300,0,300,630 );
 		
 		
-		if(Ventana.campo[0][0] != null){
+			if(Ventana.campo[0][0] != null){
 			arg0.fillRect(0,600,30,30);
 			}
 
@@ -828,8 +828,6 @@ public class Tablero extends JPanel {
 			}
 
 
-		
-		
 		//PINTA LA PIEZA EN MO
 		arg0.fillRect(Ventana.x_0, Ventana.y_0, 30, 30);
 		arg0.fillRect(Ventana.x_1, Ventana.y_1, 30, 30);
