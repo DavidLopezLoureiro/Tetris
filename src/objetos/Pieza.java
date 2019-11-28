@@ -29,7 +29,7 @@ public class Pieza {
 			 * 
 			 * @return Cod_pieza --> String codigo de la pieza.
 			 */
-			public String getCod_pieza() {
+			public static String getCod_pieza() {
 				return Cod_pieza;
 			}
 		
@@ -39,7 +39,7 @@ public class Pieza {
 			 * 
 			 * @return orientacion --> String orientacion de la pieza.
 			 */
-			public Orientacion getOrientacion() {
+			public static Orientacion getOrientacion() {
 				return orientacion;
 			}
 
