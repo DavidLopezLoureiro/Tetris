@@ -9,6 +9,23 @@ public class Pieza {
 	private Cuadrado c2;
 	private Cuadrado c3;
 
+	
+	/**
+	 * ¡¡NO LLAMAR!! Constructor de piezas. (se usa mediante el metodo de la clase crear pieza)
+	 * 
+	 * @param cod_pieza --> String del codigo de la pieza.
+	 * 
+	 * @param orientacion --> String orientacion de la pieza.
+	 * 
+	 * @param c0 --> Cuadrado 0 de la pieza.
+	 * 
+	 * @param c1 --> Cuadrado 1 de la pieza.
+	 * 
+	 * @param c2 --> Cuadrado 2 de la pieza.
+	 * 
+	 * @param c3 --> Cuadrado 3 de la pieza.
+	 * 
+	 */
 	public Pieza(String cod_pieza, String orientacion, Cuadrado c0, Cuadrado c1, Cuadrado c2, Cuadrado c3) {
 		super();
 		Cod_pieza = cod_pieza;
@@ -19,30 +36,65 @@ public class Pieza {
 		this.c3 = c3;
 	}
 
+	/**
+	 * Devuelve el cuadrado 0.
+	 * 
+	 * @return c0 --> Cuadrado 0 de la pieza.
+	 */
 	public Cuadrado getc0() {
 		return c0;
 	}
 	
+	/**
+	 * Devuelve el cuadrado 1.
+	 * 
+	 * @return c1 --> Cuadrado 1 de la pieza.
+	 */
 	public Cuadrado getc1() {
 		return c1;
 	}
 	
+	/**
+	 * Devuelve el cuadrado 2.
+	 * 
+	 * @return c2 --> Cuadrado 2 de la pieza.
+	 */
 	public Cuadrado getc2() {
 		return c2;
 	}
 	
+	/**
+	 * Devuelve el cuadrado 3.
+	 * 
+	 * @return c3 --> Cuadrado 0 de la pieza.
+	 */
 	public Cuadrado getc3() {
 		return c3;
 	}
 	
+	/**
+	 * Devuelve el codigo de la pieza..
+	 * 
+	 * @return Cod_pieza --> String codigo de la pieza.
+	 */
 	public String getCod_pieza() {
 		return Cod_pieza;
 	}
 
+	
+	/**
+	 * Devuelve la orientacion de la pieza..
+	 * 
+	 * @return orientacion --> String orientacion de la pieza.
+	 */
 	public String getOrientacion() {
 		return orientacion;
 	}
 
+	/**
+	 * Cambia la orientacion de la pieza a la orientacion siguiente de la cadena de orientaciones -> (ORIGINAL --> DERECHA --> ALREVES --> IZQUIERDA --> ORIGINAL -->...)
+	 *
+	 */
 	public void setOrientacion() {
 		
 		if(orientacion.equals("Original")) {

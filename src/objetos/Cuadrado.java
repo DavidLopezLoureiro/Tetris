@@ -10,6 +10,25 @@ public class Cuadrado {
 	private boolean choca_izquierda;
 	private boolean choca_derecha;
 
+	
+	/**
+	 * 　NO LLAMAR!! Constructor de cada cuadrado de la pieza. (se usa mediante el metodo de la clase crear pieza)
+	 * 
+	 * @param cod_cuadrado --> String del codigo del cuadrado.
+	 * 
+	 * @param color --> String del color del cuadrado.
+	 * 
+	 * @param x --> int de la posicion x del cuadrado.
+	 * 
+	 * @param y --> int de la posicion y del cuadrado.
+	 * 
+	 * @param choca_abajo --> boolean para saber si el cuadrado tiene contacto con la parte de abajo.
+	 * 
+	 * @param choca_izquierda --> boolean para saber si el cuadrado tiene contacto con la izquierda.
+	 * 
+	 * @param choca_derecha --> boolean para saber si el cuadrado tiene contacto con la derecha.
+	 */
+	
 	public Cuadrado(String cod_cuadrado, String color, int x, int y, boolean choca_abajo, boolean choca_izquierda, boolean choca_derecha) {	
 		super();
 		Cod_cuadrado = cod_cuadrado; 
@@ -23,45 +42,88 @@ public class Cuadrado {
 	
 	//GETS
 	
-		//GET COLOR	
+	/**
+	 * Devuelve el color del cuadrado.
+	 * 	
+	 * @return color --> String del color del cuadrado.
+	 */
 	public String getColor() {
 		return color;
 	}
 	
-		//GET COD_CUADRADO
+	/**
+	 * Devuelve el codigo del cuadrado.
+	 * 	
+	 * @return color --> String del codigo del cuadrado.
+	 */
 	public String getCod_cuadrado() {
 		return Cod_cuadrado;
 	}
 	
-		//GETS DE X Y
+	/**
+	 * Devuelve la x del cuadrado.
+	 * 	
+	 * @return x --> int de la x del cuadrado.
+	 */
 	public int getx() {
 		return x;
 	}
 	
+	/**
+	 * Devuelve la y del cuadrado.
+	 * 	
+	 * @return y --> int de la y del cuadrado.
+	 */
 	public int gety() {
 		return y;
 	}
 
-		//GETS DE CHOQUES
+	/**
+	 * Devuelve el boolean choca_abajo del cuadrado.
+	 * 	
+	 * @return choca_abajo --> boolean que indica si el cuadrado choca con elementos debajo de el.
+	 */
 	public boolean getabajo() {
 		return choca_abajo;
 	}
 	
+	
+	/**
+	 * Devuelve el boolean choca_izquierda del cuadrado.
+	 * 	
+	 * @return choca_izquierda --> boolean que indica si el cuadrado choca con elementos a la izquierda de el.
+	 */
 	public boolean getizquierda() {
 		return choca_izquierda;
 	}
 	
+	
+	/**
+	 * Devuelve el boolean choca_derecha del cuadrado.
+	 * 	
+	 * @return choca_derecha --> boolean que indica si el cuadrado choca con elementos a la derecha de el.
+	 */
 	public boolean getderecha() {
 		return choca_derecha;
 	}
 	
 	//SETS
 	
-		//SETS DE X Y
+	/**
+	 * Establece la x del cuadrado a lo que le pasemos.
+	 * 	
+	 * @param x --> int posicion x que queremos que el cuadrado tenga.
+	 */
 	public void setx(int x) {
 		this.x = x;
 	}
 	
+	
+	/**
+	 * Establece la y del cuadrado a lo que le pasemos.
+	 * 	
+	 * @param y --> int posicion y que queremos que el cuadrado tenga.
+	 */
 	public void sety(int y) {
 		this.y = y;
 	}
@@ -69,7 +131,13 @@ public class Cuadrado {
 	
 	// FALTA DE ADAPTAR ESTOS METODOS PARA CADA PIEZA Y CADA ORIENTACION
 
-	// C0
+	/**
+	 * 　 NO LLAMAR !! Gira el cuadrado 0 de la pieza. (Se llama mediante el metodo setOrientacion() de la clase Pieza)
+	 * 	
+	 * @param Cod_pieza --> String codigo de la pieza de la cual el cuadrado en cuestion forma parte.
+	 * 
+	 * @param orientacio --> String orientacion que tendra la pieza para calcular como gira el cuadrado.
+	 */
 	public void girar0(String Cod_pieza, String orientacion) {
 
 		// T
@@ -210,7 +278,13 @@ public class Cuadrado {
 	//booleans no cambiados apartir de aqui
 
 	
-	// C1
+		/**
+		 * 　 NO LLAMAR !! Gira el cuadrado 1 de la pieza. (Se llama mediante el metodo setOrientacion() de la clase Pieza)
+		 * 	
+		 * @param Cod_pieza --> String codigo de la pieza de la cual el cuadrado en cuestion forma parte.
+		 * 
+		 * @param orientacio --> String orientacion que tendra la pieza para calcular como gira el cuadrado.
+		 */
 		public void girar1(String Cod_pieza, String orientacion) {
 
 			// T
@@ -353,7 +427,13 @@ public class Cuadrado {
 		}
 
 	
-		// C2
+		/**
+		 * 　 NO LLAMAR !! Gira el cuadrado 2 de la pieza. (Se llama mediante el metodo setOrientacion() de la clase Pieza)
+		 * 	
+		 * @param Cod_pieza --> String codigo de la pieza de la cual el cuadrado en cuestion forma parte.
+		 * 
+		 * @param orientacio --> String orientacion que tendra la pieza para calcular como gira el cuadrado.
+		 */
 		public void girar2(String Cod_pieza, String orientacion) {
 
 			// T
@@ -495,7 +575,13 @@ public class Cuadrado {
 
 		}
 
-		// C3
+		/**
+		 * 　 NO LLAMAR !! Gira el cuadrado 3 de la pieza. (Se llama mediante el metodo setOrientacion() de la clase Pieza)
+		 * 	
+		 * @param Cod_pieza --> String codigo de la pieza de la cual el cuadrado en cuestion forma parte.
+		 * 
+		 * @param orientacio --> String orientacion que tendra la pieza para calcular como gira el cuadrado.
+		 */
 		public void girar3(String Cod_pieza, String orientacion) {
 
 			// T
