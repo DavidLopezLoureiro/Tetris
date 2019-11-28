@@ -14,7 +14,6 @@ import java.util.Date;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
-import javax.swing.Timer;
 import javax.swing.border.EmptyBorder;
 
 import imagenes.AsignadorDeFotosDePiezas;
@@ -27,14 +26,16 @@ import interfaz.Tablero;
 import objetos.Pieza;
 import objetos.CreadorDePiezas;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
 @SuppressWarnings("serial")
-public class Ventana extends JFrame {
+public class Ventana extends JFrame implements KeyListener{
 
 	private JPanel contentPane;
 	
 	public static String Cod_pieza_actual;
 	public static ArrayList<String> lista;
-	private static String ESO;
 	private static int lineas;
 	public static Dificultad dificultad;
 	private static Pieza guardada; //para guardar la pieza 
@@ -51,10 +52,50 @@ public class Ventana extends JFrame {
 	public static int x_3;
 	public static int y_3;
 	
-	private static Timer movimiento;
+	public static String[][] campo;
 
 	
 	public enum Dificultad { FACIL, MEDIO, DIFICIL }
+	
+	
+	@Override
+	public void keyPressed(KeyEvent e) {
+		
+		
+		int key = e.getKeyCode();
+		
+		 if (key == KeyEvent.VK_DOWN) {
+			 
+		  System.out.println("Presionó Espacio!" + (char) key);
+		  
+		 } 
+		 
+		 if (key == KeyEvent.VK_RIGHT) {
+		 
+		  System.out.println("Presionó Enter!" + (char) key);
+		  
+		 }
+		
+		 if (key == KeyEvent.VK_LEFT) {
+			 
+		  System.out.println("Presionó Espacio!" + (char) key);
+		  
+		 }
+		 
+		 if (key == KeyEvent.VK_SPACE) {
+			 
+		  System.out.println("Presionó Espacio!" + (char) key);
+		  
+		 }
+		 
+		
+	}
+	 
+	@Override
+	public void keyReleased(KeyEvent e) {}
+	 
+	@Override
+	public void keyTyped(KeyEvent e) {}
 
 	/**
 	 * Launch the application.
@@ -65,7 +106,6 @@ public class Ventana extends JFrame {
 				try {
 					Ventana frame = new Ventana();
 					frame.setVisible(true);
-					 JOptionPane.showMessageDialog(null, ESO);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -80,8 +120,8 @@ public class Ventana extends JFrame {
 		
 		//CREACION DEL ARRAY
 		
-			String[][] campo;
-			campo = new String[23][12]; //EL ARRAY TIENE QUE SER DE 21 * 9 PERO ESTA AUMENTADO PARA PROBAR LOS GIROS (sin que de error por out of index)
+			
+			campo = new String[21][9]; //EL ARRAY TIENE QUE SER DE 21 * 9 PERO ESTA AUMENTADO PARA PROBAR LOS GIROS (sin que de error por out of index)
 		
 		
 		//LISTA DE PIEZAS
@@ -113,7 +153,6 @@ public class Ventana extends JFrame {
 				panel.add(tablero);
 				
 			
-		
 			//GUARDAR
 				JPanel t_guardada = new JPanel();
 				t_guardada.setBackground(Color.DARK_GRAY);
@@ -200,62 +239,7 @@ public class Ventana extends JFrame {
 			panel_guardar.add(pieza_guardada);
 			pieza_guardada.setBackground(Color.WHITE);
 			
-			
-			//INSERCION DE PIEZAS EN LA LISTA POR PRIMERA VEZ
-			
-				lista = CreadorDePiezas.crear_lista_pirmera_vez();
 	
-				pieza_siguiente.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(0)))));
-				pieza_siguiente_2.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(1)))));
-				pieza_siguiente_3.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(2)))));
-				pieza_siguiente_4.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(3)))));
-				//pieza_guardada.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(3))))); para poner la imagen de la foto de la pieza que este guardada
-	
-			
-			//SACA LA PRIMERA PIEZA DE LA LISTA AL CAMPO Y MUEVE EL RESTO DE LAS PIEZAS UN HUECO HACIA ADELANTE
-			
-				 CreadorDePiezas.mover_lista();
-				
-				//MUEVE LA LISTA
-					pieza_siguiente.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(0)))));
-					pieza_siguiente_2.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(1)))));
-					pieza_siguiente_3.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(2)))));
-					pieza_siguiente_4.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(3)))));
-					
-					campo[Pieza.getc0().gety()][Pieza.getc0().getx()] = Pieza.getc0().getCod_cuadrado();
-					
-					campo[Pieza.getc1().gety()][Pieza.getc1().getx()] = Pieza.getc1().getCod_cuadrado();
-					
-					campo[Pieza.getc2().gety()][Pieza.getc2().getx()] = Pieza.getc2().getCod_cuadrado();
-					
-					campo[Pieza.getc3().gety()][Pieza.getc3().getx()] = Pieza.getc3().getCod_cuadrado();
-					
-					//DIBUJA EL CAMPO
-					
-							 ESO = "";
-							 
-							 for (int i=campo.length;i>0;i--){
-							//System.out.print("\n");
-							ESO = ESO + "\n";
-						            for(int j=0;j<campo[0].length;j++){
-						            	ESO = ESO + campo[i-1][j]+ " ";
-						            	
-						            }
-						        }
-					 
-					//RESETEA EL CAMPO
-						 
-							 for (int i = 0;i<campo.length;i++){
-								 
-					            for(int j=0;j<campo[0].length;j++){
-					            	
-						            	campo[i][j]= null;
-						            }
-						        }
-				
-		
-			
-			
 	/* COMENTADO PARA HACER PRUEBAS RAPIDAS EN LUGAR DE TENER QUE INICIAR SESION CADA VEZ
 			JLabel lblUsuario = new JLabel("Usuario:  " + IniciarSesion.entrada.getNombre());
 			lblUsuario.setFont(new Font("Consolas", Font.PLAIN, 12));
@@ -369,7 +353,7 @@ public class Ventana extends JFrame {
 								
 								Ajustes nuevaventana = new Ajustes();
 								nuevaventana.setVisible(true);
-
+								 
 								// CIERRA LA VENTAN ACTUAL
 								Ventana.this.dispose();
 					        
@@ -378,6 +362,48 @@ public class Ventana extends JFrame {
 						}
 					});
 				 
+
+					//INSERCION DE PIEZAS EN LA LISTA POR PRIMERA VEZ
+					
+						lista = CreadorDePiezas.crear_lista_pirmera_vez(); //PASAR A LA VENTANA ANTERIOR
+			
+						pieza_siguiente.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(0)))));
+						pieza_siguiente_2.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(1)))));
+						pieza_siguiente_3.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(2)))));
+						pieza_siguiente_4.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(3)))));
+						
+						//pieza_guardada.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(3))))); para poner la imagen de la foto de la pieza que este guardada
+			
+					
+					//Inicializa el campo
+						
+
+						 for (int i = 0;i<campo.length;i++){
+							 
+				            for(int j=0;j<campo[0].length;j++){
+				            	
+					            	campo[i][j]= null;
+					            }
+					        }
+					
+						 //SACA LA PRIMERA PIEZA Y MUEVE LA LISTA DE PIEZAS
+						 
+						 CreadorDePiezas.mover_lista();
+						 
+						 	campo[Pieza.getc0().gety()][Pieza.getc0().getx()] = Pieza.getc0().getCod_cuadrado();
+							
+							campo[Pieza.getc1().gety()][Pieza.getc1().getx()] = Pieza.getc1().getCod_cuadrado();
+							
+							campo[Pieza.getc2().gety()][Pieza.getc2().getx()] = Pieza.getc2().getCod_cuadrado();
+							
+							campo[Pieza.getc3().gety()][Pieza.getc3().getx()] = Pieza.getc3().getCod_cuadrado();
+							
+						
+						//MUEVE LA LISTA
+							pieza_siguiente.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(0)))));
+							pieza_siguiente_2.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(1)))));
+							pieza_siguiente_3.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(2)))));
+							pieza_siguiente_4.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(3)))));
 			
 					x_0 = (Pieza.getc0().getx() * 30);
 					x_1 = (Pieza.getc1().getx() * 30);
@@ -389,43 +415,54 @@ public class Ventana extends JFrame {
 							try {
 								Thread.sleep(300);
 								
-								if(Pieza.getc0().getabajo()==true) {
-									if (campo[Pieza.getc0().gety()][Pieza.getc0().getx()] == null) {
-										if(Pieza.getc0().gety() > 0 && Pieza.getc1().gety() > 0 &&Pieza.getc2().gety() > 0 && Pieza.getc3().gety() > 0) {
-											movimientoabajo(x_0, x_1, x_2, x_3);
-										}else {
-											parar();
+										if(choque_abajo() == false) {
+											
+											movimientoabajo();
+															
+										}else{
+										
+										for(int i = 0; i < 9 ; i++) {
+											
+											if(campo[20][i] != null) {
+												 JOptionPane.showMessageDialog(null, "GAME OVER");
+												 
+												 for (int P = 0;P<campo.length;P++){
+													 
+											            for(int j=0;j<campo[0].length;j++){
+											            	
+												            	campo[P][j]= null;
+												            }
+												        }
+												 
+											}
 										}
-									}
-						
-								}else if((Pieza.getc1().getabajo()==true)) {
-									if(campo[Pieza.getc1().gety()][Pieza.getc1().getx()] == null) {
-										if(Pieza.getc0().gety() > 0 && Pieza.getc1().gety() > 0 &&Pieza.getc2().gety() > 0 && Pieza.getc3().gety() > 0) {
-											movimientoabajo(x_0, x_1, x_2, x_3);
-										}else {
-											parar();
-									}
-								}
-								
-								}else if(Pieza.getc2().getabajo()==true) {
-									if(campo[Pieza.getc2().gety()][Pieza.getc2().getx()] == null) {
-										if(Pieza.getc0().gety() > 0 && Pieza.getc1().gety() > 0 &&Pieza.getc2().gety() > 0 && Pieza.getc3().gety() > 0) {
-											movimientoabajo(x_0, x_1, x_2, x_3);
-										}else {
-											parar();
-									}
-								}
-								
-								}else if(Pieza.getc3().getabajo()==true) {
-									if (campo[Pieza.getc3().gety()][Pieza.getc3().getx()] == null) {
-										if(Pieza.getc0().gety() > 0 && Pieza.getc1().gety() > 0 &&Pieza.getc2().gety() > 0 && Pieza.getc3().gety() > 0) {
-											movimientoabajo(x_0, x_1, x_2, x_3);
-										}else {
-											parar();
-									}
-								}
-							}
-			
+											CreadorDePiezas.mover_lista();
+											
+												
+												//MUEVE LA LISTA
+													pieza_siguiente.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(0)))));
+													pieza_siguiente_2.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(1)))));
+													pieza_siguiente_3.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(2)))));
+													pieza_siguiente_4.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(3)))));
+													
+													campo[Pieza.getc0().gety()][Pieza.getc0().getx()] = Pieza.getc0().getCod_cuadrado();
+													
+													campo[Pieza.getc1().gety()][Pieza.getc1().getx()] = Pieza.getc1().getCod_cuadrado();
+													
+													campo[Pieza.getc2().gety()][Pieza.getc2().getx()] = Pieza.getc2().getCod_cuadrado();
+													
+													campo[Pieza.getc3().gety()][Pieza.getc3().getx()] = Pieza.getc3().getCod_cuadrado();
+													
+													x_0 = (Pieza.getc0().getx() * 30);
+													x_1 = (Pieza.getc1().getx() * 30);
+													x_2 = (Pieza.getc2().getx() * 30);
+													x_3 = (Pieza.getc3().getx() * 30);
+													
+													movimientoabajo();
+													
+										}
+									
+							
 							} catch (InterruptedException e) {
 							
 							}
@@ -436,46 +473,101 @@ public class Ventana extends JFrame {
 					
 		}
 	
-	public void parar() {
-		
-		movimiento.stop();
-		System.out.println("PARO");
+	public void movimientoabajo() {	 	
+		 	
+		 	if(choque_abajo() == false) {
+		 		
+		 		borrar_donde_estaba_abajo();
+	
+				Pieza.getc0().sety(Pieza.getc0().gety() - 1);
+				y_0 = (20 - Pieza.getc0().gety()) * 30;
+				
+				Pieza.getc1().sety(Pieza.getc1().gety() - 1);
+				y_1 = (20 - Pieza.getc1().gety()) * 30;
+				
+				Pieza.getc2().sety(Pieza.getc2().gety() - 1);
+				y_2 = (20 - Pieza.getc2().gety()) * 30;
+				
+				Pieza.getc3().sety(Pieza.getc3().gety() - 1);
+				y_3 = (20 - Pieza.getc3().gety()) * 30;
+				
+				campo[Pieza.getc0().gety()][Pieza.getc0().getx()] = Pieza.getc0().getCod_cuadrado();
+				campo[Pieza.getc1().gety()][Pieza.getc1().getx()] = Pieza.getc1().getCod_cuadrado();
+				campo[Pieza.getc2().gety()][Pieza.getc2().getx()] = Pieza.getc2().getCod_cuadrado();
+				campo[Pieza.getc3().gety()][Pieza.getc3().getx()] = Pieza.getc3().getCod_cuadrado();
+			
+		 	}
+	
 	}
 	
-	public void movimientoabajo(int x_0, int x_1, int x_2, int x_3) {
-	
-			Pieza.getc0().sety(Pieza.getc0().gety() - 1);
-			y_0 = (20 - Pieza.getc0().gety()) * 30;
-			
-			Pieza.getc1().sety(Pieza.getc1().gety() - 1);
-			y_1 = (20 - Pieza.getc1().gety()) * 30;
-			
-			Pieza.getc2().sety(Pieza.getc2().gety() - 1);
-			y_2 = (20 - Pieza.getc2().gety()) * 30;
-			
-			Pieza.getc3().sety(Pieza.getc3().gety() - 1);
-			y_3 = (20 - Pieza.getc3().gety()) * 30;
-			
-			//aqui llama a la funcion de choques
-	
+	public void borrar_donde_estaba_abajo() {
+		
+		//BORRA LA POSICION EN LA QUE ESTABA EL CUADRADO
+		campo[Pieza.getc0().gety()][Pieza.getc0().getx()] = null;
+		campo[Pieza.getc1().gety()][Pieza.getc1().getx()] = null;
+		campo[Pieza.getc2().gety()][Pieza.getc2().getx()] = null;
+		campo[Pieza.getc3().gety()][Pieza.getc3().getx()] = null;
+		
 	}
 	
-	public void choque_abajo(int y_0, int y_1, int y_2, int y_3) {
+	public boolean choque_abajo() {
 		
-		Pieza.getc0().sety(Pieza.getc0().gety() - 1);
-		y_0 = (20 - Pieza.getc0().gety()) * 30;
+		//COMPRUEBA QUE LA PIEZA AL BAJAR NO CHOQUE
 		
-		Pieza.getc1().sety(Pieza.getc1().gety() - 1);
-		y_1 = (20 - Pieza.getc1().gety()) * 30;
+		if(Pieza.getc0().gety() == 0 || Pieza.getc1().gety() == 0 || Pieza.getc2().gety() == 0 || Pieza.getc3().gety() == 0) {
+			
+			return true;
+			
+		}
 		
-		Pieza.getc2().sety(Pieza.getc2().gety() - 1);
-		y_2 = (20 - Pieza.getc2().gety()) * 30;
+		if(Pieza.getc0().getabajo() == true){
+			
+			if(campo[Pieza.getc0().gety()-1][Pieza.getc0().getx()] == null) {
+				
+				
+			}else {
+				
+				return true;
+				
+			}
+			
+		}
 		
-		Pieza.getc3().sety(Pieza.getc3().gety() - 1);
-		y_3 = (20 - Pieza.getc3().gety()) * 30;
+		if(Pieza.getc1().getabajo() == true) {
+			
+			if(campo[Pieza.getc1().gety()-1][Pieza.getc1().getx()] == null) {
+				
+				
+			}else {
+				
+				return true;
+				
+			}
+			
+		}
 		
-		//aqui llama a la funcion de choques
-
-}
+		if(Pieza.getc2().getabajo() == true) {
+			
+			if(campo[Pieza.getc2().gety()-1][Pieza.getc2().getx()] == null) {
+				
+				
+			}else {
+				return true;
+			}
+			
+		}
+		
+		if(Pieza.getc3().getabajo() == true) {
+			
+			if(campo[Pieza.getc3().gety()-1][Pieza.getc3().getx()] == null) {
+				
+				
+			}else {
+				return true;
+			}
+		
+		}
+		return false;
+	}
 
 }
