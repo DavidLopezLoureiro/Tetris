@@ -59,7 +59,7 @@ public class Ajustes extends JFrame {
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(220, 220, 220));
 		panel.setForeground(new Color(220, 220, 220));
-		panel.setBounds(0, 0, 832, 115);
+		panel.setBounds(0, 0, 850, 115);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
