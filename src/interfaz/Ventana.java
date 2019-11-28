@@ -24,17 +24,9 @@ import javax.swing.JButton;
 import interfaz.Tablero;
 
 import objetos.Pieza;
-<<<<<<< HEAD
 
-
-import java.awt.Font;
-import javax.swing.ImageIcon;
-import java.awt.Color;
-
-=======
->>>>>>> branch 'master' of https://github.com/DavidLopezLoureiro/Tetris.git
 import objetos.CreadorDePiezas;
-//github.com/DavidLopezLoureiro/Tetris.git
+
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -351,71 +343,9 @@ public class Ventana extends JFrame implements KeyListener{
 				timer.start();
 				
 			
-<<<<<<< HEAD
-		//BOTONES
 
-			JButton Ajustes = new JButton("AJUSTES");
-			Ajustes.setForeground(new Color(255, 255, 255));
-			Ajustes.setBackground(new Color(65, 105, 225));
-			Ajustes.setFont(new Font("Times New Roman", Font.BOLD, 25));
-			Ajustes.setBounds(517, 719, 153, 71);
-
-			JButton Ajustes1 = new JButton("Ajustes");
-			Ajustes1.setBounds(455, 500, 132, 64);
-https://github.com/DavidLopezLoureiro/Tetris.git
-			contentPane.add(Ajustes1);
-			
-			JButton btnGirar = new JButton("Girar");
-			btnGirar.setBounds(102, 534, 97, 25);
-			panel.add(btnGirar);
-			
-			JButton btnSacarBool = new JButton("SACAR BOOL");
-			btnSacarBool.setBounds(66, 496, 168, 25);
-			panel.add(btnSacarBool);
-			
-			JButton btnSacarX = new JButton("SACAR X");
-			btnSacarX.setBounds(102, 462, 97, 25);
-			panel.add(btnSacarX);
-			
-			JButton btnSacarY = new JButton("SACAR Y");
-			btnSacarY.setBounds(102, 428, 97, 25);
-			panel.add(btnSacarY);
-			
-			JButton btnT = new JButton("T");
-			btnT.setBounds(20, 193, 97, 25);
-			contentPane.add(btnT);
-			
-			JButton btnI = new JButton("I");
-			btnI.setBounds(20, 222, 97, 25);
-			contentPane.add(btnI);
-			
-			JButton btnO = new JButton("O");
-			btnO.setBounds(20, 251, 97, 25);
-			contentPane.add(btnO);
-			
-			JButton btnL = new JButton("L");
-			btnL.setBounds(20, 280, 97, 25);
-			contentPane.add(btnL);
-			
-			JButton btnR = new JButton("R");
-			btnR.setBounds(20, 308, 97, 25);
-			contentPane.add(btnR);
-			
-			JButton btnS = new JButton("S");
-			btnS.setBounds(20, 338, 97, 25);
-			contentPane.add(btnS);
-			
-			JButton btnZ = new JButton("Z");
-			btnZ.setBounds(20, 370, 97, 25);
-			contentPane.add(btnZ);
-			
-			JButton btnBajar = new JButton("BAJAR");
-			btnBajar.setBounds(102, 396, 97, 25);
-			panel.add(btnBajar);
-=======
-						
 		//FONDO	
->>>>>>> branch 'master' of https://github.com/DavidLopezLoureiro/Tetris.git
+
 		
 			JLabel lblNewLabel = new JLabel("");
 			lblNewLabel.setIcon(new ImageIcon(Ventana.class.getResource("/imagenes/fondoTetris.jpg")));
@@ -425,9 +355,9 @@ https://github.com/DavidLopezLoureiro/Tetris.git
 		//ACTION LISTENERS
 				
 
-				 Ajustes1.addActionListener(new ActionListener() {
+				 Ajustes.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent arg0) {
-							if (arg0.getSource() == Ajustes1) {
+							if (arg0.getSource() == Ajustes) {
 								
 								Ajustes nuevaventana = new Ajustes();
 								nuevaventana.setVisible(true);
