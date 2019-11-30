@@ -24,7 +24,12 @@ import javax.swing.JButton;
 import interfaz.Tablero;
 
 import objetos.Pieza;
-
+import objetos.PiezaI;
+import objetos.PiezaL;
+import objetos.PiezaR;
+import objetos.PiezaS;
+import objetos.PiezaT;
+import objetos.PiezaZ;
 import objetos.CreadorDePiezas;
 
 
@@ -95,8 +100,118 @@ public class Ventana extends JFrame implements KeyListener{
 		 
 		 if (key == KeyEvent.VK_SPACE) {
 			 
-		  System.out.println("Los giros");
+			 borrar_donde_estaba();
+			 
+		  if( Pieza.getCod_pieza() == "T") {
+			  
+			  PiezaT.girar(); 
+			  
+			  if(campo[Pieza.getc0().gety()][Pieza.getc0().getx()] == null && campo[Pieza.getc1().gety()][Pieza.getc1().getx()] == null  && campo[Pieza.getc2().gety()][Pieza.getc2().getx()] == null  && campo[Pieza.getc3().gety()][Pieza.getc3().getx()] == null) {
+			
+					
+			  } else {
+				  
+				  PiezaT.girar(); 
+				  PiezaT.girar(); 
+				  PiezaT.girar(); 
+			  }
 		  
+		  }else if( Pieza.getCod_pieza() == "I") {
+			  
+			  PiezaI.girar();
+			  
+			  if(campo[Pieza.getc0().gety()][Pieza.getc0().getx()] == null && campo[Pieza.getc1().gety()][Pieza.getc1().getx()] == null  && campo[Pieza.getc2().gety()][Pieza.getc2().getx()] == null  && campo[Pieza.getc3().gety()][Pieza.getc3().getx()] == null) {
+					
+					
+			  } else {
+				  
+				  PiezaI.girar();
+				  PiezaI.girar();
+				  PiezaI.girar();
+				  
+			  }
+			  
+		  }	else if( Pieza.getCod_pieza() == "L") {
+			  
+			  PiezaL.girar();
+			  
+			  if(campo[Pieza.getc0().gety()][Pieza.getc0().getx()] == null && campo[Pieza.getc1().gety()][Pieza.getc1().getx()] == null  && campo[Pieza.getc2().gety()][Pieza.getc2().getx()] == null  && campo[Pieza.getc3().gety()][Pieza.getc3().getx()] == null) {
+					
+					
+			  } else {
+				  
+				  PiezaL.girar();
+				  PiezaL.girar();
+				  PiezaL.girar();
+				  
+			  }
+			  
+		  }	else if( Pieza.getCod_pieza() == "R") {
+			  
+			  PiezaR.girar();
+			  
+			  if(campo[Pieza.getc0().gety()][Pieza.getc0().getx()] == null && campo[Pieza.getc1().gety()][Pieza.getc1().getx()] == null  && campo[Pieza.getc2().gety()][Pieza.getc2().getx()] == null  && campo[Pieza.getc3().gety()][Pieza.getc3().getx()] == null) {
+					
+					
+			  } else {
+				  
+				  PiezaR.girar();
+				  PiezaR.girar();
+				  PiezaR.girar();
+				  
+			  }
+			  
+		  }	 else if( Pieza.getCod_pieza() == "S") {
+			  
+			  PiezaS.girar();
+			  
+			  if(campo[Pieza.getc0().gety()][Pieza.getc0().getx()] == null && campo[Pieza.getc1().gety()][Pieza.getc1().getx()] == null  && campo[Pieza.getc2().gety()][Pieza.getc2().getx()] == null  && campo[Pieza.getc3().gety()][Pieza.getc3().getx()] == null) {
+					
+					
+			  } else {
+				  
+				  PiezaS.girar();
+				  PiezaS.girar();
+				  PiezaS.girar();
+				  
+			  }
+			  
+		  }	 else if( Pieza.getCod_pieza() == "Z") {
+			  
+			  PiezaZ.girar();
+			  
+			  if(campo[Pieza.getc0().gety()][Pieza.getc0().getx()] == null && campo[Pieza.getc1().gety()][Pieza.getc1().getx()] == null  && campo[Pieza.getc2().gety()][Pieza.getc2().getx()] == null  && campo[Pieza.getc3().gety()][Pieza.getc3().getx()] == null) {
+					
+					
+			  } else {
+				  
+				  PiezaZ.girar();
+				  PiezaZ.girar();
+				  PiezaZ.girar();
+				  
+			  }
+			  
+		  }	 
+		  
+		    campo[Pieza.getc0().gety()][Pieza.getc0().getx()] = Pieza.getc0().getCod_cuadrado();
+			
+			campo[Pieza.getc1().gety()][Pieza.getc1().getx()] = Pieza.getc1().getCod_cuadrado();
+			
+			campo[Pieza.getc2().gety()][Pieza.getc2().getx()] = Pieza.getc2().getCod_cuadrado();
+			
+			campo[Pieza.getc3().gety()][Pieza.getc3().getx()] = Pieza.getc3().getCod_cuadrado();
+		  
+			y_0 = (20 - Pieza.getc0().gety()) * 30;
+			x_0 = (Pieza.getc0().getx() * 30);
+			
+			y_1 = (20 - Pieza.getc1().gety()) * 30;
+			x_1 = (Pieza.getc1().getx() * 30);
+			
+			y_2 = (20 - Pieza.getc2().gety()) * 30;
+			x_2 = (Pieza.getc2().getx() * 30);
+			
+			y_3 = (20 - Pieza.getc3().gety()) * 30;
+			x_3 = (Pieza.getc3().getx() * 30);
 		 }
 		 
 		 if (key == KeyEvent.VK_ENTER) {
@@ -107,6 +222,8 @@ public class Ventana extends JFrame implements KeyListener{
 			 pieza_guardada.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(guardada))));
 			 borrar_donde_estaba();
 			 CreadorDePiezas.mover_lista();
+			 
+			 Cod_pieza_actual = Pieza.getCod_pieza();
 			 
 			 	pieza_siguiente.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(0)))));
 				pieza_siguiente_2.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(1)))));
@@ -129,12 +246,15 @@ public class Ventana extends JFrame implements KeyListener{
 			 }else if(guardada != null) {
 				 
 				 String transito = guardada;
+				 
 				 guardada = Pieza.getCod_pieza();
 				 
 				 pieza_guardada.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(guardada))));
 				 borrar_donde_estaba();
 				 
 				 CreadorDePiezas.mover_guardada(transito);
+				 
+				 Cod_pieza_actual = Pieza.getCod_pieza();
 					
 					campo[Pieza.getc0().gety()][Pieza.getc0().getx()] = Pieza.getc0().getCod_cuadrado();
 					
@@ -188,12 +308,12 @@ public class Ventana extends JFrame implements KeyListener{
 		//CREACION DEL ARRAY
 		
 			
-			campo = new String[21][9]; //EL ARRAY TIENE QUE SER DE 21 * 9 PERO ESTA AUMENTADO PARA PROBAR LOS GIROS (sin que de error por out of index)
+			campo = IniciarSesion.campo_i; //EL ARRAY TIENE QUE SER DE 21 * 9 PERO ESTA AUMENTADO PARA PROBAR LOS GIROS (sin que de error por out of index)
 		
 		
 		//LISTA DE PIEZAS
 		
-			lista = new ArrayList<String>();
+			lista = IniciarSesion.lista_i;
 	
 		//AJUSTES GENERALES
 			
@@ -309,7 +429,7 @@ public class Ventana extends JFrame implements KeyListener{
 			pieza_guardada.setBackground(Color.WHITE);
 			
 	
-	/* COMENTADO PARA HACER PRUEBAS RAPIDAS EN LUGAR DE TENER QUE INICIAR SESION CADA VEZ
+	
 			JLabel lblUsuario = new JLabel("Usuario:  " + IniciarSesion.entrada.getNombre());
 			lblUsuario.setFont(new Font("Consolas", Font.PLAIN, 12));
 			lblUsuario.setBounds(10, 11, 122, 22);
@@ -319,7 +439,7 @@ public class Ventana extends JFrame implements KeyListener{
 			lblPuntuacion.setFont(new Font("Consolas", Font.PLAIN, 12));
 			lblPuntuacion.setBounds(10, 41, 122, 14);
 			Info.add(lblPuntuacion);
-	*/
+	
 	
 			lineas = 0; //este valor aumenta en uno cada vez que es llamada la funcion de linea llena.
 			JLabel lblLineas = new JLabel("Lineas: " + lineas);
@@ -420,44 +540,35 @@ public class Ventana extends JFrame implements KeyListener{
 				
 
 				 Ajustes.addActionListener(new ActionListener() {
+					 
 						public void actionPerformed(ActionEvent arg0) {
-							if (arg0.getSource() == Ajustes) {
-								
+							
+							if (arg0.getModifiers() == 16) {
+							
 								Ajustes nuevaventana = new Ajustes();
 								nuevaventana.setVisible(true);
 								 
 								// CIERRA LA VENTAN ACTUAL
 								Ventana.this.dispose();
 					        
-							}	
+							}
 		
 						}
 					});
 				 
 
 					//INSERCION DE PIEZAS EN LA LISTA POR PRIMERA VEZ
-					
-						lista = CreadorDePiezas.crear_lista_pirmera_vez(); //PASAR A LA VENTANA ANTERIOR
 			
 						pieza_siguiente.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(0)))));
 						pieza_siguiente_2.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(1)))));
 						pieza_siguiente_3.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(2)))));
 						pieza_siguiente_4.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(lista.get(3)))));
 						
-					//Inicializa el campo
-						
-
-						 for (int i = 0;i<campo.length;i++){
-							 
-				            for(int j=0;j<campo[0].length;j++){
-				            	
-					            	campo[i][j]= null;
-					            }
-					        }
-					
 						 //SACA LA PRIMERA PIEZA Y MUEVE LA LISTA DE PIEZAS
 						 
-						 CreadorDePiezas.mover_lista();
+						CreadorDePiezas.mover_lista();
+						 
+						Cod_pieza_actual = Pieza.getCod_pieza();
 						 
 						 	campo[Pieza.getc0().gety()][Pieza.getc0().getx()] = Pieza.getc0().getCod_cuadrado();
 							
@@ -482,7 +593,7 @@ public class Ventana extends JFrame implements KeyListener{
 					javax.swing.Timer movimiento = new javax.swing.Timer(1, new java.awt.event.ActionListener() {
 						public void actionPerformed(java.awt.event.ActionEvent ae) {
 							try {
-								Thread.sleep(300);
+								Thread.sleep(450);
 								
 										if(choque_abajo() == false) {
 											
@@ -497,6 +608,7 @@ public class Ventana extends JFrame implements KeyListener{
 												 
 												 pieza_guardada.setIcon(new ImageIcon(Ventana.class.getResource("")));
 												 guardada = null;
+												 lista = CreadorDePiezas.crear_lista_pirmera_vez();
 												 
 												 for (int P = 0;P<campo.length;P++){
 													 
@@ -530,6 +642,8 @@ public class Ventana extends JFrame implements KeyListener{
 												}
 											}
 										CreadorDePiezas.mover_lista();
+										
+										Cod_pieza_actual = Pieza.getCod_pieza();
 											
 												
 												//MUEVE LA LISTA
