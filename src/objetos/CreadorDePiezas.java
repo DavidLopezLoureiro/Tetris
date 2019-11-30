@@ -8,7 +8,12 @@ import objetos.Pieza;
 public class CreadorDePiezas {
 	
 
-	
+
+	/**Crea la lista de piezas por primera vez.
+	 * 
+	 * @return lista -->  ArrayList de Strings de ccodigos de piezas.
+	 * 
+	 **/
 	public static ArrayList<String> crear_lista_pirmera_vez() {
 
 		ArrayList<String> lista = new ArrayList<String>();
@@ -52,6 +57,15 @@ public class CreadorDePiezas {
 		return lista;	
 	}
 	
+
+	/**
+	 * Metodo usado para el cambio de piezas entre la pieza que esta en juego y la pieza que esta guardada.
+	 * 
+	 * @param transito --> String del codigo de la pieza que esta guardada en este momento y la cual sa cambiara por la pieza actual en juego.
+	 * 
+	 * @return t -->  Pieza que estaba guardada y ahora esta en juego.
+	 * 
+	 **/
 	public static Pieza mover_guardada(String transito) {
 		
 			
@@ -103,6 +117,12 @@ public class CreadorDePiezas {
 		
 	}
 	
+	/**
+	 * Metodo para sacar la siguiente pieza de la lista, mover las otras una posicion en la lista y añadir una nueva pieza aleatoria a la lista.
+	 * 
+	 * @return t -->  Pieza siguiente en la lista que ahora esta en juego.
+	 * 
+	 **/
 	public static Pieza mover_lista() {
 		
 		 int numero = (int)Math.floor(Math.random()*(6-0+1)+0);
