@@ -13,11 +13,12 @@ import javax.swing.JTextField;
 import bd.BD;
 import interfaz.IniciarSesion;
 import interfaz.MenuInicial;
+import objetos.CreadorDePiezas;
 import objetos.Usuario;
 
 import java.awt.Font;
 import java.awt.event.ActionListener;
-
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
@@ -30,6 +31,10 @@ public class IniciarSesion extends JFrame {
 	private JTextField textFieldNombre;
 	private JPasswordField passwordFieldInicioSesion;
 	public static Usuario entrada;
+	
+	public static String[][] campo_i;
+	
+	public static ArrayList<String> lista_i;
 
 	/**
 	 * Lanza la ventana.
@@ -156,6 +161,24 @@ public class IniciarSesion extends JFrame {
 
 				} else {
 					
+					//INICIA LA LISTA DE PIEZAS
+					
+					lista_i = new ArrayList<String>();
+					
+					lista_i = CreadorDePiezas.crear_lista_pirmera_vez();
+					
+					//Inicializa el campo
+					
+					campo_i = new String[21][9];
+					
+					 for (int i = 0;i<campo_i.length;i++){
+						 
+			            for(int j=0;j<campo_i[0].length;j++){
+			            	
+			            	campo_i[i][j]= null;
+				            }
+				        }
+					 
 					//MARCA QUE USUARIO HA ENTRADO
 					entrada = BD.getUserName(textFieldNombre.getText());
 					
