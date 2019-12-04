@@ -16,6 +16,9 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import com.sun.swing.internal.plaf.synth.resources.synth;
+
+import bd.BD;
 import imagenes.AsignadorDeFotosDePiezas;
 
 import javax.swing.JLabel;
@@ -35,6 +38,7 @@ import objetos.CreadorDePiezas;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+
 
 @SuppressWarnings("serial")
 public class Ventana extends JFrame implements KeyListener{
@@ -74,7 +78,7 @@ public class Ventana extends JFrame implements KeyListener{
 	
 	@Override
 	public void keyPressed(KeyEvent e) {
-		
+		sleep = 500;
 		int key = e.getKeyCode();
 		
 		 if (key == KeyEvent.VK_DOWN) {
@@ -100,14 +104,16 @@ public class Ventana extends JFrame implements KeyListener{
 		 
 		 if (key == KeyEvent.VK_SPACE) {
 			 
-			 borrar_donde_estaba();
+			 if(Pieza.getc0().getx() != 0 && Pieza.getc1().getx() != 0 && Pieza.getc2().getx() != 0 && Pieza.getc3().getx() != 0 && Pieza.getc0().getx() != 8 && Pieza.getc1().getx() != 8 && Pieza.getc2().getx() != 8 && Pieza.getc3().getx() != 8) {
+			 
+			borrar_donde_estaba();
 			 
 		  if( Pieza.getCod_pieza() == "T") {
 			  
 			  PiezaT.girar(); 
 			  
 			  if(campo[Pieza.getc0().gety()][Pieza.getc0().getx()] == null && campo[Pieza.getc1().gety()][Pieza.getc1().getx()] == null  && campo[Pieza.getc2().gety()][Pieza.getc2().getx()] == null  && campo[Pieza.getc3().gety()][Pieza.getc3().getx()] == null) {
-			
+
 					
 			  } else {
 				  
@@ -212,6 +218,7 @@ public class Ventana extends JFrame implements KeyListener{
 			
 			y_3 = (20 - Pieza.getc3().gety()) * 30;
 			x_3 = (Pieza.getc3().getx() * 30);
+			 }
 		 }
 		 
 		 if (key == KeyEvent.VK_ENTER) {
@@ -271,12 +278,12 @@ public class Ventana extends JFrame implements KeyListener{
 		    
 			 }
 		
-			 
+		 	} 
 		  
 		 }
 		 
 		
-	}
+	
 	 
 	@Override
 	public void keyReleased(KeyEvent e) {}
@@ -299,6 +306,8 @@ public class Ventana extends JFrame implements KeyListener{
 			}
 		});
 	}
+	
+	private int sleep = 0;
 
 	/**
 	 * Create the frame.
@@ -339,9 +348,7 @@ public class Ventana extends JFrame implements KeyListener{
 				Tablero tablero = new Tablero();
 				tablero.setBounds(10, 10, 270, 630);
 				panel.add(tablero);
-				
-				
-			
+		
 			//GUARDAR
 				JPanel t_guardada = new JPanel();
 				t_guardada.setBackground(Color.DARK_GRAY);
@@ -593,18 +600,38 @@ public class Ventana extends JFrame implements KeyListener{
 					javax.swing.Timer movimiento = new javax.swing.Timer(1, new java.awt.event.ActionListener() {
 						public void actionPerformed(java.awt.event.ActionEvent ae) {
 							try {
-								Thread.sleep(450);
 								
 										if(choque_abajo() == false) {
 											
 											movimientoabajo();
+											while(sleep < 500) {
+												Thread.sleep(1);
+												sleep++;
+											}
+											sleep = 0;
 															
 										}else{
 										
+										//PARA DETECTAR QUE EL USUARIO HA PERDIDO
 										for(int i = 0; i < 9 ; i++) {
 											
 											if(campo[20][i] != null) {
 												 JOptionPane.showMessageDialog(null, "GAME OVER");
+												 
+												 String c = "";
+													
+													for(int h = 0 ; h < 21; h++) {
+														
+														
+														for(int f = 0; f < 9; f++) {
+															
+															c = c + "|" + campo[h][f];
+														}
+														
+														c = c + "\n";
+													}
+													
+													System.out.println(c);
 												 
 												 pieza_guardada.setIcon(new ImageIcon(Ventana.class.getResource("")));
 												 guardada = null;
@@ -620,11 +647,19 @@ public class Ventana extends JFrame implements KeyListener{
 												 
 											}
 										}
+										
+										
 											for(int u = 0 ; u < 21 ; u++) {
 												
 												if(campo[u][0]!= null && campo[u][1]!= null && campo[u][2]!= null && campo[u][3]!= null && campo[u][4]!= null && campo[u][5]!= null && campo[u][6]!= null && campo[u][7]!= null && campo[u][8]!= null) {
 													
 													lineas = lineas + 1;
+													
+													IniciarSesion.entrada.setMaxPuntu(IniciarSesion.entrada.getMaxPuntu() + 1);
+													
+													BD.update(IniciarSesion.entrada);
+													
+													lblPuntuacion.setText("Puntuacion: " + IniciarSesion.entrada.getMaxPuntu());
 													
 													for(int t = 0; t < 9 ; t++) {
 														
@@ -635,8 +670,7 @@ public class Ventana extends JFrame implements KeyListener{
 															campo[r][t] = campo[r+1][t];
 															
 														}
-														
-														
+										
 													}
 													
 												}
@@ -677,8 +711,9 @@ public class Ventana extends JFrame implements KeyListener{
 						}
 					});
 					movimiento.start();
-					
+				
 		}
+	
 	
 	public void movimientoabajo() {	 	
 		 	
@@ -759,18 +794,7 @@ public class Ventana extends JFrame implements KeyListener{
 		
 	 	}
 	}
-	
-	public void borrar_donde_estaba() {
 		
-		//BORRA LA POSICION EN LA QUE ESTABA EL CUADRADO
-		
-		campo[Pieza.getc0().gety()][Pieza.getc0().getx()] = null;
-		campo[Pieza.getc1().gety()][Pieza.getc1().getx()] = null;
-		campo[Pieza.getc2().gety()][Pieza.getc2().getx()] = null;
-		campo[Pieza.getc3().gety()][Pieza.getc3().getx()] = null;
-		
-	}
-	
 	public boolean choque_abajo() {
 		
 		//COMPRUEBA QUE LA PIEZA AL BAJAR NO CHOQUE
@@ -889,8 +913,7 @@ public class Ventana extends JFrame implements KeyListener{
 		
 		}
 		return false;
-	}
-	
+	}	
 	
 	public boolean choque_derecha() {
 		
@@ -952,4 +975,14 @@ public class Ventana extends JFrame implements KeyListener{
 		return false;
 	}
 
+	public void borrar_donde_estaba() {
+		
+		//BORRA LA POSICION EN LA QUE ESTABA EL CUADRADO
+		
+		campo[Pieza.getc0().gety()][Pieza.getc0().getx()] = null;
+		campo[Pieza.getc1().gety()][Pieza.getc1().getx()] = null;
+		campo[Pieza.getc2().gety()][Pieza.getc2().getx()] = null;
+		campo[Pieza.getc3().gety()][Pieza.getc3().getx()] = null;
+		
+	}
 }
