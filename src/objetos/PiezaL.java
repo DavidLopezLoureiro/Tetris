@@ -25,8 +25,8 @@ public class PiezaL extends Pieza{
 		 case ORIGINAL:
 				
 				//C0
-		 			Pieza.c0.sety(Pieza.c0.gety() - 1);
-			 		Pieza.c0.setx(Pieza.c0.getx() + 1);	
+		 			Pieza.c0.sety(Pieza.c0.gety());
+			 		Pieza.c0.setx(Pieza.c0.getx() + 2);	
 				
 					Pieza.c0.setchocha_abajo(true);
 					Pieza.c0.setchoca_izquierda(false);
@@ -34,8 +34,8 @@ public class PiezaL extends Pieza{
 					
 				
 				//C1
-					Pieza.c1.sety(Pieza.c1.gety());
-					Pieza.c1.setx(Pieza.c1.getx());
+					Pieza.c1.sety(Pieza.c1.gety() + 1);
+					Pieza.c1.setx(Pieza.c1.getx() + 1);
 					
 					Pieza.c1.setchocha_abajo(true);
 					Pieza.c1.setchoca_izquierda(false);
@@ -43,17 +43,17 @@ public class PiezaL extends Pieza{
 				
 				
 				//C2
-					Pieza.c2.sety(Pieza.c2.gety() + 1);
-					Pieza.c2.setx(Pieza.c2.getx() - 1);
+					Pieza.c2.sety(Pieza.c2.gety() + 2);
+					Pieza.c2.setx(Pieza.c2.getx());
 					
-					Pieza.c2.setchocha_abajo(true);
-					Pieza.c2.setchoca_izquierda(false);
+					Pieza.c2.setchocha_abajo(false);
+					Pieza.c2.setchoca_izquierda(true);
 					Pieza.c2.setchoca_derecha(false);
 				
 				
 				//C3
-					Pieza.c3.sety(Pieza.c3.gety() + 2);
-					Pieza.c3.setx(Pieza.c3.getx() - 2);				
+					Pieza.c3.sety(Pieza.c3.gety() + 1);
+					Pieza.c3.setx(Pieza.c3.getx() - 1);				
 			
 					Pieza.c3.setchocha_abajo(true);
 					Pieza.c3.setchoca_izquierda(true);
@@ -66,8 +66,8 @@ public class PiezaL extends Pieza{
 		 	case DERECHA:
 				
 			 	//C0
-			 		Pieza.c0.sety(Pieza.c0.gety() - 1);
-			 		Pieza.c0.setx(Pieza.c0.getx() - 1);
+			 		Pieza.c0.sety(Pieza.c0.gety() - 2);
+			 		Pieza.c0.setx(Pieza.c0.getx());
 					
 					Pieza.c0.setchocha_abajo(true);
 					Pieza.c0.setchoca_izquierda(true);
@@ -75,8 +75,8 @@ public class PiezaL extends Pieza{
 					
 				
 				//C1
-					Pieza.c1.sety(Pieza.c1.gety());
-					Pieza.c1.setx(Pieza.c1.getx());
+					Pieza.c1.sety(Pieza.c1.gety() - 1);
+					Pieza.c1.setx(Pieza.c1.getx() + 1);
 					
 					Pieza.c1.setchocha_abajo(false);
 					Pieza.c1.setchoca_izquierda(true);
@@ -84,21 +84,21 @@ public class PiezaL extends Pieza{
 				
 				
 				//C2
-					Pieza.c2.sety(Pieza.c2.gety() + 1);
-					Pieza.c2.setx(Pieza.c2.getx() + 1);			
+					Pieza.c2.sety(Pieza.c2.gety());
+					Pieza.c2.setx(Pieza.c2.getx() + 2);			
 					
 					Pieza.c2.setchocha_abajo(false);
-					Pieza.c2.setchoca_izquierda(true);
+					Pieza.c2.setchoca_izquierda(false);
 					Pieza.c2.setchoca_derecha(true);
 				
 				
 				//C3
-					Pieza.c3.sety(Pieza.c3.gety() + 2);
-					Pieza.c3.setx(Pieza.c3.getx() + 2);
+					Pieza.c3.sety(Pieza.c3.gety() + 1);
+					Pieza.c3.setx(Pieza.c3.getx() + 1);
 					
-					Pieza.c3.setchocha_abajo(false);
+					Pieza.c3.setchocha_abajo(true);
 					Pieza.c3.setchoca_izquierda(true);
-					Pieza.c3.setchoca_derecha(true);
+					Pieza.c3.setchoca_derecha(false);
 					
 					Pieza.orientacion = Pieza.Orientacion.ALREVES;
 					
@@ -107,8 +107,8 @@ public class PiezaL extends Pieza{
 		 	case ALREVES:
 				
 			 	//C0
-			 		Pieza.c0.sety(Pieza.c0.gety() + 1);
-			 		Pieza.c0.setx(Pieza.c0.getx() - 1);
+			 		Pieza.c0.sety(Pieza.c0.gety());
+			 		Pieza.c0.setx(Pieza.c0.getx() - 2);
 					
 					Pieza.c0.setchocha_abajo(true);
 					Pieza.c0.setchoca_izquierda(true);
@@ -116,8 +116,8 @@ public class PiezaL extends Pieza{
 					
 				
 				//C1
-					Pieza.c1.sety(Pieza.c1.gety());
-					Pieza.c1.setx(Pieza.c1.getx());
+					Pieza.c1.sety(Pieza.c1.gety() - 1);
+					Pieza.c1.setx(Pieza.c1.getx() - 1);
 					
 					Pieza.c1.setchocha_abajo(true);
 					Pieza.c1.setchoca_izquierda(false);
@@ -125,20 +125,20 @@ public class PiezaL extends Pieza{
 				
 				
 				//C2
-					Pieza.c2.sety(Pieza.c2.gety() - 1);
-					Pieza.c2.setx(Pieza.c2.getx() + 1);			
+					Pieza.c2.sety(Pieza.c2.gety() - 2);
+					Pieza.c2.setx(Pieza.c2.getx());			
 					
 					Pieza.c2.setchocha_abajo(true);
 					Pieza.c2.setchoca_izquierda(false);
-					Pieza.c2.setchoca_derecha(false);
+					Pieza.c2.setchoca_derecha(true);
 				
 				
 				//C3
-					Pieza.c3.sety(Pieza.c3.gety() - 2);
-					Pieza.c3.setx(Pieza.c3.getx() + 2);
+					Pieza.c3.sety(Pieza.c3.gety() - 1);
+					Pieza.c3.setx(Pieza.c3.getx() + 1);
 					
-					Pieza.c3.setchocha_abajo(true);
-					Pieza.c3.setchoca_izquierda(false);
+					Pieza.c3.setchocha_abajo(false);
+					Pieza.c3.setchoca_izquierda(true);
 					Pieza.c3.setchoca_derecha(true);
 				
 					Pieza.orientacion = Pieza.Orientacion.IZQUIERDA;
@@ -149,8 +149,8 @@ public class PiezaL extends Pieza{
 				
 				
 			 	//C0
-			 		Pieza.c0.sety(Pieza.c0.gety() + 1);
-			 		Pieza.c0.setx(Pieza.c0.getx() + 1);
+			 		Pieza.c0.sety(Pieza.c0.gety() + 2);
+			 		Pieza.c0.setx(Pieza.c0.getx());
 					
 					Pieza.c0.setchocha_abajo(false);
 					Pieza.c0.setchoca_izquierda(true);
@@ -158,8 +158,8 @@ public class PiezaL extends Pieza{
 					
 				
 				//C1
-					Pieza.c1.sety(Pieza.c1.gety());
-					Pieza.c1.setx(Pieza.c1.getx());
+					Pieza.c1.sety(Pieza.c1.gety() + 1);
+					Pieza.c1.setx(Pieza.c1.getx() - 1);
 					
 					Pieza.c1.setchocha_abajo(false);
 					Pieza.c1.setchoca_izquierda(true);
@@ -167,20 +167,20 @@ public class PiezaL extends Pieza{
 				
 				
 				//C2
-					Pieza.c2.sety(Pieza.c2.gety() - 1);
-					Pieza.c2.setx(Pieza.c2.getx() - 1);			
+					Pieza.c2.sety(Pieza.c2.gety());
+					Pieza.c2.setx(Pieza.c2.getx() - 2);			
 					
-					Pieza.c2.setchocha_abajo(false);
+					Pieza.c2.setchocha_abajo(true);
 					Pieza.c2.setchoca_izquierda(true);
-					Pieza.c2.setchoca_derecha(true);
+					Pieza.c2.setchoca_derecha(false);
 				
 				
 				//C3
-					Pieza.c3.sety(Pieza.c3.gety() - 2);
-					Pieza.c3.setx(Pieza.c3.getx() - 2);
+					Pieza.c3.sety(Pieza.c3.gety() - 1);
+					Pieza.c3.setx(Pieza.c3.getx() - 1);
 					
 					Pieza.c3.setchocha_abajo(true);
-					Pieza.c3.setchoca_izquierda(true);
+					Pieza.c3.setchoca_izquierda(false);
 					Pieza.c3.setchoca_derecha(true);
 				
 					Pieza.orientacion = Pieza.Orientacion.ORIGINAL;

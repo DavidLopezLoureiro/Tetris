@@ -22,178 +22,173 @@ public class PiezaZ extends Pieza{
 	public static void girar() {
 		 switch (Pieza.orientacion) {
 			
-		 	case ORIGINAL:
-			
+		 case ORIGINAL:
+				
 				//C0
-					Pieza.c0.setx(Pieza.c0.getx() + 2);
-					Pieza.c0.sety(Pieza.c0.gety() + 2);
-					
+		 			Pieza.c0.sety(Pieza.c0.gety() - 1);
+			 		Pieza.c0.setx(Pieza.c0.getx() + 1);	
+				
 					Pieza.c0.setchocha_abajo(true);
-					Pieza.c0.setchocha_abajo(true);
-					Pieza.c0.setchocha_abajo(true);
+					Pieza.c0.setchoca_izquierda(false);
+					Pieza.c0.setchoca_derecha(true);
 					
 				
 				//C1
-					Pieza.c1.setx(Pieza.c1.getx() + 2);
-					Pieza.c1.sety(Pieza.c1.gety() + 2);
+					Pieza.c1.sety(Pieza.c1.gety() + 1);
+					Pieza.c1.setx(Pieza.c1.getx() + 1);
 					
-					Pieza.c1.setchocha_abajo(true);
-					Pieza.c1.setchocha_abajo(true);
-					Pieza.c1.setchocha_abajo(true);
+					Pieza.c1.setchocha_abajo(false);
+					Pieza.c1.setchoca_izquierda(false);
+					Pieza.c1.setchoca_derecha(true);
 				
 				
 				//C2
-					Pieza.c2.setx(Pieza.c2.getx() + 2);
-					Pieza.c2.sety(Pieza.c2.getx() + 2);
+					Pieza.c2.sety(Pieza.c2.gety());
+					Pieza.c2.setx(Pieza.c2.getx());
 					
 					Pieza.c2.setchocha_abajo(true);
-					Pieza.c2.setchocha_abajo(true);
-					Pieza.c2.setchocha_abajo(true);
+					Pieza.c2.setchoca_izquierda(true);
+					Pieza.c2.setchoca_derecha(false);
 				
 				
 				//C3
-					Pieza.c3.setx(Pieza.c3.getx() + 2);
 					Pieza.c3.sety(Pieza.c3.gety() + 2);
+					Pieza.c3.setx(Pieza.c3.getx());				
 			
 					Pieza.c3.setchocha_abajo(true);
-					Pieza.c3.setchocha_abajo(true);
-					Pieza.c3.setchocha_abajo(true);
+					Pieza.c3.setchoca_izquierda(true);
+					Pieza.c3.setchoca_derecha(false);
 				
-				
-				//HACER CON ENUMS
 					Pieza.orientacion = Pieza.Orientacion.DERECHA;
-		
-				
-			
+					
+					break;
+					
 		 	case DERECHA:
 				
-				//C0
-					Pieza.c0.setx(Pieza.c0.getx() + 2);
-					Pieza.c0.sety(Pieza.c0.gety() + 2);
+			 	//C0
+			 		Pieza.c0.sety(Pieza.c0.gety() - 1);
+			 		Pieza.c0.setx(Pieza.c0.getx() - 1);
 					
 					Pieza.c0.setchocha_abajo(true);
-					Pieza.c0.setchocha_abajo(true);
-					Pieza.c0.setchocha_abajo(true);
+					Pieza.c0.setchoca_izquierda(true);
+					Pieza.c0.setchoca_derecha(true);
 					
 				
 				//C1
-					Pieza.c1.setx(Pieza.c1.getx() + 2);
-					Pieza.c1.sety(Pieza.c1.gety() + 2);
+					Pieza.c1.sety(Pieza.c1.gety() - 1);
+					Pieza.c1.setx(Pieza.c1.getx() + 1);
 					
 					Pieza.c1.setchocha_abajo(true);
-					Pieza.c1.setchocha_abajo(true);
-					Pieza.c1.setchocha_abajo(true);
+					Pieza.c1.setchoca_izquierda(false);
+					Pieza.c1.setchoca_derecha(true);
 				
 				
 				//C2
-					Pieza.c2.setx(Pieza.c2.getx() + 2);
-					Pieza.c2.sety(Pieza.c2.getx() + 2);
+					Pieza.c2.sety(Pieza.c2.gety());
+					Pieza.c2.setx(Pieza.c2.getx());			
 					
-					Pieza.c2.setchocha_abajo(true);
-					Pieza.c2.setchocha_abajo(true);
-					Pieza.c2.setchocha_abajo(true);
+					Pieza.c2.setchocha_abajo(false);
+					Pieza.c2.setchoca_izquierda(true);
+					Pieza.c2.setchoca_derecha(false);
 				
 				
 				//C3
+					Pieza.c3.sety(Pieza.c3.gety());
 					Pieza.c3.setx(Pieza.c3.getx() + 2);
-					Pieza.c3.sety(Pieza.c3.gety() + 2);
-			
-					Pieza.c3.setchocha_abajo(true);
-					Pieza.c3.setchocha_abajo(true);
-					Pieza.c3.setchocha_abajo(true);
-				
-				
-				//HACER CON ENUMS
+					
+					Pieza.c3.setchocha_abajo(false);
+					Pieza.c3.setchoca_izquierda(true);
+					Pieza.c3.setchoca_derecha(true);
+					
 					Pieza.orientacion = Pieza.Orientacion.ALREVES;
 					
-					
+					break;
 					
 		 	case ALREVES:
 				
-				
-				//C0
-					Pieza.c0.setx(Pieza.c0.getx() + 2);
-					Pieza.c0.sety(Pieza.c0.gety() + 2);
+			 	//C0
+			 		Pieza.c0.sety(Pieza.c0.gety() + 1);
+			 		Pieza.c0.setx(Pieza.c0.getx() - 1);
 					
 					Pieza.c0.setchocha_abajo(true);
-					Pieza.c0.setchocha_abajo(true);
-					Pieza.c0.setchocha_abajo(true);
+					Pieza.c0.setchoca_izquierda(true);
+					Pieza.c0.setchoca_derecha(false);
 					
 				
 				//C1
-					Pieza.c1.setx(Pieza.c1.getx() + 2);
-					Pieza.c1.sety(Pieza.c1.gety() + 2);
+					Pieza.c1.sety(Pieza.c1.gety() - 1);
+					Pieza.c1.setx(Pieza.c1.getx() - 1);
 					
 					Pieza.c1.setchocha_abajo(true);
-					Pieza.c1.setchocha_abajo(true);
-					Pieza.c1.setchocha_abajo(true);
+					Pieza.c1.setchoca_izquierda(true);
+					Pieza.c1.setchoca_derecha(false);
 				
 				
 				//C2
-					Pieza.c2.setx(Pieza.c2.getx() + 2);
-					Pieza.c2.sety(Pieza.c2.getx() + 2);
+					Pieza.c2.sety(Pieza.c2.gety());
+					Pieza.c2.setx(Pieza.c2.getx());			
 					
-					Pieza.c2.setchocha_abajo(true);
-					Pieza.c2.setchocha_abajo(true);
-					Pieza.c2.setchocha_abajo(true);
+					Pieza.c2.setchocha_abajo(false);
+					Pieza.c2.setchoca_izquierda(false);
+					Pieza.c2.setchoca_derecha(true);
 				
 				
 				//C3
-					Pieza.c3.setx(Pieza.c3.getx() + 2);
-					Pieza.c3.sety(Pieza.c3.gety() + 2);
-			
+					Pieza.c3.sety(Pieza.c3.gety() - 2);
+					Pieza.c3.setx(Pieza.c3.getx());
+					
 					Pieza.c3.setchocha_abajo(true);
-					Pieza.c3.setchocha_abajo(true);
-					Pieza.c3.setchocha_abajo(true);
+					Pieza.c3.setchoca_izquierda(false);
+					Pieza.c3.setchoca_derecha(true);
 				
-				
-				//HACER CON ENUMS
 					Pieza.orientacion = Pieza.Orientacion.IZQUIERDA;
 					
+					break;
+					
 		 	case IZQUIERDA:
-				
-				
-				//C0
-					Pieza.c0.setx(Pieza.c0.getx() + 2);
-					Pieza.c0.sety(Pieza.c0.gety() + 2);
+		 				
+			 	//C0
+			 		Pieza.c0.sety(Pieza.c0.gety() + 1);
+			 		Pieza.c0.setx(Pieza.c0.getx() + 1);
 					
-					Pieza.c0.setchocha_abajo(true);
-					Pieza.c0.setchocha_abajo(true);
-					Pieza.c0.setchocha_abajo(true);
+					Pieza.c0.setchocha_abajo(false);
+					Pieza.c0.setchoca_izquierda(true);
+					Pieza.c0.setchoca_derecha(true);
 					
-			
+				
 				//C1
-					Pieza.c1.setx(Pieza.c1.getx() + 2);
-					Pieza.c1.sety(Pieza.c1.gety() + 2);
+					Pieza.c1.sety(Pieza.c1.gety() + 1);
+					Pieza.c1.setx(Pieza.c1.getx() - 1);
 					
-					Pieza.c1.setchocha_abajo(true);
-					Pieza.c1.setchocha_abajo(true);
-					Pieza.c1.setchocha_abajo(true);
+					Pieza.c1.setchocha_abajo(false);
+					Pieza.c1.setchoca_izquierda(true);
+					Pieza.c1.setchoca_derecha(false);
 				
 				
 				//C2
-					Pieza.c2.setx(Pieza.c2.getx() + 2);
-					Pieza.c2.sety(Pieza.c2.getx() + 2);
+					Pieza.c2.sety(Pieza.c2.gety());
+					Pieza.c2.setx(Pieza.c2.getx());			
 					
 					Pieza.c2.setchocha_abajo(true);
-					Pieza.c2.setchocha_abajo(true);
-					Pieza.c2.setchocha_abajo(true);
+					Pieza.c2.setchoca_izquierda(false);
+					Pieza.c2.setchoca_derecha(true);
 				
 				
 				//C3
-					Pieza.c3.setx(Pieza.c3.getx() + 2);
-					Pieza.c3.sety(Pieza.c3.gety() + 2);
-			
+					Pieza.c3.sety(Pieza.c3.gety());
+					Pieza.c3.setx(Pieza.c3.getx() - 2);
+					
 					Pieza.c3.setchocha_abajo(true);
-					Pieza.c3.setchocha_abajo(true);
-					Pieza.c3.setchocha_abajo(true);
+					Pieza.c3.setchoca_izquierda(true);
+					Pieza.c3.setchoca_derecha(true);
 				
-				
-				//HACER CON ENUMS
 					Pieza.orientacion = Pieza.Orientacion.ORIGINAL;
+					
+					break;
 
 			default:
 				break;
+				
 				
 				
 			}
