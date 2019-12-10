@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import objetos.CreadorDePiezas;
+
 import javax.swing.JLabel;
 
 import javax.swing.JButton;
@@ -13,6 +16,7 @@ import javax.swing.JButton;
 import javax.swing.JSlider;
 import java.awt.Font;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import javax.swing.JRadioButton;
@@ -153,5 +157,49 @@ public class Ajustes extends JFrame {
 	        
 			}
 		});
+		
+		
+		btnGuardarYSalir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				
+				
+				
+				// CIERRA LA VENTAN ACTUAL
+				Ajustes.this.dispose();
+	        
+			}
+		});
+		
+		btnReiniciar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				
+				
+				//INICIA LA LISTA DE PIEZAS
+
+				IniciarSesion.lista_i.clear();
+				
+				IniciarSesion.lista_i = CreadorDePiezas.crear_lista_pirmera_vez();
+				
+				//Inicializa el campo
+				
+				 for (int i = 0;i< 21;i++){
+					 
+		            for(int j=0;j< 9;j++){
+		            	
+		            	IniciarSesion.campo_i[i][j]= null;
+			            }
+			        }
+				 
+				Ventana nuevaventana = new Ventana();
+				nuevaventana.setVisible(true);
+
+				// CIERRA LA VENTAN ACTUAL
+				Ajustes.this.dispose();
+	        
+			}
+		});
+		
 	}
 }
