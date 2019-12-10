@@ -2,6 +2,9 @@ package interfaz;
 
 import java.awt.EventQueue;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -18,6 +21,7 @@ import objetos.Usuario;
 
 import java.awt.Font;
 import java.awt.event.ActionListener;
+
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
@@ -25,7 +29,7 @@ import java.awt.Color;
 import javax.swing.JPasswordField;
 
 @SuppressWarnings("serial")
-public class IniciarSesion extends JFrame {
+public class IniciarSesion extends JFrame implements KeyListener {
 
 	private JPanel contentPane;
 	private JTextField textFieldNombre;
@@ -50,6 +54,80 @@ public class IniciarSesion extends JFrame {
 				}
 			}
 		});
+	}
+	
+	@Override
+	public void keyPressed(KeyEvent e) {
+		int key = e.getKeyCode();
+		
+		if (key == KeyEvent.VK_ENTER) {
+			
+			// PROCESADO DE CONTRASEÑA
+			char clave[] = passwordFieldInicioSesion.getPassword();
+			String clave_pasada = new String(clave);
+			String cont_usu = BD.getCont(textFieldNombre.getText());
+
+			// COMPRUEBA QUE LOS CAMPOS NO ESTEN VACIOS
+			if (textFieldNombre.getText().equals("")
+					|| passwordFieldInicioSesion.getPassword().toString().equals("")) {
+
+				JOptionPane.showMessageDialog(null, "Introduce los datos antes de continuar");
+
+				// COMPRUEBA QUE EL USAURIO EXISTE
+			} else if (BD.getUserName(textFieldNombre.getText()).getNombre().equals("")) {
+
+				JOptionPane.showMessageDialog(null, "Este usuario no existe.");
+
+				// COMPRUEBA QUE LAS CONTRASEÑAS SEAN IGUALES
+			} else if (!cont_usu.equals(clave_pasada)) {
+
+				JOptionPane.showMessageDialog(null, "Contraseña incorrecta.");
+
+			} else {
+				
+				//INICIA LA LISTA DE PIEZAS
+				
+				lista_i = new ArrayList<String>();
+				
+				lista_i = CreadorDePiezas.crear_lista_pirmera_vez();
+				
+				//Inicializa el campo
+				
+				campo_i = new String[21][9];
+				
+				 for (int i = 0;i<campo_i.length;i++){
+					 
+		            for(int j=0;j<campo_i[0].length;j++){
+		            	
+		            	campo_i[i][j]= null;
+			            }
+			        }
+				 
+				//MARCA QUE USUARIO HA ENTRADO
+				entrada = BD.getUserName(textFieldNombre.getText());
+				
+				Ventana nuevaventana = new Ventana();
+				nuevaventana.setVisible(true);
+
+				// CIERRA LA VENTANA ACTUAL
+				IniciarSesion.this.dispose();
+			}
+
+		
+			}
+
+		}
+	
+	@Override
+	public void keyReleased(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	/**
@@ -79,7 +157,6 @@ public class IniciarSesion extends JFrame {
 		btnVolver.setForeground(new Color(255, 255, 255));
 		btnVolver.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		btnVolver.setBackground(new Color(135, 206, 235));
-
 		btnVolver.setBounds(116, 492, 277, 105);
 		contentPane.add(btnVolver);
 
@@ -118,6 +195,7 @@ public class IniciarSesion extends JFrame {
 		passwordFieldInicioSesion.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 		passwordFieldInicioSesion.setBounds(116, 366, 598, 56);
 		contentPane.add(passwordFieldInicioSesion);
+		passwordFieldInicioSesion.addKeyListener(this);
 
 		// ACTION LISTENERS
 		btnVolver.addActionListener(new ActionListener() {
@@ -192,4 +270,6 @@ public class IniciarSesion extends JFrame {
 		});
 
 	}
+
+
 }
