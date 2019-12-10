@@ -147,12 +147,6 @@ public class Tablero extends JPanel {
 			arg0.drawLine(270,0,270,630 );
 			arg0.drawLine(300,0,300,630 );
 
-
-
-
-
-			
-
 		repaint();
 	
 		
