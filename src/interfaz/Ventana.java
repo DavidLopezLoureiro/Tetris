@@ -593,12 +593,14 @@ public class Ventana extends JFrame implements KeyListener {
 			public void actionPerformed(ActionEvent arg0) {
 
 				if (arg0.getModifiers() == 16) {
-
+					
+					borrar_donde_estaba();
+					
 					Ajustes nuevaventana = new Ajustes();
 					nuevaventana.setVisible(true);
 
 					// CIERRA LA VENTAN ACTUAL
-					borrar_donde_estaba();
+					
 
 					Ventana.this.dispose();
 
@@ -647,7 +649,7 @@ public class Ventana extends JFrame implements KeyListener {
 						}
 						for (int u = 0; u < 21; u++) {
 
-							if (campo[u][0] != null && campo[u][1] != null && campo[u][2] != null && campo[u][3] != null
+							while (campo[u][0] != null && campo[u][1] != null && campo[u][2] != null && campo[u][3] != null
 									&& campo[u][4] != null && campo[u][5] != null && campo[u][6] != null
 									&& campo[u][7] != null && campo[u][8] != null) {
 
@@ -967,7 +969,7 @@ public class Ventana extends JFrame implements KeyListener {
 		return false;
 	}
 
-	public void borrar_donde_estaba() {
+	public static void borrar_donde_estaba() {
 
 		// BORRA LA POSICION EN LA QUE ESTABA EL CUADRADO
 
