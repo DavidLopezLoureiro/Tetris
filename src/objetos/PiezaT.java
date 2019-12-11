@@ -24,20 +24,12 @@ public class PiezaT extends Pieza{
 		
 	 	case ORIGINAL:
 	 		
-	 		if(Pieza.c1.gety() - 1 >= 0 && Pieza.c1.getx() - 1  >= 0) {
+	 		if(Pieza.c1.gety() - 1 >= 0 && Pieza.c1.getx() - 1  >= 0 && Pieza.c1.gety() - 1 <= 20 && Pieza.c1.getx() - 1 <= 8) {
+	 				
+	 		if(Pieza.c2.gety() + 1 >= 0 && Pieza.c2.getx() - 1  >= 0 && Pieza.c2.gety() + 1 <= 20 && Pieza.c2.getx() - 1 <= 8) {
+	 		 		
+	 		if(Pieza.c3.gety() + 1 >= 0 && Pieza.c3.getx() + 1  >= 0 && Pieza.c3.gety() + 1 <= 20 && Pieza.c3.getx() + 1 <= 8) {
 	 			
-	 			if(Pieza.c1.gety() - 1 <= 20 && Pieza.c1.getx() - 1 <= 8) {
-	 				
-	 				if(Pieza.c2.gety() + 1 >= 0 && Pieza.c2.getx() - 1  >= 0) {
-	 		 			
-	 		 			if(Pieza.c2.gety() + 1 <= 20 && Pieza.c2.getx() - 1 <= 8) {
-
-	 		 				if(Pieza.c3.gety() + 1 >= 0 && Pieza.c3.getx() + 1  >= 0) {
-	 		 		 			
-	 		 		 			if(Pieza.c3.gety() + 1 <= 20 && Pieza.c3.getx() + 1 <= 8) {
-	 		 				
-	 				
-	 				
 			//C0
 	 			Pieza.c0.sety(Pieza.c0.gety());
 		 		Pieza.c0.setx(Pieza.c0.getx());	
@@ -75,10 +67,6 @@ public class PiezaT extends Pieza{
 			
 				Pieza.orientacion = Pieza.Orientacion.DERECHA;
 				
-				
-								}
-							}
-						}
 					}
 				}
 			}
