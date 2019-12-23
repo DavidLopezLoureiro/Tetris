@@ -161,9 +161,6 @@ public class Ajustes extends JFrame {
 		btnGuardarYSalir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				
-				
-				
 				// CIERRA LA VENTAN ACTUAL
 				Ajustes.this.dispose();
 	        
