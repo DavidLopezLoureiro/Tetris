@@ -28,7 +28,7 @@ public class PiezaT extends Pieza{
 	 				
 	 		if(Pieza.c2.gety() + 1 >= 0 && Pieza.c2.getx() - 1  >= 0 && Pieza.c2.gety() + 1 <= 20 && Pieza.c2.getx() - 1 <= 8) {
 	 		 		
-	 		if(Pieza.c3.gety() + 1 >= 0 && Pieza.c3.getx() + 1  >= 0 && Pieza.c3.gety() + 1 <= 20 && Pieza.c3.getx() + 1 <= 8) {
+	 		if(Pieza.c3.gety() + 1 >= 0 && Pieza.c3.getx() + 1  >= 0 && Pieza.c3.gety() - 1 <= 20 && Pieza.c3.getx() + 1 <= 8) {
 	 			
 			//C0
 	 			Pieza.c0.sety(Pieza.c0.gety());
