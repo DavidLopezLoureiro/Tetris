@@ -15,6 +15,7 @@ public class CuadradoTest {
 	//probamos los diferentes metodos de la clase para verificcar que funcionan correctamente
 	@Test
 	public void FuncionalidadDeLaClase() {
+		
 		Boolean tipo;
 		//probamos que los getters funcionan corrrectamente
 		tipo=(cuadrado.getCod_cuadrado().equals("0"))?true:false;
