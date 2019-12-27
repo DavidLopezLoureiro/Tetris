@@ -26,12 +26,8 @@ public class AsignadorDeFotosDePiezasTest {
 	public void AsignacionFotos() {
 		for ( String dato: tipos) {
 			String prueba="/imagenes/"+dato+".png";
-			if(prueba.equals(AsignadorDeFotosDePiezas.poner_foto(dato))) {
-				assertTrue(true);
-			}else {
-				assertTrue(false);
-			}
-			
+			Boolean resultado=prueba.equals(AsignadorDeFotosDePiezas.poner_foto(dato));
+			assertTrue(resultado);
 		}
 		
 	}
