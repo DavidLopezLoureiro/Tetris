@@ -61,7 +61,7 @@ public class CrearUsuario extends JFrame {
 		// PANELS
 		JPanel panelFondoTitulo = new JPanel();
 		panelFondoTitulo.setBackground(new Color(220, 220, 220));
-		panelFondoTitulo.setBounds(0, 0, 844, 146);
+		panelFondoTitulo.setBounds(0, 0, 844, 105);
 		panelFondoTitulo.setLayout(null);
 		contentPane.add(panelFondoTitulo);
 
@@ -85,7 +85,7 @@ public class CrearUsuario extends JFrame {
 		// LABELS
 		JLabel lblRegistro = new JLabel("REGISTRO");
 		lblRegistro.setFont(new Font("Times New Roman", Font.BOLD, 30));
-		lblRegistro.setBounds(327, 31, 159, 69);
+		lblRegistro.setBounds(326, 23, 159, 69);
 		panelFondoTitulo.add(lblRegistro);
 
 		JLabel lblNombreDeUsuario = new JLabel("Nombre de usuario:");
