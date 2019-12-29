@@ -6,11 +6,12 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.plaf.basic.BasicBorders.RadioButtonBorder;
 
 import objetos.CreadorDePiezas;
 
 import javax.swing.JLabel;
-
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 
 import javax.swing.JSlider;
@@ -22,8 +23,10 @@ import javax.swing.JRadioButton;
 
 @SuppressWarnings("serial")
 public class Ajustes extends JFrame {
-
+	JRadioButton rdbtnDifcil ;
 	private JPanel contentPane;
+	JRadioButton rdbtnMedio;
+	JRadioButton rdbtnFcil;
 
 	/**
 	 * Launch the application. 
@@ -41,6 +44,10 @@ public class Ajustes extends JFrame {
 		});
 	}
 
+	
+	public void nivelar() {
+		if()
+	}
 	/**
 	 * Create the frame.
 	 */
@@ -127,20 +134,23 @@ public class Ajustes extends JFrame {
 		
 		
 		//RADIOBUTTONS
-		
-		JRadioButton rdbtnFcil = new JRadioButton("F\u00C1CIL");
+		ButtonGroup grupo= new ButtonGroup();//para que solo se puede seleccionar un botton a la vez
+		rdbtnFcil = new JRadioButton("F\u00C1CIL");
 		rdbtnFcil.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		rdbtnFcil.setBounds(88, 345, 127, 25);
+		grupo.add(rdbtnFcil);
 		contentPane.add(rdbtnFcil);
 		
-		JRadioButton rdbtnMedio = new JRadioButton("MEDIO");
+		rdbtnMedio = new JRadioButton("MEDIO");
 		rdbtnMedio.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		rdbtnMedio.setBounds(374, 345, 127, 25);
+		grupo.add(rdbtnMedio);
 		contentPane.add(rdbtnMedio);
 		
-		JRadioButton rdbtnDifcil = new JRadioButton("DIF\u00CDCIL");
+		 rdbtnDifcil = new JRadioButton("DIF\u00CDCIL");
 		rdbtnDifcil.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		rdbtnDifcil.setBounds(654, 345, 93, 25);
+		grupo.add(rdbtnDifcil);
 		contentPane.add(rdbtnDifcil);
 		
 		

@@ -40,11 +40,11 @@ import java.awt.event.KeyListener;
 public class Ventana extends JFrame implements KeyListener {
 
 	private JPanel contentPane;
-
+	public static int Niveldificultad;
 	public static String Cod_pieza_actual;
 	public static ArrayList<String> lista;
 	private static int lineas;
-	public static Dificultad dificultad;
+	public static Dificultad dificultad=Dificultad.FACIL;
 
 	private static String guardada; // para guardar la pieza
 	public static JLabel pieza_guardada;
@@ -73,7 +73,16 @@ public class Ventana extends JFrame implements KeyListener {
 	public enum Dificultad {
 		FACIL, MEDIO, DIFICIL
 	}
-
+	public void anyadirDificultad() {
+		if(dificultad==Dificultad.FACIL) {
+			Niveldificultad=500;
+		}else if(dificultad==Dificultad.MEDIO) {
+			Niveldificultad=400;
+		}else {
+			Niveldificultad=280;
+		}
+		
+	}
 	@Override
 	public void keyPressed(KeyEvent e) {
 		int key = e.getKeyCode();
@@ -329,7 +338,8 @@ public class Ventana extends JFrame implements KeyListener {
 	 * Create the frame.
 	 */
 	public Ventana() {
-
+		//añadimos dificultad
+		anyadirDificultad();
 		// CREACION DEL ARRAY
 
 		campo = IniciarSesion.campo_i; // EL ARRAY TIENE QUE SER DE 21 * 9 PERO ESTA AUMENTADO PARA PROBAR LOS GIROS
@@ -623,7 +633,7 @@ public class Ventana extends JFrame implements KeyListener {
 							
 							panel.repaint();
 
-							Thread.sleep(500);
+							Thread.sleep(Niveldificultad);
 
 						}
 
