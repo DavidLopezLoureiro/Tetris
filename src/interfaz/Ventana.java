@@ -44,7 +44,7 @@ public class Ventana extends JFrame implements KeyListener {
 	public static String Cod_pieza_actual;
 	public static ArrayList<String> lista;
 	private static int lineas;
-	public static Dificultad dificultad=Dificultad.FACIL;
+	public static Dificultad dificultad;
 
 	private static String guardada; // para guardar la pieza
 	public static JLabel pieza_guardada;
@@ -74,7 +74,7 @@ public class Ventana extends JFrame implements KeyListener {
 		FACIL, MEDIO, DIFICIL
 	}
 	public void anyadirDificultad() {
-		if(dificultad==Dificultad.FACIL) {
+		if(dificultad==Dificultad.FACIL || dificultad==null) {
 			Niveldificultad=500;
 		}else if(dificultad==Dificultad.MEDIO) {
 			Niveldificultad=400;

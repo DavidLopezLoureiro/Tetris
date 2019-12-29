@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.plaf.basic.BasicBorders.RadioButtonBorder;
 
+import interfaz.Ventana.Dificultad;
 import objetos.CreadorDePiezas;
 
 import javax.swing.JLabel;
@@ -44,9 +45,11 @@ public class Ajustes extends JFrame {
 		});
 	}
 
-	
+	//añade los ajueste de nivel 
 	public void nivelar() {
-		if()
+		if(rdbtnFcil.isSelected())Ventana.dificultad=Dificultad.FACIL;
+		if(rdbtnMedio.isSelected())Ventana.dificultad=Dificultad.MEDIO;
+		if(rdbtnDifcil.isSelected())Ventana.dificultad=Dificultad.DIFICIL;
 	}
 	/**
 	 * Create the frame.
@@ -147,7 +150,7 @@ public class Ajustes extends JFrame {
 		grupo.add(rdbtnMedio);
 		contentPane.add(rdbtnMedio);
 		
-		 rdbtnDifcil = new JRadioButton("DIF\u00CDCIL");
+		rdbtnDifcil = new JRadioButton("DIF\u00CDCIL");
 		rdbtnDifcil.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		rdbtnDifcil.setBounds(654, 345, 93, 25);
 		grupo.add(rdbtnDifcil);
@@ -170,7 +173,7 @@ public class Ajustes extends JFrame {
 		
 		btnGuardarYSalir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+				nivelar();
 				// CIERRA LA VENTAN ACTUAL
 				Ajustes.this.dispose();
 	        
@@ -197,7 +200,7 @@ public class Ajustes extends JFrame {
 		            	IniciarSesion.campo_i[i][j]= null;
 			            }
 			        }
-				 
+				nivelar();
 				Ventana nuevaventana = new Ventana();
 				nuevaventana.setVisible(true);
 
