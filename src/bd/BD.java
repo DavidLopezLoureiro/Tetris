@@ -89,8 +89,7 @@ public class BD {
 		}
 	}
 	
-	/* No ejecutar estas funciones
-	 * 
+	
 	public static void createUserTable() {
 		try (Statement stmt = conn.createStatement()) {
 			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR, cont VARCHAR, maxPuntu INTEGER, email VARCHAR)");
@@ -107,7 +106,7 @@ public class BD {
 			throw new SQLException("Error borrando la tabla 'usuarios' en la BD", e);
 		}
 	}
-	*/
+
 	
 	
 	/**
@@ -186,11 +185,11 @@ public class BD {
 	}
 	
 	/**
-	 * Devuelve la contraseña del nombre que buscamos.
+	 * Devuelve la contraseï¿½a del nombre que buscamos.
 	 * 
 	 * @param name --> nombre del usuario.
 	 * 
-	 * @return cont --> contraseña del usuario.
+	 * @return cont --> contraseï¿½a del usuario.
 	 * 
 	 */
 	public static String getCont(String name){

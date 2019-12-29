@@ -4,7 +4,6 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import interfaz.ElegirModo;
 
 public class VentanaDuo extends JFrame{
 	
