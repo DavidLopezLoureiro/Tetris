@@ -620,6 +620,8 @@ public class Ventana extends JFrame implements KeyListener {
 						while (choque_abajo() == false) {
 
 							movimientoabajo();
+							
+							panel.repaint();
 
 							Thread.sleep(500);
 
@@ -702,7 +704,7 @@ public class Ventana extends JFrame implements KeyListener {
 						x_2 = (Pieza.getc2().getx() * 30);
 						x_3 = (Pieza.getc3().getx() * 30);
 
-						movimientoabajo();
+						panel.repaint();
 
 					} catch (InterruptedException e) {
 
