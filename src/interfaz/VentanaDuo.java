@@ -6,6 +6,8 @@ import javax.swing.JPanel;
 
 
 public class VentanaDuo extends JFrame{
+	public VentanaDuo() {
+	}
 	
 private JPanel contentPane;
 	
