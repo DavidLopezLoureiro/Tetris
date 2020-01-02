@@ -303,11 +303,16 @@ public class BD {
 	}
 	/**
 	 * Metodo para obtener puntuacion maxima de un Usuario expecifico
-	 * @param usuario actual
+	 * @param usuario del que quermos obtener la mejor puntuacion
 	 */
 	public static int maxPuntu(Usuario user) {
-		
-		
+		try (PreparedStatement stmt = conn.prepareStatement("SELECT max(puntos) FROM puntu WHERE id=?")) {
+			stmt.setInt(1, user.getId());
+			stmt.executeUpdate();
+		} catch (SQLException e) {
+			lastError = e;
+			log(Level.SEVERE, "Puntuacion del usuario no encontrado o no existe", e);
+		}
 		return 0;
 	}
 	
