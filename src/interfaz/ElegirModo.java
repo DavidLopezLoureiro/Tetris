@@ -14,7 +14,7 @@ import java.awt.event.ActionEvent;
 
 public class ElegirModo extends JFrame{
 	public ElegirModo() {
-		
+		setVisible(true);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 850, 700);
@@ -25,6 +25,13 @@ public class ElegirModo extends JFrame{
 		botonModoClasico.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		botonModoClasico.setBounds(103, 207, 242, 97);
 		getContentPane().add(botonModoClasico);
+		botonModoClasico.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 		
 		JButton botonModoDuo = new JButton("2 JUGADORES");
 		botonModoDuo.addActionListener(new ActionListener() {
@@ -32,7 +39,7 @@ public class ElegirModo extends JFrame{
 			}
 		});
 		botonModoDuo.setFont(new Font("Times New Roman", Font.BOLD, 25));
-		botonModoDuo.setBounds(103, 468, 242, 97);
+		botonModoDuo.setBounds(103, 341, 242, 97);
 		getContentPane().add(botonModoDuo);
 		
 		JLabel labelSegundaImagen = new JLabel("");
@@ -55,6 +62,19 @@ public class ElegirModo extends JFrame{
 		labelTitulo.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 35));
 		labelTitulo.setBounds(358, 29, 128, 46);
 		panel.add(labelTitulo);
+		
+		JButton btnAjustes = new JButton("Ajustes");
+		btnAjustes.setFont(new Font("Dialog", Font.BOLD, 25));
+		btnAjustes.setBounds(103, 478, 242, 97);
+		getContentPane().add(btnAjustes);
+		btnAjustes.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				
+				
+			}
+		});
 	}
 
 	
@@ -71,4 +91,7 @@ public class ElegirModo extends JFrame{
 		});
 		
 	}
+
+
+	
 }
