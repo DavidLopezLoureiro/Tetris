@@ -315,7 +315,25 @@ public class BD {
 		}
 		return 0;
 	}
-	
+	/**
+	 * Metodo que devuelve la lista de todas las puntuaciones obtenidas por el usuario a lo lago del juego
+	 * @param el objeto ususario del que queremos obtener las puntuaciones
+	 */
+	public  static ArrayList<Integer> puntuaciones(Usuario user){
+		ArrayList<Integer>Devolver=new ArrayList<Integer>();
+		String sentSQL="SELECT puntos FROM puntu WHERE id="+user.getId();
+		try (Statement stmt = conn.createStatement()){
+			ResultSet st=stmt.executeQuery( sentSQL );
+				while (st.next()) {
+					Devolver.add(st.getInt("puntos"));
+				}
+				st.close();
+			} catch (SQLException e) {
+				lastError = e;
+				log(Level.SEVERE, "Error en uso de base de datos", e);
+			}
+		return Devolver;
+	}
 	
 	
 	
