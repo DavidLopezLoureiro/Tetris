@@ -89,12 +89,22 @@ public class BD {
 		}
 	}
 	
-	
+	//metodo para crear la tabla usuarios
 	public static void createUserTable() {
 		try (Statement stmt = conn.createStatement()) {
 			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR, cont VARCHAR, maxPuntu INTEGER, email VARCHAR)");
 		} catch (SQLException e) {
-			
+			lastError=e;
+			log(Level.SEVERE,"La tabla ya ha sido creada",e);
+		}
+	}
+	//metodo para crear la tabla Puntuacion
+	public static void createPuntuTable() {
+		try (Statement stmt = conn.createStatement()) {
+			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS puntu (id INTEGER PRIMARY KEY, puntos INTEGER)");//el id de la tabla sera el id del usuario que tenga asociado
+		} catch (SQLException e) {
+			lastError=e;
+			log(Level.SEVERE,"la tabla ya ha sido creada",e);
 		}
 	}
 	
@@ -103,7 +113,9 @@ public class BD {
 		try (Statement stmt = conn.createStatement()) {
 			stmt.executeUpdate("DROP TABLE usuarios IF EXISTS");
 		} catch (SQLException e) {
-			throw new SQLException("Error borrando la tabla 'usuarios' en la BD", e);
+			lastError = e;
+			log(Level.SEVERE,"Error borrado de la tabla usuarios",e);
+			
 		}
 	}
 
