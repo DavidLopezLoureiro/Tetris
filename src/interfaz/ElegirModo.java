@@ -12,7 +12,10 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class ElegirModo extends JFrame{
+public class ElegirModo extends JFrame implements  ActionListener{
+	JButton btnAjustes;
+	JButton botonModoClasico;
+	JButton botonModoDuo;
 	public ElegirModo() {
 		setVisible(true);
 		setResizable(false);
@@ -21,25 +24,16 @@ public class ElegirModo extends JFrame{
 		
 		getContentPane().setLayout(null);
 		
-		JButton botonModoClasico = new JButton("CLASICO");
+		botonModoClasico = new JButton("CLASICO");
 		botonModoClasico.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		botonModoClasico.setBounds(103, 207, 242, 97);
+		botonModoClasico.addActionListener(this);
 		getContentPane().add(botonModoClasico);
-		botonModoClasico.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-		});
 		
-		JButton botonModoDuo = new JButton("2 JUGADORES");
-		botonModoDuo.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
+		botonModoDuo = new JButton("2 JUGADORES");
 		botonModoDuo.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		botonModoDuo.setBounds(103, 341, 242, 97);
+		botonModoClasico.addActionListener(this);
 		getContentPane().add(botonModoDuo);
 		
 		JLabel labelSegundaImagen = new JLabel("");
@@ -63,18 +57,11 @@ public class ElegirModo extends JFrame{
 		labelTitulo.setBounds(358, 29, 128, 46);
 		panel.add(labelTitulo);
 		
-		JButton btnAjustes = new JButton("Ajustes");
+		btnAjustes = new JButton("Ajustes");
 		btnAjustes.setFont(new Font("Dialog", Font.BOLD, 25));
 		btnAjustes.setBounds(103, 478, 242, 97);
+		btnAjustes.addActionListener(this);
 		getContentPane().add(btnAjustes);
-		btnAjustes.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				
-				
-			}
-		});
 	}
 
 	
@@ -90,6 +77,21 @@ public class ElegirModo extends JFrame{
 			}
 		});
 		
+	}
+
+//implementacion de los action listener 
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		if(arg0.getSource()==botonModoClasico) {
+			Ventana ventana= new Ventana();
+			
+		} else if(arg0.getSource()==botonModoDuo) {
+			VentanaDuo duo=new VentanaDuo();
+		} else {
+			Ajustes nuevaventana = new Ajustes();
+			nuevaventana.setVisible(true);
+		}
+		this.dispose();
 	}
 
 
