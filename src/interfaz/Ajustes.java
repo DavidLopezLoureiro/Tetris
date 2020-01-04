@@ -19,6 +19,8 @@ import javax.swing.JSlider;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.applet.Applet;
+import java.applet.AudioClip;
 import java.awt.Color;
 import javax.swing.JRadioButton;
 
@@ -28,6 +30,7 @@ public class Ajustes extends JFrame {
 	private JPanel contentPane;
 	JRadioButton rdbtnMedio;
 	JRadioButton rdbtnFcil;
+	
 
 	/**
 	 * Launch the application. 
@@ -159,14 +162,14 @@ public class Ajustes extends JFrame {
 		
 		
 		btnReanudar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-				Ventana nuevaventana = new Ventana();
-				nuevaventana.setVisible(true);
-
+			public void actionPerformed(ActionEvent arg0) {			
+			Ventana nuevaventana = new Ventana();
+			nuevaventana.setVisible(true);
+			
 				// CIERRA LA VENTAN ACTUAL
-				Ajustes.this.dispose();
-	        
+			Ajustes.this.dispose();
+				
+	      
 			}
 		});
 		
@@ -211,4 +214,5 @@ public class Ajustes extends JFrame {
 		});
 		
 	}
+	
 }

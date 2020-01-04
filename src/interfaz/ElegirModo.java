@@ -8,14 +8,21 @@ import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+
+import objetos.CreadorDePiezas;
+import objetos.Usuario;
+
 import java.awt.Color;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 public class ElegirModo extends JFrame implements  ActionListener{
 	JButton btnAjustes;
 	JButton botonModoClasico;
 	JButton botonModoDuo;
+	public static ArrayList<String> lista_i;
+	public static String[][] campo_i;
 	public ElegirModo() {
 		setVisible(true);
 		setResizable(false);
@@ -83,13 +90,22 @@ public class ElegirModo extends JFrame implements  ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		if(arg0.getSource()==botonModoClasico) {
+			//INICIA LA LISTA DE PIEZAS
+			IniciarSesion.lista_i = new ArrayList<String>();
+			IniciarSesion.lista_i  = CreadorDePiezas.crear_lista_pirmera_vez();
+			//Inicializa el campo
+			IniciarSesion.campo_i = new String[21][9];
+			 for (int i = 0;i<IniciarSesion.campo_i.length;i++){
+				 
+	            for(int j=0;j<IniciarSesion.campo_i[0].length;j++){
+	            	
+	            	IniciarSesion.campo_i[i][j]= null;
+		            }
+		        }
 			Ventana ventana= new Ventana();
-			
-		} else if(arg0.getSource()==botonModoDuo) {
-			VentanaDuo duo=new VentanaDuo();
+			ventana.setVisible(true);
 		} else {
-			Ajustes nuevaventana = new Ajustes();
-			nuevaventana.setVisible(true);
+			VentanaDuo duo=new VentanaDuo();
 		}
 		this.dispose();
 	}

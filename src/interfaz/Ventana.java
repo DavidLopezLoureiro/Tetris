@@ -16,6 +16,8 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+
+
 import bd.BD;
 import imagenes.AsignadorDeFotosDePiezas;
 
@@ -35,10 +37,12 @@ import objetos.CreadorDePiezas;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.applet.Applet;
+import java.applet.AudioClip;
 
 @SuppressWarnings("serial")
 public class Ventana extends JFrame implements KeyListener {
-
+	public static AudioClip sonido;
 	private JPanel contentPane;
 	public static int Niveldificultad;
 	public static String Cod_pieza_actual;
@@ -340,6 +344,7 @@ public class Ventana extends JFrame implements KeyListener {
 	public Ventana() {
 		//añadimos dificultad
 		anyadirDificultad();
+	
 		// CREACION DEL ARRAY
 
 		campo = IniciarSesion.campo_i; // EL ARRAY TIENE QUE SER DE 21 * 9 PERO ESTA AUMENTADO PARA PROBAR LOS GIROS
@@ -991,4 +996,6 @@ public class Ventana extends JFrame implements KeyListener {
 		campo[Pieza.getc3().gety()][Pieza.getc3().getx()] = null;
 
 	}
+	//metodo para que suene
+	
 }
