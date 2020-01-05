@@ -653,6 +653,11 @@ public class Ventana extends JFrame implements KeyListener {
 								JOptionPane.showMessageDialog(null, "GAME OVER");
 								ElegirModo elegir=new ElegirModo();
 								elegir.setVisible(true);
+								//añadimos la puntuacion en la base de datos
+								BD.anyadirPuntu(IniciarSesion.entrada);
+								
+								
+								//proceso para reiniciar el tablero
 								pieza_guardada.setIcon(new ImageIcon(Ventana.class.getResource("")));
 								guardada =null;
 								Ventana.this.dispose();

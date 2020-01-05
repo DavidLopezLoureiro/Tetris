@@ -8918,3 +8918,61 @@
   </exception>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-01-05T17:42:41.076063Z</date>
+  <millis>1578246161076</millis>
+  <nanos>63000</nanos>
+  <sequence>0</sequence>
+  <logger>bd.BD</logger>
+  <level>SEVERE</level>
+  <class>bd.BD</class>
+  <method>log</method>
+  <thread>21</thread>
+  <message>Error en uso de base de datos</message>
+  <exception>
+    <message>java.sql.SQLException: [SQLITE_CONSTRAINT]  Abort due to constraint violation (UNIQUE constraint failed: puntu.id)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>890</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>901</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>execute</method>
+      <line>810</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>executeUpdate</method>
+      <line>847</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3PreparedStatement</class>
+      <method>executeUpdate</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>bd.BD</class>
+      <method>anyadirPuntu</method>
+      <line>298</line>
+    </frame>
+    <frame>
+      <class>interfaz.Ventana$4</class>
+      <method>run</method>
+      <line>657</line>
+    </frame>
+    <frame>
+      <class>java.lang.Thread</class>
+      <method>run</method>
+      <line>834</line>
+    </frame>
+  </exception>
+</record>

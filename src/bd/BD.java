@@ -108,7 +108,7 @@ public class BD {
 		}
 	}
 	
-	
+	//metodo para borrar la tabla usuario
 	public static void dropUserTable() throws SQLException {
 		try (Statement stmt = conn.createStatement()) {
 			stmt.executeUpdate("DROP TABLE usuarios IF EXISTS");
@@ -288,18 +288,20 @@ public class BD {
 	}
 	/**
 	 * Metodo para añadir la puntuacion del usuario que esta jugando en este momento
-	 * @param el objeto que hace referencia  al jugador actual y la puntuacion conseguida que queremos guardar
+	 * @param el objeto que hace referencia  al jugador actual donde tendremos la puntuacion conseguida y el id del usuario
 	 */
-	public static void anyadirPuntu(Usuario user , int puntuacion) {
+	public static void anyadirPuntu(Usuario user ) {
 		try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO puntu (id, puntos) VALUES (?, ?)");
 				Statement stmtForId = conn.createStatement()) {
 				stmt.setInt(1, user.getId());
-				stmt.setInt(2, puntuacion);
+				stmt.setInt(2, user.getMaxPuntu());
 				stmt.executeUpdate();
 			} catch (SQLException e) {
 				lastError = e;
 				log(Level.SEVERE, "Error en uso de base de datos", e);
 			}
+		//ademas reiniciamos la puntuacion para la proxima partida
+		user.setMaxPuntu(0);
 	}
 	/**
 	 * Metodo para obtener puntuacion maxima de un Usuario expecifico
