@@ -62,7 +62,7 @@ public class IniciarSesion extends JFrame implements KeyListener {
 		
 		if (key == KeyEvent.VK_ENTER) {
 			
-			// PROCESADO DE CONTRASEÑA
+			// PROCESADO DE CONTRASEï¿½A
 			char clave[] = passwordFieldInicioSesion.getPassword();
 			String clave_pasada = new String(clave);
 			String cont_usu = BD.getCont(textFieldNombre.getText());
@@ -78,36 +78,19 @@ public class IniciarSesion extends JFrame implements KeyListener {
 
 				JOptionPane.showMessageDialog(null, "Este usuario no existe.");
 
-				// COMPRUEBA QUE LAS CONTRASEÑAS SEAN IGUALES
+				// COMPRUEBA QUE LAS CONTRASEï¿½AS SEAN IGUALES
 			} else if (!cont_usu.equals(clave_pasada)) {
 
-				JOptionPane.showMessageDialog(null, "Contraseña incorrecta.");
+				JOptionPane.showMessageDialog(null, "Contraseï¿½a incorrecta.");
 
 			} else {
-				
-				//INICIA LA LISTA DE PIEZAS
-				
-				lista_i = new ArrayList<String>();
-				
-				lista_i = CreadorDePiezas.crear_lista_pirmera_vez();
-				
-				//Inicializa el campo
-				
-				campo_i = new String[21][9];
-				
-				 for (int i = 0;i<campo_i.length;i++){
-					 
-		            for(int j=0;j<campo_i[0].length;j++){
-		            	
-		            	campo_i[i][j]= null;
-			            }
-			        }
+		
 				 
 				//MARCA QUE USUARIO HA ENTRADO
 				entrada = BD.getUserName(textFieldNombre.getText());
-				
-				Ventana nuevaventana = new Ventana();
-				nuevaventana.setVisible(true);
+				//nueva ventana que se va a abrir
+				ElegirModo elegir=new ElegirModo();
+				elegir.setVisible(true);
 
 				// CIERRA LA VENTANA ACTUAL
 				IniciarSesion.this.dispose();
@@ -216,7 +199,7 @@ public class IniciarSesion extends JFrame implements KeyListener {
 		btnIniciarSesion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				// PROCESADO DE CONTRASEÑA
+				// PROCESADO DE CONTRASEï¿½A
 				char clave[] = passwordFieldInicioSesion.getPassword();
 				String clave_pasada = new String(clave);
 				String cont_usu = BD.getCont(textFieldNombre.getText());
@@ -232,36 +215,19 @@ public class IniciarSesion extends JFrame implements KeyListener {
 
 					JOptionPane.showMessageDialog(null, "Este usuario no existe.");
 
-					// COMPRUEBA QUE LAS CONTRASEÑAS SEAN IGUALES
+					// COMPRUEBA QUE LAS CONTRASEï¿½AS SEAN IGUALES
 				} else if (!cont_usu.equals(clave_pasada)) {
 
-					JOptionPane.showMessageDialog(null, "Contraseña incorrecta.");
+					JOptionPane.showMessageDialog(null, "Contraseï¿½a incorrecta.");
 
 				} else {
 					
-					//INICIA LA LISTA DE PIEZAS
-					
-					lista_i = new ArrayList<String>();
-					
-					lista_i = CreadorDePiezas.crear_lista_pirmera_vez();
-					
-					//Inicializa el campo
-					
-					campo_i = new String[21][9];
-					
-					 for (int i = 0;i<campo_i.length;i++){
-						 
-			            for(int j=0;j<campo_i[0].length;j++){
-			            	
-			            	campo_i[i][j]= null;
-				            }
-				        }
-					 
+			 
 					//MARCA QUE USUARIO HA ENTRADO
 					entrada = BD.getUserName(textFieldNombre.getText());
 					
-					Ventana nuevaventana = new Ventana();
-					nuevaventana.setVisible(true);
+					ElegirModo elegir=new ElegirModo();
+					elegir.setVisible(true);
 
 					// CIERRA LA VENTANA ACTUAL
 					IniciarSesion.this.dispose();

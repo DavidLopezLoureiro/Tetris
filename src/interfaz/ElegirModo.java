@@ -102,6 +102,7 @@ public class ElegirModo extends JFrame implements  ActionListener{
 	            	IniciarSesion.campo_i[i][j]= null;
 		            }
 		        }
+			 Ventana.terminar=true;
 			Ventana ventana= new Ventana();
 			ventana.setVisible(true);
 		} else {

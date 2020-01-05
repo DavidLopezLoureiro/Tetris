@@ -49,7 +49,7 @@ public class Ventana extends JFrame implements KeyListener {
 	public static ArrayList<String> lista;
 	private static int lineas;
 	public static Dificultad dificultad;
-
+	public  static Boolean terminar=true;
 	private static String guardada; // para guardar la pieza
 	public static JLabel pieza_guardada;
 
@@ -57,6 +57,7 @@ public class Ventana extends JFrame implements KeyListener {
 	public static JLabel pieza_siguiente_2;
 	public static JLabel pieza_siguiente_3;
 	public static JLabel pieza_siguiente_4;
+	Thread hilo;
 
 	public static int x_0;
 	public static int y_0;
@@ -626,9 +627,10 @@ public class Ventana extends JFrame implements KeyListener {
 		});
 		
 	
-		new Thread(new Runnable() {
+		hilo = new Thread(new Runnable() {
+			//si termina la aplicacion
 			public void run() {
-				while (true) {
+				while (terminar) {
 
 					try {
 
@@ -646,20 +648,30 @@ public class Ventana extends JFrame implements KeyListener {
 						for (int i = 0; i < 9; i++) {
 
 							if (campo[20][i] != null) {
-
+								//cambios a hacer una vez haya perido el usuario 
+								terminar=false;
 								JOptionPane.showMessageDialog(null, "GAME OVER");
-
+								ElegirModo elegir=new ElegirModo();
+								elegir.setVisible(true);
 								pieza_guardada.setIcon(new ImageIcon(Ventana.class.getResource("")));
-								guardada = null;
-								lista = CreadorDePiezas.crear_lista_pirmera_vez();
-
-								for (int P = 0; P < campo.length; P++) {
-
-									for (int j = 0; j < campo[0].length; j++) {
-
-										campo[P][j] = null;
-									}
-								}
+								guardada =null;
+								Ventana.this.dispose();
+								hilo.interrupt();
+							
+								
+//	
+//								pieza_guardada.setIcon(new ImageIcon(Ventana.class.getResource("")));
+//								guardada = null;
+//								lista = CreadorDePiezas.crear_lista_pirmera_vez();
+//
+//								for (int P = 0; P < campo.length; P++) {
+//
+//									for (int j = 0; j < campo[0].length; j++) {
+//
+//										campo[P][j] = null;
+//									}
+//								}
+								
 
 							}
 
@@ -729,7 +741,9 @@ public class Ventana extends JFrame implements KeyListener {
 
 			}
 
-		}).start();
+		});
+		
+		hilo.start();
 	
 	}
 	
