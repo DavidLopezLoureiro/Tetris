@@ -1,8 +1,9 @@
 package bd;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
-
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.After;
@@ -99,6 +100,18 @@ public class TestBD {
 		
 		assertEquals(cont, "cont");
 	
+	}
+	
+	@Test
+	public void testAnyadirPuntu() {
+		Usuario usuario=new Usuario(20000, "erikk", "e", 100, "e");
+		BD.anyadirPuntu(usuario);
+		ArrayList<Integer>puntu=BD.puntuaciones(usuario);
+		for (Integer integer : puntu) {
+			if(integer==100) {
+				assertTrue(true);
+			}
+		}
 	}
 
 }
