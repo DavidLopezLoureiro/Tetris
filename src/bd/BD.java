@@ -118,7 +118,16 @@ public class BD {
 			
 		}
 	}
-
+	//metodo para borrar la tabla puntuacion
+	public static void dropPuntuTable() throws SQLException {
+		try (Statement stmt = conn.createStatement()) {
+			stmt.executeUpdate("DROP TABLE puntu IF EXISTS");
+		} catch (SQLException e) {
+			lastError = e;
+			log(Level.SEVERE,"Error borrado de la tabla usuarios",e);
+			
+		}
+	}
 	
 	
 	/**
