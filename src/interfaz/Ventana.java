@@ -37,12 +37,11 @@ import objetos.CreadorDePiezas;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.applet.Applet;
-import java.applet.AudioClip;
+
 
 @SuppressWarnings("serial")
 public class Ventana extends JFrame implements KeyListener {
-	public static AudioClip sonido;
+	
 	private JPanel contentPane;
 	public static int Niveldificultad;
 	public static String Cod_pieza_actual;
@@ -635,13 +634,9 @@ public class Ventana extends JFrame implements KeyListener {
 					try {
 
 						while (choque_abajo() == false) {
-
 							movimientoabajo();
-							
 							panel.repaint();
-
 							Thread.sleep(Niveldificultad);
-
 						}
 
 						// PARA DETECTAR QUE EL USUARIO HA PERDIDO
@@ -656,26 +651,24 @@ public class Ventana extends JFrame implements KeyListener {
 								//añadimos la puntuacion en la base de datos
 								BD.anyadirPuntu(IniciarSesion.entrada);
 								
-								
+	//---------------------------------------------Zona de Error----------------------------------------------------							
 								//proceso para reiniciar el tablero
 								pieza_guardada.setIcon(new ImageIcon(Ventana.class.getResource("")));
 								guardada =null;
 								Ventana.this.dispose();
-								hilo.interrupt();
-							
-								
+								hilo.interrupt();			
 //	
 //								pieza_guardada.setIcon(new ImageIcon(Ventana.class.getResource("")));
 //								guardada = null;
 //								lista = CreadorDePiezas.crear_lista_pirmera_vez();
 //
-//								for (int P = 0; P < campo.length; P++) {
-//
-//									for (int j = 0; j < campo[0].length; j++) {
-//
-//										campo[P][j] = null;
-//									}
-//								}
+								for (int P = 0; P < campo.length; P++) {
+
+									for (int j = 0; j < campo[0].length; j++) {
+
+										campo[P][j] = null;
+									}
+								}
 								
 
 							}
@@ -691,7 +684,7 @@ public class Ventana extends JFrame implements KeyListener {
 
 								IniciarSesion.entrada.setMaxPuntu(IniciarSesion.entrada.getMaxPuntu() + 1);
 
-								BD.update(IniciarSesion.entrada);
+								//BD.update(IniciarSesion.entrada);
 
 								lblPuntuacion.setText("Puntuacion: " + IniciarSesion.entrada.getMaxPuntu());
 
