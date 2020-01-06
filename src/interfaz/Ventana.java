@@ -363,6 +363,7 @@ public class Ventana extends JFrame implements KeyListener {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		setLocationRelativeTo(null);
 
 		// PANELES
 
@@ -651,6 +652,13 @@ public class Ventana extends JFrame implements KeyListener {
 								//añadimos la puntuacion en la base de datos
 								BD.anyadirPuntu(IniciarSesion.entrada);
 								
+								for (int P = 0; P < campo.length; P++) {
+
+									for (int j = 0; j < campo[0].length; j++) {
+
+										campo[P][j] = null;
+									}
+								}
 	//---------------------------------------------Zona de Error----------------------------------------------------							
 								//proceso para reiniciar el tablero
 								pieza_guardada.setIcon(new ImageIcon(Ventana.class.getResource("")));
@@ -662,13 +670,7 @@ public class Ventana extends JFrame implements KeyListener {
 //								guardada = null;
 //								lista = CreadorDePiezas.crear_lista_pirmera_vez();
 //
-								for (int P = 0; P < campo.length; P++) {
-
-									for (int j = 0; j < campo[0].length; j++) {
-
-										campo[P][j] = null;
-									}
-								}
+								
 								
 
 							}

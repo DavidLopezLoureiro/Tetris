@@ -57,6 +57,7 @@ public class MenuInicial extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		setLocationRelativeTo(null);
 
 		// BOTONES
 		JButton btnCrearUsuario = new JButton("REGISTRARSE");

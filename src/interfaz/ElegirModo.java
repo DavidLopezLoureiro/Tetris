@@ -28,7 +28,7 @@ public class ElegirModo extends JFrame implements  ActionListener{
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 850, 700);
-		
+		setLocationRelativeTo(null);
 		getContentPane().setLayout(null);
 		
 		botonModoClasico = new JButton("CLASICO");

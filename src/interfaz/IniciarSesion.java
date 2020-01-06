@@ -127,6 +127,7 @@ public class IniciarSesion extends JFrame implements KeyListener {
 		contentPane.setBorder(null);
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		setLocationRelativeTo(null);
 
 		// BOTONES
 		JButton btnIniciarSesion = new JButton("ENTRAR");
