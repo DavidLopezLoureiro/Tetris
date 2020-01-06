@@ -101,7 +101,7 @@ public class BD {
 	//metodo para crear la tabla Puntuacion
 	public static void createPuntuTable() {
 		try (Statement stmt = conn.createStatement()) {
-			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS puntu (id INTEGER PRIMARY KEY, puntos INTEGER)");//el id de la tabla sera el id del usuario que tenga asociado
+			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS puntu (id INTEGER, puntos INTEGER)");//el id de la tabla sera el id del usuario que tenga asociado
 		} catch (SQLException e) {
 			lastError=e;
 			log(Level.SEVERE,"la tabla ya ha sido creada",e);
@@ -111,7 +111,7 @@ public class BD {
 	//metodo para borrar la tabla usuario
 	public static void dropUserTable() throws SQLException {
 		try (Statement stmt = conn.createStatement()) {
-			stmt.executeUpdate("DROP TABLE usuarios IF EXISTS");
+			stmt.executeUpdate("DROP TABLE usuarios");
 		} catch (SQLException e) {
 			lastError = e;
 			log(Level.SEVERE,"Error borrado de la tabla usuarios",e);
@@ -121,10 +121,10 @@ public class BD {
 	//metodo para borrar la tabla puntuacion
 	public static void dropPuntuTable() throws SQLException {
 		try (Statement stmt = conn.createStatement()) {
-			stmt.executeUpdate("DROP TABLE puntu IF EXISTS");
+			stmt.executeUpdate("DROP TABLE puntu ");
 		} catch (SQLException e) {
 			lastError = e;
-			log(Level.SEVERE,"Error borrado de la tabla usuarios",e);
+			log(Level.SEVERE,"Error borrado de la tabla puntuacion",e);
 			
 		}
 	}

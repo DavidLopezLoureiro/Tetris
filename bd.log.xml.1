@@ -229,3 +229,46 @@
   </exception>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-01-06T10:29:12.368960Z</date>
+  <millis>1578306552368</millis>
+  <nanos>960000</nanos>
+  <sequence>0</sequence>
+  <logger>bd.BD</logger>
+  <level>SEVERE</level>
+  <class>bd.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Error borrado de la tabla puntuacion</message>
+  <exception>
+    <message>java.sql.SQLException: near "IF": syntax error</message>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>throwex</method>
+      <line>397</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeUpdate</method>
+      <line>116</line>
+    </frame>
+    <frame>
+      <class>bd.BD</class>
+      <method>dropPuntuTable</method>
+      <line>124</line>
+    </frame>
+    <frame>
+      <class>bd.p</class>
+      <method>main</method>
+      <line>9</line>
+    </frame>
+  </exception>
+</record>
+</log>
