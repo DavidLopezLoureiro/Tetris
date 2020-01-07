@@ -57,7 +57,6 @@ public class Ventana extends JFrame implements KeyListener {
 	public static JLabel pieza_siguiente_3;
 	public static JLabel pieza_siguiente_4;
 	Thread hilo;
-
 	public static int x_0;
 	public static int y_0;
 
@@ -320,28 +319,13 @@ public class Ventana extends JFrame implements KeyListener {
 	public void keyTyped(KeyEvent e) {
 	}
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Ventana frame = new Ventana();
-					frame.setVisible(true);
-
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 
 	/**
 	 * Create the frame.
 	 */
 	public Ventana() {
+		
 		//añadimos dificultad
 		anyadirDificultad();
 	
@@ -628,10 +612,10 @@ public class Ventana extends JFrame implements KeyListener {
 		
 	
 		hilo = new Thread(new Runnable() {
-			//si termina la aplicacion
+			
 			public void run() {
-				while (terminar) {
-
+				
+				//si termina la aplicacion
 					try {
 
 						while (choque_abajo() == false) {
@@ -644,14 +628,9 @@ public class Ventana extends JFrame implements KeyListener {
 						for (int i = 0; i < 9; i++) {
 
 							if (campo[20][i] != null) {
-								//cambios a hacer una vez haya perido el usuario 
-								terminar=false;
-								JOptionPane.showMessageDialog(null, "GAME OVER");
-								ElegirModo elegir=new ElegirModo();
-								elegir.setVisible(true);
 								//añadimos la puntuacion en la base de datos
 								BD.anyadirPuntu(IniciarSesion.entrada);
-								
+								//cambios a hacer una vez haya perdido el usuario 
 								for (int P = 0; P < campo.length; P++) {
 
 									for (int j = 0; j < campo[0].length; j++) {
@@ -659,20 +638,16 @@ public class Ventana extends JFrame implements KeyListener {
 										campo[P][j] = null;
 									}
 								}
-	//---------------------------------------------Zona de Error----------------------------------------------------							
+								terminar=false;
 								//proceso para reiniciar el tablero
 								pieza_guardada.setIcon(new ImageIcon(Ventana.class.getResource("")));
 								guardada =null;
+								new ElegirModo();//volevemos a la ventana principal
 								Ventana.this.dispose();
-								hilo.interrupt();			
-//	
-//								pieza_guardada.setIcon(new ImageIcon(Ventana.class.getResource("")));
-//								guardada = null;
-//								lista = CreadorDePiezas.crear_lista_pirmera_vez();
-//
+								hilo.interrupt();	
+								JOptionPane.showMessageDialog(null, "GAME OVER");
 								
 								
-
 							}
 
 						}
@@ -737,7 +712,7 @@ public class Ventana extends JFrame implements KeyListener {
 
 					}
 
-				}
+				
 
 			}
 
