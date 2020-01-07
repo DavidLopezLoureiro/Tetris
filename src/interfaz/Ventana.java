@@ -318,8 +318,20 @@ public class Ventana extends JFrame implements KeyListener {
 	@Override
 	public void keyTyped(KeyEvent e) {
 	}
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Ventana frame = new Ventana();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
 
-
+	}
+	
 
 	/**
 	 * Create the frame.
@@ -614,6 +626,7 @@ public class Ventana extends JFrame implements KeyListener {
 		hilo = new Thread(new Runnable() {
 			
 			public void run() {
+				while(terminar) {
 				
 				//si termina la aplicacion
 					try {
@@ -712,7 +725,7 @@ public class Ventana extends JFrame implements KeyListener {
 
 					}
 
-				
+			}
 
 			}
 
