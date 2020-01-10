@@ -1,0 +1,6 @@
+# id del servidor 
+servidor.id=PC9915
+# Nombre del servidor 
+servidor.nombre=juan
+# Usuario para la conexión
+servidor.contra=12345

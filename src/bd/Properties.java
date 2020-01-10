@@ -24,9 +24,9 @@ public class Properties {
 		}
  
 		// Acceder a las propiedades por su nombre
-		id=Integer.parseInt(prop.getProperty("id"));
-		nombre=prop.getProperty("nombre");
-		contra=prop.getProperty("contra");
+		id=Integer.parseInt(prop.getProperty("servidor.id"));
+		nombre=prop.getProperty("servidor.nombre");
+		contra=prop.getProperty("servidor.contra");
 		
 	
 		
@@ -41,9 +41,9 @@ public class Properties {
 			InputStream is = null;
 			  is=new FileInputStream("fichero.prop");
 			  prop.load(is);
-			  prop.setProperty("id", ""+usuario.getId());
-			  prop.setProperty("nombre", usuario.getNombre());
-			  prop.setProperty("contra", usuario.getContra());
+			  prop.setProperty("servidor.id", ""+usuario.getId());
+			  prop.setProperty("servidor.nombre", usuario.getNombre());
+			  prop.setProperty("servidor.contra", usuario.getContra());
 			} catch(IOException ioe) {
 				ioe.printStackTrace();
 		}
