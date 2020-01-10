@@ -40,7 +40,7 @@ public class ElegirModo extends JFrame implements  ActionListener{
 		botonModoDuo = new JButton("2 JUGADORES");
 		botonModoDuo.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		botonModoDuo.setBounds(103, 341, 242, 97);
-		botonModoClasico.addActionListener(this);
+		botonModoDuo.addActionListener(this);
 		getContentPane().add(botonModoDuo);
 		
 		JLabel labelSegundaImagen = new JLabel("");
@@ -102,10 +102,11 @@ public class ElegirModo extends JFrame implements  ActionListener{
 	            	IniciarSesion.campo_i[i][j]= null;
 		            }
 		        }
+			 
 			 Ventana.terminar=true;
 			Ventana ventana= new Ventana();
 			ventana.setVisible(true);
-			this.dispose();
+			ElegirModo.this.dispose();
 		} else {
 			VentanaDuo duo=new VentanaDuo();
 			this.dispose();

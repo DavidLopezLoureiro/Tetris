@@ -338,6 +338,8 @@ public class Ventana extends JFrame implements KeyListener {
 	 */
 	public Ventana() {
 		
+		System.out.println("sidfbn");
+		
 		//añadimos dificultad
 		anyadirDificultad();
 	
