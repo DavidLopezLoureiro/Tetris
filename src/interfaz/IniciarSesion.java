@@ -14,6 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 
 import bd.BD;
+import bd.Properties;
 import interfaz.IniciarSesion;
 import interfaz.MenuInicial;
 import objetos.CreadorDePiezas;
@@ -180,7 +181,9 @@ public class IniciarSesion extends JFrame implements KeyListener {
 		passwordFieldInicioSesion.setBounds(116, 366, 598, 56);
 		contentPane.add(passwordFieldInicioSesion);
 		passwordFieldInicioSesion.addKeyListener(this);
-
+		//CARGA DEL ARCHIVO PROPERTIES
+		Properties.Lectura();
+		textFieldNombre.setText(Properties.nombre);//añadimos el nombre del usuario que se a conectado la ultima vez
 		// ACTION LISTENERS
 		btnVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -223,7 +226,9 @@ public class IniciarSesion extends JFrame implements KeyListener {
 
 				} else {
 					
-			 
+					//CAMBIAMOS EL FICHERO PROPEERTIES
+					Usuario usu=new Usuario(100, textFieldNombre.getText(), String.valueOf(passwordFieldInicioSesion.getPassword()), "nulo");
+					Properties.Escritura(usu);
 					//MARCA QUE USUARIO HA ENTRADO
 					entrada = BD.getUserName(textFieldNombre.getText());
 					
