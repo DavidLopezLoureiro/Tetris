@@ -1,14 +1,17 @@
 package bd;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.Enumeration;
 
 import objetos.Usuario;
 
 public class Properties {
-	public static int id;
+
 	public static String nombre;
 	public static String contra;
 	//metodo que se  encarga de hacer lectura de un fichero
@@ -24,10 +27,15 @@ public class Properties {
 		}
  
 		// Acceder a las propiedades por su nombre
-		id=Integer.parseInt(prop.getProperty("servidor.id"));
+		
 		nombre=prop.getProperty("servidor.nombre");
 		contra=prop.getProperty("servidor.contra");
-		
+		try {
+			is.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	
 		
 	}
@@ -37,13 +45,14 @@ public class Properties {
 	 */
 	public static void Escritura(Usuario usuario) {
 		try {
+			File archivo =new File("fichero.prop");
 			java.util.Properties prop = new java.util.Properties();
-			InputStream is = null;
-			  is=new FileInputStream("fichero.prop");
-			  prop.load(is);
+			 FileOutputStream st=new FileOutputStream(archivo);
 			  prop.setProperty("servidor.id", ""+usuario.getId());
 			  prop.setProperty("servidor.nombre", usuario.getNombre());
 			  prop.setProperty("servidor.contra", usuario.getContra());
+			  prop.store(st, null);
+			  st.close();
 			} catch(IOException ioe) {
 				ioe.printStackTrace();
 		}
