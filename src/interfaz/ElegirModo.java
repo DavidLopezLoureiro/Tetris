@@ -77,7 +77,7 @@ public class ElegirModo extends JFrame implements  ActionListener{
 			public void run() {
 				try {
 					ElegirModo frame = new ElegirModo();
-					frame.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -107,9 +107,15 @@ public class ElegirModo extends JFrame implements  ActionListener{
 			Ventana ventana= new Ventana();
 			ventana.setVisible(true);
 			ElegirModo.this.dispose();
+		}else if(arg0.getSource()==btnAjustes){
+			//ABRIMOS LA VENTANA DE AJUSTES
+			AjustesElegirModo ajustes=new AjustesElegirModo();
+			ajustes.setVisible(true);
+			//CERRAMOS LA VENTANA
+			ElegirModo.this.dispose();
 		} else {
 			VentanaDuo duo=new VentanaDuo();
-			this.dispose();
+			ElegirModo.this.dispose();
 		}
 		
 	}
