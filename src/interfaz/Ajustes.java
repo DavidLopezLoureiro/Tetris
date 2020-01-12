@@ -167,32 +167,9 @@ public class Ajustes extends JFrame {
 		
 		btnReanudar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {	
-				CreadorDePiezas.mover_lista();
-
-				Ventana.Cod_pieza_actual = Pieza.getCod_pieza();
-
-				Ventana.campo[Pieza.getc0().gety()][Pieza.getc0().getx()] = Pieza.getc0().getCod_cuadrado();
-
-				Ventana.campo[Pieza.getc1().gety()][Pieza.getc1().getx()] = Pieza.getc1().getCod_cuadrado();
-
-				Ventana.campo[Pieza.getc2().gety()][Pieza.getc2().getx()] = Pieza.getc2().getCod_cuadrado();
-
-				Ventana.campo[Pieza.getc3().gety()][Pieza.getc3().getx()] = Pieza.getc3().getCod_cuadrado();
-
-				// MUEVE LA LISTA
-				Ventana.pieza_siguiente
-						.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(Ventana.lista.get(0)))));
-				Ventana.pieza_siguiente_2
-						.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(Ventana.lista.get(1)))));
-				Ventana.pieza_siguiente_3
-						.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(Ventana.lista.get(2)))));
-				Ventana.pieza_siguiente_4
-						.setIcon(new ImageIcon(Ventana.class.getResource(AsignadorDeFotosDePiezas.poner_foto(Ventana.lista.get(3)))));
-
-				Ventana.x_0 = (Pieza.getc0().getx() * 30);
-				Ventana.x_1 = (Pieza.getc1().getx() * 30);
-				Ventana.x_2 = (Pieza.getc2().getx() * 30);
-				Ventana.x_3 = (Pieza.getc3().getx() * 30);
+				
+				Ventana.borrar_donde_estaba();
+			
 
 			Ventana nuevaventana = new Ventana();
 			nuevaventana.setVisible(true);

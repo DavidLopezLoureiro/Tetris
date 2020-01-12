@@ -338,7 +338,7 @@ public class Ventana extends JFrame implements KeyListener {
 	 */
 	public Ventana() {
 		
-		System.out.println("sidfbn");
+	
 		
 		//añadimos dificultad
 		anyadirDificultad();
@@ -606,10 +606,12 @@ public class Ventana extends JFrame implements KeyListener {
 
 			public void actionPerformed(ActionEvent arg0) {
 
-				if (arg0.getModifiers() == 16) {
+				if (arg0.getModifiers() == 16) {	
+					
+				
 					
 					borrar_donde_estaba();
-					
+		
 					Ajustes nuevaventana = new Ajustes();
 					nuevaventana.setVisible(true);
 
