@@ -73,7 +73,7 @@ public class Ventana extends JFrame implements KeyListener {
 
 	public static Thread movimiento;
 	
-	public static boolean ajustes = false;
+
 
 	public enum Dificultad {
 		FACIL, MEDIO, DIFICIL
@@ -607,8 +607,7 @@ public class Ventana extends JFrame implements KeyListener {
 				if (arg0.getModifiers() == 16) {
 					
 					borrar_donde_estaba();
-					
-					ajustes = true;
+	
 					
 					Ajustes nuevaventana = new Ajustes();
 					nuevaventana.setVisible(true);

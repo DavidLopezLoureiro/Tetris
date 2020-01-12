@@ -148,8 +148,6 @@ public class Ajustes extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {	
 				
 				Ventana.borrar_donde_estaba();
-				
-				Ventana.ajustes = false;
 			
 			Ventana nuevaventana = new Ventana();
 			nuevaventana.setVisible(true);
@@ -167,6 +165,7 @@ public class Ajustes extends JFrame {
 				nivelar();
 				// CIERRA LA VENTAN ACTUAL
 				Ajustes.this.dispose();
+				
 	        
 			}
 		});

@@ -64,11 +64,7 @@ public class ElegirModo extends JFrame implements  ActionListener{
 		labelTitulo.setBounds(358, 29, 128, 46);
 		panel.add(labelTitulo);
 		
-		btnAjustes = new JButton("Ajustes");
-		btnAjustes.setFont(new Font("Dialog", Font.BOLD, 25));
-		btnAjustes.setBounds(103, 478, 242, 97);
-		btnAjustes.addActionListener(this);
-		getContentPane().add(btnAjustes);
+		
 	}
 
 	
@@ -107,12 +103,7 @@ public class ElegirModo extends JFrame implements  ActionListener{
 			Ventana ventana= new Ventana();
 			ventana.setVisible(true);
 			ElegirModo.this.dispose();
-		}else if(arg0.getSource()==btnAjustes){
-			//ABRIMOS LA VENTANA DE AJUSTES
-			AjustesElegirModo ajustes=new AjustesElegirModo();
-			ajustes.setVisible(true);
-			//CERRAMOS LA VENTANA
-			ElegirModo.this.dispose();
+		
 		} else {
 			VentanaDuo duo=new VentanaDuo();
 			ElegirModo.this.dispose();
