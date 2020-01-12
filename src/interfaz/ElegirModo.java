@@ -39,7 +39,7 @@ public class ElegirModo extends JFrame implements  ActionListener{
 		
 		botonModoDuo = new JButton("ESTADISTICAS");
 		botonModoDuo.setFont(new Font("Times New Roman", Font.BOLD, 25));
-		botonModoDuo.setBounds(103, 341, 242, 97);
+		botonModoDuo.setBounds(103, 391, 242, 97);
 		botonModoDuo.addActionListener(this);
 		getContentPane().add(botonModoDuo);
 		
@@ -61,7 +61,7 @@ public class ElegirModo extends JFrame implements  ActionListener{
 		
 		JLabel labelTitulo = new JLabel("JUEGO");
 		labelTitulo.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 35));
-		labelTitulo.setBounds(358, 29, 128, 46);
+		labelTitulo.setBounds(358, 129, 128, 46);
 		panel.add(labelTitulo);
 		
 		
