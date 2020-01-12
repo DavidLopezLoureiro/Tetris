@@ -654,6 +654,8 @@ public class Ventana extends JFrame implements KeyListener {
 									}
 								}
 								terminar=false;
+								//crea el tablero Jfreechart
+								JfreeChart.CrearTabla(IniciarSesion.entrada);
 								//proceso para reiniciar el tablero
 								pieza_guardada.setIcon(new ImageIcon(Ventana.class.getResource("")));
 								guardada =null;
