@@ -98,7 +98,7 @@ public class ElegirModo extends JFrame implements  ActionListener{
 	            	IniciarSesion.campo_i[i][j]= null;
 		            }
 		        }
-			 
+			 IniciarSesion.entrada.setMaxPuntu(0);//reiniciamos la puntuacion
 			 Ventana.terminar=true;
 			Ventana ventana= new Ventana();
 			ventana.setVisible(true);

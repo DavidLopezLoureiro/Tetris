@@ -675,6 +675,7 @@ public class Ventana extends JFrame implements KeyListener {
 								lineas = lineas + 1;
 
 								IniciarSesion.entrada.setMaxPuntu(IniciarSesion.entrada.getMaxPuntu() + 1);
+								IniciarSesion.entrada.setMaxPuntu(IniciarSesion.entrada.getMaxPuntu() + 1);//añadimos la puntuacion 
 
 								//BD.update(IniciarSesion.entrada);
 

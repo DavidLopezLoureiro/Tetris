@@ -39,7 +39,7 @@ public static void CrearTabla(Usuario usuario) {
     renderer.setSeriesStroke(0, new BasicStroke(2));
     //creacion de la tabla
     JFreeChart chart = ChartFactory.createXYLineChart("Ultimas Puntuaciones", "Partida", "Puntuacion", dataset);
-    chart.getXYPlot().getRangeAxis().setRange(0, 100);
+    chart.getXYPlot().getRangeAxis().setRange(0, 25);
     chart.getXYPlot().setRenderer(renderer);
     
     BufferedImage image = chart.createBufferedImage(600, 400);
@@ -54,25 +54,26 @@ public static void CrearTabla(Usuario usuario) {
 private static double[][] Datos(Usuario usuario) {
 	ArrayList<Integer>puntuacion=BD.puntuaciones(usuario);//obtenemos las puntuaciones
 	int indice=puntuacion.size()-1;
-	if(indice<=3) {
-	puntuacionMedia=(puntuacion.get(indice)-3+puntuacion.get(indice)-2+puntuacion.get(indice)-1+puntuacion.get(indice))/4;//aprivechamos para obtener la puntuacion media de las ultimas partidas
-	double[][]puntus=new double[][] {{1,2,3,4},{puntuacion.get(indice)-3,puntuacion.get(indice)-2,puntuacion.get(indice)-1,puntuacion.get(indice)}} ;
+	System.out.println(indice);
+	if(indice>=3) {
+	puntuacionMedia=puntuacion.get(indice-3)+puntuacion.get(indice-2)+puntuacion.get(indice-1)+puntuacion.get(indice)/4;//aprivechamos para obtener la puntuacion media de las ultimas partidas
+	double[][]puntus=new double[][] {{1,2,3,4},{puntuacion.get(indice-3),puntuacion.get(indice-2),puntuacion.get(indice-1),puntuacion.get(indice)}} ;
 	return puntus;
 	}
 	if(indice==2) {
-		puntuacionMedia=(puntuacion.get(indice)-2+puntuacion.get(indice)-1+puntuacion.get(indice))/3;//aprivechamos para obtener la puntuacion media de las ultimas partidas
-		double[][]puntus=new double[][] {{1,2,3,4},{0,puntuacion.get(indice)-2,puntuacion.get(indice)-1,puntuacion.get(indice)}} ;
+		puntuacionMedia=puntuacion.get(indice-2)+puntuacion.get(indice-1)+puntuacion.get(indice)/3;//aprivechamos para obtener la puntuacion media de las ultimas partidas
+		double[][]puntus=new double[][] {{1,2,3,4},{puntuacion.get(indice-2),puntuacion.get(indice-1),puntuacion.get(indice),0}} ;
 		return puntus;
 	}
 	if(indice==1) {
-		puntuacionMedia=(puntuacion.get(indice)-1+puntuacion.get(indice))/2;//aprivechamos para obtener la puntuacion media de las ultimas partidas
-		double[][]puntus=new double[][] {{1,2,3,4},{0,0,puntuacion.get(indice)-1,puntuacion.get(indice)}} ;
+		puntuacionMedia=puntuacion.get(indice-1)+puntuacion.get(indice)/2;//aprivechamos para obtener la puntuacion media de las ultimas partidas
+		double[][]puntus=new double[][] {{1,2,3,4},{puntuacion.get(indice-1),puntuacion.get(indice),0,0}} ;
 		return puntus;
 		}
 	if(indice==0) {
-	puntuacionMedia=puntuacion.get(indice);//aprivechamos para obtener la puntuacion media de las ultimas partidas
-		double[][]puntus=new double[][] {{1,2,3,4},{0,0,0,puntuacion.get(indice)}} ;
-	return puntus;
+		puntuacionMedia=puntuacion.get(indice);//aprivechamos para obtener la puntuacion media de las ultimas partidas
+		double[][]puntus=new double[][] {{1,2,3,4},{puntuacion.get(indice),0,0,0}} ;
+		return puntus;
 	}
 //	
 	return new double[][] {{1,2,3,4},{0,0,0,0}};
