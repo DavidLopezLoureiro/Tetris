@@ -74,6 +74,13 @@ public class PiezaT extends Pieza{
 	 		break;
 				
 	 	case DERECHA:
+	 		
+	 		
+	 			if(Pieza.c1.gety() + 1 >= 0 && Pieza.c1.getx() - 1  >= 0 && Pieza.c1.gety() + 1 <= 20 && Pieza.c1.getx() - 1 <= 8) {
+ 				
+		 		if(Pieza.c2.gety() + 1 >= 0 && Pieza.c2.getx() + 1  >= 0 && Pieza.c2.gety() + 1 <= 20 && Pieza.c2.getx() + 1 <= 8) {
+		 		 		
+		 		if(Pieza.c3.gety() - 1 >= 0 && Pieza.c3.getx() + 1  >= 0 && Pieza.c3.gety() - 1 <= 20 && Pieza.c3.getx() + 1 <= 8) {
 			
 		 	//C0
 		 		Pieza.c0.sety(Pieza.c0.gety());
@@ -112,9 +119,21 @@ public class PiezaT extends Pieza{
 				
 				Pieza.orientacion = Pieza.Orientacion.ALREVES;
 				
+		 			}
+		 		}
+	 		}
+				
 				break;
 				
 	 	case ALREVES:
+	 		
+
+ 			if(Pieza.c1.gety() + 1 >= 0 && Pieza.c1.getx() + 1  >= 0 && Pieza.c1.gety() + 1 <= 20 && Pieza.c1.getx() + 1 <= 8) {
+				
+	 		if(Pieza.c2.gety() - 1 >= 0 && Pieza.c2.getx() + 1  >= 0 && Pieza.c2.gety() - 1 <= 20 && Pieza.c2.getx() + 1 <= 8) {
+	 		 		
+	 		if(Pieza.c3.gety() - 1 >= 0 && Pieza.c3.getx() - 1  >= 0 && Pieza.c3.gety() - 1 <= 20 && Pieza.c3.getx() - 1 <= 8) {
+		
 			
 		 	//C0
 		 		Pieza.c0.sety(Pieza.c0.gety());
@@ -153,9 +172,21 @@ public class PiezaT extends Pieza{
 			
 				Pieza.orientacion = Pieza.Orientacion.IZQUIERDA;
 				
+	 		}
+	 		}
+ 			}
+				
 				break;
 				
 	 	case IZQUIERDA:
+	 		
+
+ 			if(Pieza.c1.gety() - 1 >= 0 && Pieza.c1.getx() + 1  >= 0 && Pieza.c1.gety() - 1 <= 20 && Pieza.c1.getx() + 1 <= 8) {
+				
+	 		if(Pieza.c2.gety() - 1 >= 0 && Pieza.c2.getx() - 1  >= 0 && Pieza.c2.gety() - 1 <= 20 && Pieza.c2.getx() - 1 <= 8) {
+	 		 		
+	 		if(Pieza.c3.gety() + 1 >= 0 && Pieza.c3.getx() - 1  >= 0 && Pieza.c3.gety() + 1 <= 20 && Pieza.c3.getx() - 1 <= 8) {
+		
 			
 			
 		 	//C0
@@ -194,6 +225,10 @@ public class PiezaT extends Pieza{
 				Pieza.c3.setchoca_derecha(false);
 			
 				Pieza.orientacion = Pieza.Orientacion.ORIGINAL;
+				
+	 		}
+	 		}
+ 			}
 				
 				break;
 

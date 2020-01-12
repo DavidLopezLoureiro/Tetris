@@ -24,7 +24,13 @@ public static void girar() {
 	 switch (Pieza.orientacion) {
 		
 	 case ORIGINAL:
+		 
+			if(Pieza.c0.gety() - 1 >= 0 && Pieza.c0.getx() + 1  >= 0 && Pieza.c0.gety() - 1 <= 20 && Pieza.c0.getx() + 1 <= 8) {
 			
+	 		if(Pieza.c2.gety() + 1 >= 0 && Pieza.c2.getx() - 1  >= 0 && Pieza.c2.gety() + 1 <= 20 && Pieza.c2.getx() - 1 <= 8) {
+	 		 		
+	 		if(Pieza.c3.gety() + 2 >= 0 && Pieza.c3.getx() - 2  >= 0 && Pieza.c3.gety() + 2 <= 20 && Pieza.c3.getx() - 2 <= 8) {
+		
 			//C0
 	 			Pieza.c0.sety(Pieza.c0.gety() - 1);
 		 		Pieza.c0.setx(Pieza.c0.getx() + 1);	
@@ -62,9 +68,20 @@ public static void girar() {
 			
 				Pieza.orientacion = Pieza.Orientacion.DERECHA;
 				
+	 					}
+	 				}
+				}
+			
+				
 				break;
 				
 	 	case DERECHA:
+	 		
+	 			if(Pieza.c0.gety() - 1 >= 0 && Pieza.c0.getx() - 1  >= 0 && Pieza.c0.gety() - 1 <= 20 && Pieza.c0.getx() - 1 <= 8) {
+				
+		 		if(Pieza.c2.gety() + 1 >= 0 && Pieza.c2.getx() + 1  >= 0 && Pieza.c2.gety() + 1 <= 20 && Pieza.c2.getx() + 1 <= 8) {
+		 		 		
+		 		if(Pieza.c3.gety() + 2 >= 0 && Pieza.c3.getx() + 2  >= 0 && Pieza.c3.gety() + 2 <= 20 && Pieza.c3.getx() + 2 <= 8) {
 			
 		 	//C0
 		 		Pieza.c0.sety(Pieza.c0.gety() - 1);
@@ -103,9 +120,18 @@ public static void girar() {
 				
 				Pieza.orientacion = Pieza.Orientacion.ALREVES;
 				
+					}
+				}
+			}
 				break;
 				
 	 	case ALREVES:
+	 		
+	 			if(Pieza.c0.gety() + 1 >= 0 && Pieza.c0.getx() - 1  >= 0 && Pieza.c0.gety() + 1 <= 20 && Pieza.c0.getx() - 1 <= 8) {
+				
+		 		if(Pieza.c2.gety() - 1 >= 0 && Pieza.c2.getx() + 1  >= 0 && Pieza.c2.gety() - 1 <= 20 && Pieza.c2.getx() + 1 <= 8) {
+		 		 		
+		 		if(Pieza.c3.gety() - 2 >= 0 && Pieza.c3.getx() + 2  >= 0 && Pieza.c3.gety() - 2 <= 20 && Pieza.c3.getx() + 2 <= 8) {
 			
 		 	//C0
 		 		Pieza.c0.sety(Pieza.c0.gety() + 1);
@@ -143,10 +169,20 @@ public static void girar() {
 				Pieza.c3.setchoca_derecha(true);
 			
 				Pieza.orientacion = Pieza.Orientacion.IZQUIERDA;
+
+					}
+				}
+			}
 				
 				break;
 				
 	 	case IZQUIERDA:
+	 		
+	 			if(Pieza.c0.gety() + 1 >= 0 && Pieza.c0.getx() + 1  >= 0 && Pieza.c0.gety() + 1 <= 20 && Pieza.c0.getx() + 1 <= 8) {
+				
+		 		if(Pieza.c2.gety() - 1 >= 0 && Pieza.c2.getx() - 1  >= 0 && Pieza.c2.gety() - 1 <= 20 && Pieza.c2.getx() - 1 <= 8) {
+		 		 		
+		 		if(Pieza.c3.gety() - 2 >= 0 && Pieza.c3.getx() - 2  >= 0 && Pieza.c3.gety() - 2 <= 20 && Pieza.c3.getx() - 2 <= 8) {
 			
 			
 		 	//C0
@@ -185,6 +221,10 @@ public static void girar() {
 				Pieza.c3.setchoca_derecha(true);
 			
 				Pieza.orientacion = Pieza.Orientacion.ORIGINAL;
+				
+					}
+				}
+			}
 				
 				break;
 
