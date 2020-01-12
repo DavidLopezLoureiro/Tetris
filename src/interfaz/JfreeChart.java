@@ -1,11 +1,9 @@
 package interfaz;
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.axis.NumberAxis;
-import org.jfree.chart.plot.XYPlot;
-import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
-import org.jfree.data.xy.DefaultXYDataset;
-import org.jfree.data.xy.XYDataset;
+
+import demo.orsoncharts.swing.*;
+import demo.orsoncharts.*;
+import com.orsoncharts.*;
+import demo.*;
 
 import bd.BD;
 import objetos.Usuario;
