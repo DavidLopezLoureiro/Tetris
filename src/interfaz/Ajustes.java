@@ -170,7 +170,6 @@ public class Ajustes extends JFrame {
 				
 				Ventana.borrar_donde_estaba();
 			
-
 			Ventana nuevaventana = new Ventana();
 			nuevaventana.setVisible(true);
 			

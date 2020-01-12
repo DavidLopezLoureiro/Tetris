@@ -113,9 +113,6 @@ public class Ventana extends JFrame implements KeyListener {
 
 		if (key == KeyEvent.VK_SPACE) {
 
-			if (Pieza.getc0().getx() != 0 && Pieza.getc1().getx() != 0 && Pieza.getc2().getx() != 0
-					&& Pieza.getc3().getx() != 0 && Pieza.getc0().getx() != 8 && Pieza.getc1().getx() != 8
-					&& Pieza.getc2().getx() != 8 && Pieza.getc3().getx() != 8) {
 
 				borrar_donde_estaba();
 
@@ -242,7 +239,7 @@ public class Ventana extends JFrame implements KeyListener {
 				y_3 = (20 - Pieza.getc3().gety()) * 30;
 				x_3 = (Pieza.getc3().getx() * 30);
 			}
-		}
+		
 
 		if (key == KeyEvent.VK_ENTER) {
 
@@ -338,7 +335,7 @@ public class Ventana extends JFrame implements KeyListener {
 	 */
 	public Ventana() {
 		
-	
+		System.out.println("sidfbn");
 		
 		//añadimos dificultad
 		anyadirDificultad();
@@ -606,12 +603,10 @@ public class Ventana extends JFrame implements KeyListener {
 
 			public void actionPerformed(ActionEvent arg0) {
 
-				if (arg0.getModifiers() == 16) {	
-					
-				
+				if (arg0.getModifiers() == 16) {
 					
 					borrar_donde_estaba();
-		
+					
 					Ajustes nuevaventana = new Ajustes();
 					nuevaventana.setVisible(true);
 
