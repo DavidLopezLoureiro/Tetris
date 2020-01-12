@@ -9,6 +9,12 @@ import bd.BD;
 import objetos.Usuario;
 
 import javax.imageio.ImageIO;
+
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
+import org.jfree.data.xy.DefaultXYDataset;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;

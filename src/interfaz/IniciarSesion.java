@@ -234,8 +234,8 @@ public class IniciarSesion extends JFrame implements KeyListener {
 					
 					ElegirModo elegir=new ElegirModo();
 					elegir.setVisible(true);
-//					//crea el tablero Jfreechart
-//					JfreeChart.CrearTabla(entrada);
+					//crea el tablero Jfreechart
+					JfreeChart.CrearTabla(entrada);
 					// CIERRA LA VENTANA ACTUAL
 					IniciarSesion.this.dispose();
 				}
