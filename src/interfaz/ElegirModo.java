@@ -37,7 +37,7 @@ public class ElegirModo extends JFrame implements  ActionListener{
 		botonModoClasico.addActionListener(this);
 		getContentPane().add(botonModoClasico);
 		
-		botonModoDuo = new JButton("2 JUGADORES");
+		botonModoDuo = new JButton("ESTADISTICAS");
 		botonModoDuo.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		botonModoDuo.setBounds(103, 341, 242, 97);
 		botonModoDuo.addActionListener(this);

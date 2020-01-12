@@ -82,32 +82,11 @@ public class AjustesElegirModo extends  JFrame {
 		lblAjustes.setBounds(327, 34, 153, 46);
 		panel.add(lblAjustes);
 		
-		JLabel lblVolumen = new JLabel("VOLUMEN:");
-		lblVolumen.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		lblVolumen.setBounds(88, 160, 127, 16);
-		contentPane.add(lblVolumen);
-		
 		JLabel lblDificultad = new JLabel("DIFICULTAD:");
 		lblDificultad.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		lblDificultad.setBounds(88, 285, 154, 16);
 		contentPane.add(lblDificultad);
 		
-		JLabel label = new JLabel("-");
-		label.setFont(new Font("Times New Roman", Font.PLAIN, 30));
-		label.setBounds(65, 204, 56, 16);
-		contentPane.add(label);
-		
-		JLabel label_1 = new JLabel("+");
-		label_1.setFont(new Font("Times New Roman", Font.BOLD, 25));
-		label_1.setBounds(764, 205, 56, 16);
-		contentPane.add(label_1);
-		
-		
-		//SLIDER
-		
-		JSlider slider = new JSlider();
-		slider.setBounds(88, 222, 672, 26);
-		contentPane.add(slider);
 		
 		
 		//BOTONES

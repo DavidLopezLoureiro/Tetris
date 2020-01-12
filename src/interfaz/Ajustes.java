@@ -66,7 +66,7 @@ public class Ajustes extends JFrame {
 		//AJUSTES GENERALES
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 850, 700);
+		setBounds(100, 100, 850, 550);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -91,33 +91,12 @@ public class Ajustes extends JFrame {
 		lblAjustes.setBounds(327, 34, 153, 46);
 		panel.add(lblAjustes);
 		
-		JLabel lblVolumen = new JLabel("VOLUMEN:");
-		lblVolumen.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		lblVolumen.setBounds(88, 160, 127, 16);
-		contentPane.add(lblVolumen);
 		
 		JLabel lblDificultad = new JLabel("DIFICULTAD:");
 		lblDificultad.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		lblDificultad.setBounds(88, 285, 154, 16);
+		lblDificultad.setBounds(88, 155, 154, 16);
 		contentPane.add(lblDificultad);
-		
-		JLabel label = new JLabel("-");
-		label.setFont(new Font("Times New Roman", Font.PLAIN, 30));
-		label.setBounds(65, 204, 56, 16);
-		contentPane.add(label);
-		
-		JLabel label_1 = new JLabel("+");
-		label_1.setFont(new Font("Times New Roman", Font.BOLD, 25));
-		label_1.setBounds(764, 205, 56, 16);
-		contentPane.add(label_1);
-		
-		
-		//SLIDER
-		
-		JSlider slider = new JSlider();
-		slider.setBounds(88, 222, 672, 26);
-		contentPane.add(slider);
-		
+	
 		
 		//BOTONES
 		
@@ -125,21 +104,21 @@ public class Ajustes extends JFrame {
 		btnReiniciar.setForeground(new Color(255, 255, 255));
 		btnReiniciar.setBackground(new Color(152, 251, 152));
 		btnReiniciar.setFont(new Font("Times New Roman", Font.BOLD, 25));
-		btnReiniciar.setBounds(65, 546, 292, 65);
+		btnReiniciar.setBounds(65, 400, 292, 65);
 		contentPane.add(btnReiniciar);
 		
 		JButton btnReanudar = new JButton("REANUDAR");
 		btnReanudar.setBackground(new Color(255, 165, 0));
 		btnReanudar.setForeground(Color.WHITE);
 		btnReanudar.setFont(new Font("Times New Roman", Font.BOLD, 25));
-		btnReanudar.setBounds(265, 452, 292, 65);
+		btnReanudar.setBounds(265, 300, 292, 65);
 		contentPane.add(btnReanudar);
 		
 		JButton btnGuardarYSalir = new JButton("GUARDAR Y SALIR");
 		btnGuardarYSalir.setForeground(new Color(255, 255, 255));
 		btnGuardarYSalir.setBackground(new Color(152, 251, 152));
 		btnGuardarYSalir.setFont(new Font("Times New Roman", Font.BOLD, 25));
-		btnGuardarYSalir.setBounds(468, 546, 292, 65);
+		btnGuardarYSalir.setBounds(468, 400, 292, 65);
 		contentPane.add(btnGuardarYSalir);
 		
 		
@@ -147,19 +126,19 @@ public class Ajustes extends JFrame {
 		ButtonGroup grupo= new ButtonGroup();//para que solo se puede seleccionar un botton a la vez
 		rdbtnFcil = new JRadioButton("F\u00C1CIL");
 		rdbtnFcil.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-		rdbtnFcil.setBounds(88, 345, 127, 25);
+		rdbtnFcil.setBounds(88, 205, 127, 25);
 		grupo.add(rdbtnFcil);
 		contentPane.add(rdbtnFcil);
 		
 		rdbtnMedio = new JRadioButton("MEDIO");
 		rdbtnMedio.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-		rdbtnMedio.setBounds(374, 345, 127, 25);
+		rdbtnMedio.setBounds(374, 205, 127, 25);
 		grupo.add(rdbtnMedio);
 		contentPane.add(rdbtnMedio);
 		
 		rdbtnDifcil = new JRadioButton("DIF\u00CDCIL");
 		rdbtnDifcil.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-		rdbtnDifcil.setBounds(654, 345, 93, 25);
+		rdbtnDifcil.setBounds(654, 205, 93, 25);
 		grupo.add(rdbtnDifcil);
 		contentPane.add(rdbtnDifcil);
 		
