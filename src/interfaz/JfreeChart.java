@@ -55,30 +55,26 @@ private static double[][] Datos(Usuario usuario) {
 	ArrayList<Integer>puntuacion=BD.puntuaciones(usuario);//obtenemos las puntuaciones
 	int indice=puntuacion.size()-1;
 	if(indice<=3) {
-	puntuacionMedia=(puntuacion.get(indice)-4+puntuacion.get(indice)-3+puntuacion.get(indice)-2+puntuacion.get(indice)-1+puntuacion.get(indice))/4;//aprivechamos para obtener la puntuacion media de las ultimas partidas
-	double[][]puntus=new double[][] {{1,2,3,4},{puntuacion.get(indice)-4,puntuacion.get(indice)-3,puntuacion.get(indice)-2,puntuacion.get(indice)-1,puntuacion.get(indice)}} ;
+	puntuacionMedia=(puntuacion.get(indice)-3+puntuacion.get(indice)-2+puntuacion.get(indice)-1+puntuacion.get(indice))/4;//aprivechamos para obtener la puntuacion media de las ultimas partidas
+	double[][]puntus=new double[][] {{1,2,3,4},{puntuacion.get(indice)-3,puntuacion.get(indice)-2,puntuacion.get(indice)-1,puntuacion.get(indice)}} ;
 	return puntus;
 	}
-	if(indice<=3) {
-		puntuacionMedia=(puntuacion.get(indice)-4+puntuacion.get(indice)-3+puntuacion.get(indice)-2+puntuacion.get(indice)-1+puntuacion.get(indice))/4;//aprivechamos para obtener la puntuacion media de las ultimas partidas
-		double[][]puntus=new double[][] {{1,2,3,4},{puntuacion.get(indice)-4,puntuacion.get(indice)-3,puntuacion.get(indice)-2,puntuacion.get(indice)-1,puntuacion.get(indice)}} ;
-		return puntus;
-		}
 	if(indice==2) {
 		puntuacionMedia=(puntuacion.get(indice)-2+puntuacion.get(indice)-1+puntuacion.get(indice))/3;//aprivechamos para obtener la puntuacion media de las ultimas partidas
 		double[][]puntus=new double[][] {{1,2,3,4},{0,puntuacion.get(indice)-2,puntuacion.get(indice)-1,puntuacion.get(indice)}} ;
 		return puntus;
-		}
+	}
 	if(indice==1) {
 		puntuacionMedia=(puntuacion.get(indice)-1+puntuacion.get(indice))/2;//aprivechamos para obtener la puntuacion media de las ultimas partidas
 		double[][]puntus=new double[][] {{1,2,3,4},{0,0,puntuacion.get(indice)-1,puntuacion.get(indice)}} ;
 		return puntus;
 		}
 	if(indice==0) {
-		puntuacionMedia=puntuacion.get(indice);//aprivechamos para obtener la puntuacion media de las ultimas partidas
+	puntuacionMedia=puntuacion.get(indice);//aprivechamos para obtener la puntuacion media de las ultimas partidas
 		double[][]puntus=new double[][] {{1,2,3,4},{0,0,0,puntuacion.get(indice)}} ;
-		return puntus;
-		}
+	return puntus;
+	}
+//	
 	return new double[][] {{1,2,3,4},{0,0,0,0}};
 }
 }
