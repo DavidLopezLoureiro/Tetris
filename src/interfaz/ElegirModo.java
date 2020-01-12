@@ -104,9 +104,7 @@ public class ElegirModo extends JFrame implements  ActionListener{
 			ventana.setVisible(true);
 			ElegirModo.this.dispose();
 		
-		} else {
-			VentanaDuo duo=new VentanaDuo();
-			ElegirModo.this.dispose();
+		
 		}
 		
 	}

@@ -23,12 +23,12 @@ public class Tablero extends JPanel {
 	@Override
 	public void paint(Graphics arg0) {
 		super.paint(arg0);
-		if(Ventana.ajustes == false) {
+
 			pintadoDePieza(arg0);
 			pintadoPiezasTablero(arg0);
 			tablero(arg0);
 		repaint();
-		}
+		
 	}
 	//pinta la pieza que actualmente esta en movimiento
 	private void pintadoDePieza(Graphics arg0) {

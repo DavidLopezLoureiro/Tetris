@@ -608,7 +608,6 @@ public class Ventana extends JFrame implements KeyListener {
 					
 					borrar_donde_estaba();
 	
-					
 					Ajustes nuevaventana = new Ajustes();
 					nuevaventana.setVisible(true);
 
