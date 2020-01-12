@@ -105,6 +105,9 @@ public class ElegirModo extends JFrame implements  ActionListener{
 			ElegirModo.this.dispose();
 		
 		
+		}else {
+			Estadisticas stats=new Estadisticas();
+			this.dispose();
 		}
 		
 	}
